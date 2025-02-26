@@ -2,7 +2,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import styles from './styles.module.css';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import { useColorMode } from '@docusaurus/theme-common';
 import chatBotService from './service';
 
 export default function ChatBot() {
@@ -55,7 +54,33 @@ export default function ChatBot() {
   const [lastResponseIndex, setLastResponseIndex] = useState(null);
   const messagesEndRef = useRef(null);
   const {siteConfig} = useDocusaurusContext();
-  const {colorMode} = useColorMode();
+  
+  // Get the current color mode from document attributes instead of the hook
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  
+  // Update dark mode detection when mounted and when it changes
+  useEffect(() => {
+    const updateTheme = () => {
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      setIsDarkMode(isDark);
+    };
+    
+    // Initial check
+    updateTheme();
+    
+    // Set up observer for theme changes
+    const observer = new MutationObserver(mutations => {
+      mutations.forEach(mutation => {
+        if (mutation.attributeName === 'data-theme') {
+          updateTheme();
+        }
+      });
+    });
+    
+    observer.observe(document.documentElement, { attributes: true });
+    
+    return () => observer.disconnect();
+  }, []);
   
   // Scroll to the bottom of the chat when new messages appear
   const scrollToBottom = () => {
@@ -198,7 +223,7 @@ export default function ChatBot() {
   };
 
   return (
-    <div className={`${styles.chatbotContainer} ${colorMode === 'dark' ? styles.dark : ''}`}>
+    <div className={`${styles.chatbotContainer} ${isDarkMode ? styles.dark : ''}`}>
       {/* Chat button */}
       <button 
         className={styles.chatButton} 

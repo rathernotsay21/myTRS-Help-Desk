@@ -36,6 +36,26 @@ const config = {
     locales: ['en'],
   },
 
+  // Add the search plugin
+  plugins: [
+    [
+      require.resolve('@easyops-cn/docusaurus-search-local'),
+      {
+        // Options for the search plugin
+        hashed: true,
+        language: ["en"],
+        highlightSearchTermsOnTargetPage: true,
+        explicitSearchResultPath: true,
+        searchBarPosition: 'right',
+        searchBarShortcutHint: true,
+        // Customize the index
+        indexDocs: true,
+        indexBlog: true,
+        indexPages: true,
+      },
+    ],
+  ],
+
   presets: [
     [
       'classic',

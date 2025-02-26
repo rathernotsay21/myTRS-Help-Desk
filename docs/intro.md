@@ -2,46 +2,63 @@
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# Welcome to My TRS Help Desk
 
-Let's discover **Docusaurus in less than 5 minutes**.
+Let's discover how **My TRS can streamline your transaction reporting** in just a few minutes.
 
 ## Getting Started
 
-Get started by **creating a new site**.
-
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+Get started by **logging into your My TRS account** or **setting up a new account** if you haven't already.
 
 ### What you'll need
 
-- [Node.js](https://nodejs.org/en/download/) version 18.0 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+- **My TRS Account**: Contact your administrator if you don't have access
+- **Internet connection**: A stable internet connection is required
+- **Supported browser**: We recommend using the latest version of Chrome, Firefox, Safari, or Edge
 
-## Generate a new site
+## Accessing the Dashboard
 
-Generate a new Docusaurus site using the **classic template**.
+Once you've logged in, you'll be taken to the My TRS dashboard:
 
-The classic template will automatically be added to your project after you run the command:
-
-```bash
-npm init docusaurus@latest my-website classic
+```
+https://app.my-trs.com/dashboard
 ```
 
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
+The dashboard is your central hub for all transaction reporting activities and provides a quick overview of:
 
-The command also installs all necessary dependencies you need to run Docusaurus.
+- Recent transactions
+- Pending reports
+- Compliance status
+- System notifications
 
-## Start your site
+## Basic Navigation
 
-Run the development server:
+### Main Menu
 
-```bash
-cd my-website
-npm run start
-```
+The main navigation menu is located on the left side of the screen and includes:
 
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
+- **Dashboard**: Overview of your system
+- **Transactions**: View and manage all transactions
+- **Reports**: Generate and export reports
+- **Settings**: Configure your account preferences
+- **Help**: Access this help desk and support resources
 
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
+### Quick Actions
 
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+The Quick Actions panel allows you to:
+
+- Create a new transaction
+- Generate a report
+- Export data
+- Contact support
+
+## Need Help?
+
+If you need assistance with any feature or encounter any issues:
+
+1. Check the relevant section in this documentation
+2. Use the search function to find specific topics
+3. Contact our support team through the "Help" menu
+4. Email us at support@my-trs.com
+
+Our support team is available Monday-Friday, 9 AM - 5 PM EST.

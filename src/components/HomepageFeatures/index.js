@@ -4,12 +4,12 @@ import styles from './styles.module.css';
 
 const FeatureList = [
   {
-    title: 'Easy to Use',
+    title: 'Easy to Implement',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        My TRS was designed from the ground up to be easily installed and
+        integrated with your existing systems, getting you up and running quickly.
       </>
     ),
   },
@@ -18,18 +18,18 @@ const FeatureList = [
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        My TRS lets you focus on your business goals, while we handle the complex
+        reporting requirements. Simplify your transaction reporting and compliance processes.
       </>
     ),
   },
   {
-    title: 'Powered by React',
+    title: 'Powered by Modern Technology',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Built on cutting-edge technology, My TRS offers a robust platform that can be
+        customized to meet your specific reporting needs with industry-leading security.
       </>
     ),
   },

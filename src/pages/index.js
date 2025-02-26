@@ -13,14 +13,14 @@ function HomepageHeader() {
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
         <Heading as="h1" className="hero__title">
-          {siteConfig.title}
+          My TRS Help Desk
         </Heading>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
+        <p className="hero__subtitle">Your resource for all things TRS</p>
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
             to="/docs/intro">
-            Docusaurus Tutorial - 5min ⏱️
+            Get Started with My TRS
           </Link>
         </div>
       </div>
@@ -32,12 +32,56 @@ export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      title={`Welcome to ${siteConfig.title}`}
+      description="My TRS Help Desk - Resources, guides, and support for all your TRS needs">
       <HomepageHeader />
       <main>
         <HomepageFeatures />
       </main>
+      <div className="container margin-vert--xl">
+        <div className="row">
+          <div className="col col--8 col--offset-2">
+            <div className="padding-vert--md">
+              <h2>About My TRS</h2>
+              <p>
+                My TRS is a comprehensive transaction reporting system designed to simplify 
+                complex reporting processes for businesses. Our platform offers intuitive
+                solutions for financial reporting, compliance, and data management.
+              </p>
+              <p>
+                With a focus on user-friendly interfaces and powerful backend capabilities,
+                My TRS helps organizations streamline their reporting workflows and gain
+                valuable insights from their transaction data.
+              </p>
+            </div>
+            
+            <div className="padding-vert--md">
+              <h2>Key Features</h2>
+              <ul>
+                <li>Automated transaction reporting and analysis</li>
+                <li>Customizable dashboards and reports</li>
+                <li>Real-time data processing and visualization</li>
+                <li>Compliance with industry standards and regulations</li>
+                <li>Secure data storage and management</li>
+                <li>Integration with existing business systems</li>
+              </ul>
+            </div>
+
+            <div className="padding-vert--md">
+              <h2>Need Help?</h2>
+              <p>
+                This help desk contains comprehensive documentation, tutorials, and
+                resources to help you get the most out of My TRS. Browse our documentation
+                sections or use the search feature to find specific information.
+              </p>
+              <p>
+                For additional support, please contact our customer service team at 
+                <a href="mailto:support@my-trs.com"> support@my-trs.com</a>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </Layout>
   );
 }

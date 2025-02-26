@@ -19,7 +19,6 @@ const previewClient = contentful.createClient({
 async function getDocPages() {
   const entries = await client.getEntries({
     content_type: 'myTrsHelpDesk', // Replace with your content type ID
-    order: 'fields.order', // If you have an order field
   });
   return entries.items;
 }

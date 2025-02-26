@@ -55,7 +55,7 @@ export default function ChatBot() {
   const messagesEndRef = useRef(null);
   const {siteConfig} = useDocusaurusContext();
   
-  // Get the current color mode from document attributes instead of the hook
+  // Get the current color mode from document attributes
   const [isDarkMode, setIsDarkMode] = useState(false);
   
   // Update dark mode detection when mounted and when it changes
@@ -89,12 +89,14 @@ export default function ChatBot() {
 
   // Save messages to localStorage whenever they change
   useEffect(() => {
-    try {
-      localStorage.setItem('myTRSChatHistory', JSON.stringify(messages.slice(-50))); // Keep last 50 messages
-    } catch (error) {
-      console.error('Error saving chat history:', error);
+    if (messages.length > 0) {
+      try {
+        localStorage.setItem('myTRSChatHistory', JSON.stringify(messages.slice(-50))); // Keep last 50 messages
+      } catch (error) {
+        console.error('Error saving chat history:', error);
+      }
+      scrollToBottom();
     }
-    scrollToBottom();
   }, [messages]);
   
   // Handle chat initialization when opened

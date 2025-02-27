@@ -92,6 +92,7 @@ const config = {
           src: 'img/logo.svg',
         },
         items: [
+          {to: '/why-trs', label: 'Why TRS?', position: 'left'},
           {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',

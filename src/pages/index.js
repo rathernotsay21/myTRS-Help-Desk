@@ -13,14 +13,14 @@ function HomepageHeader() {
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
         <Heading as="h1" className="hero__title">
-          My TRS Help Desk
+          myTRS
         </Heading>
-        <p className="hero__subtitle">Your resource for all things TRS</p>
+        <p className="hero__subtitle">All-in-One Event & Registrant Management Software</p>
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
             to="/docs/intro">
-            Get Started with My TRS
+            Explore Our Solutions
           </Link>
         </div>
       </div>

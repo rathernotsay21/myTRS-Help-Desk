@@ -34,7 +34,7 @@ export default function Home() {
   return (
     <Layout
       title={`Welcome to ${siteConfig.title}`}
-      description="myTRS Help Desk - Resources, guides, and support for all your TRS needs">
+      description="myTRS Help Desk - Resources, guides, and support for all your needs">
       <HomepageHeader />
       <ClientLogos />
       <main>

@@ -3,6 +3,7 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
+import ClientLogos from '@site/src/components/ClientLogos';
 
 import Heading from '@theme/Heading';
 import styles from './index.module.css';
@@ -35,6 +36,7 @@ export default function Home() {
       title={`Welcome to ${siteConfig.title}`}
       description="My TRS Help Desk - Resources, guides, and support for all your TRS needs">
       <HomepageHeader />
+      <ClientLogos />
       <main>
         <HomepageFeatures />
       </main>

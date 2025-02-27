@@ -89,7 +89,7 @@ const config = {
         title: 'myTRS',
         logo: {
           alt: 'My TRS Logo',
-          src: 'img/logo.svg',
+          src: 'img/myTRSlogo.png',
         },
         items: [
           {to: '/why-trs', label: 'Why TRS?', position: 'left'},

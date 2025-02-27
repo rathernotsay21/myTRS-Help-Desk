@@ -6,11 +6,8 @@ import clsx from 'clsx';
 // Define client logos with names for better accessibility
 const clientLogos = [
   { file: 'Superbowl_Logo-min.png', name: 'Super Bowl' },
-  { file: 'ciaa_logo-min.png', name: 'CIAA' },
   { file: 'Special_Olympics_Logo-min.png', name: 'Special Olympics' },
   { file: 'USA_Gymnastics_Logo-min.jpg', name: 'USA Gymnastics' },
-  { file: 'PGA_of_America_Logo-min.png', name: 'PGA of America' },
-  { file: 'NFL_Draft_Logo-min.png', name: 'NFL Draft' },
   { file: 'USA_Track_and_Field_Logo-min.png', name: 'USA Track and Field' },
   { file: 'NCAA_Logo-min.png', name: 'NCAA' },
   { file: 'big_ten_conference_logo-min.jpg', name: 'Big Ten Conference' },

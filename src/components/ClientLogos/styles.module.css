@@ -91,7 +91,7 @@
     align-items: center;
     justify-content: center;
     padding: 1rem;
-    background-color: var(--ifm-background-color);
+    background-color: #ffffff; /* Always white background */
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
     transition: all 0.3s ease;
@@ -111,9 +111,9 @@
     z-index: 1;
   }
   
-  /* Add a subtle distinction in dark mode */
+  /* Maintain white background in dark mode */
   [data-theme='dark'] .logoInner {
-    background-color: rgba(255, 255, 255, 0.03);
+    background-color: #ffffff;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   }
   
@@ -130,7 +130,7 @@
     max-width: 85%;
     max-height: 80px;
     object-fit: contain;
-    transition: transform 0.3s ease, filter 0.3s ease;
+    transition: transform 0.3s ease;
     z-index: 2;
     position: relative;
   }
@@ -139,17 +139,17 @@
     transform: scale(1.05);
   }
   
-  /* Handle logo display in dark mode */
+  /* Remove filter adjustments for dark mode since we're using white backgrounds */
   [data-theme='dark'] .logo {
-    filter: brightness(0.9) contrast(1.1);
+    filter: none;
   }
   
-  /* For logos that are primarily dark and need adjustment in dark mode */
+  /* Remove specific logo adjustments for dark mode */
   [data-theme='dark'] .logo[src*="NCAA_Logo"],
   [data-theme='dark'] .logo[src*="NFL_Draft_Logo"],
   [data-theme='dark'] .logo[src*="Superbowl_Logo"],
   [data-theme='dark'] .logo[src*="PGA_of_America_Logo"] {
-    filter: brightness(1.2) contrast(1.1);
+    filter: none;
   }
   
   /* Responsive adjustments */

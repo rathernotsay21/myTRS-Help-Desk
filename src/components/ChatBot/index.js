@@ -12,7 +12,7 @@ export default function ChatBot() {
       const savedMessages = localStorage.getItem('myTRSChatHistory');
       return savedMessages ? JSON.parse(savedMessages) : [
         { 
-          text: "👋 Hi there! I'm the My TRS Assistant. How can I help you today?", 
+          text: "👋 Hi there! I'm the myTRS Assistant. How can I help you today?", 
           sender: 'bot' 
         },
         {
@@ -42,7 +42,7 @@ export default function ChatBot() {
       console.error('Error loading chat history:', error);
       return [
         { 
-          text: "👋 Hi there! I'm the My TRS Assistant. How can I help you today?", 
+          text: "👋 Hi there! I'm the myTRS Assistant. How can I help you today?", 
           sender: 'bot' 
         }
       ];
@@ -188,7 +188,7 @@ export default function ChatBot() {
     if (confirmClear) {
       const initialMessages = [
         { 
-          text: "👋 Hi there! I'm the My TRS Assistant. How can I help you today?", 
+          text: "👋 Hi there! I'm the myTRS Assistant. How can I help you today?", 
           sender: 'bot' 
         },
         {
@@ -246,7 +246,7 @@ export default function ChatBot() {
       {isOpen && (
         <div className={styles.chatWindow}>
           <div className={styles.chatHeader}>
-            <h3>My TRS Assistant</h3>
+            <h3>myTRS Assistant</h3>
             <div className={styles.headerButtons}>
               <button 
                 className={styles.clearButton} 

@@ -8,7 +8,7 @@ const FeatureList = [
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        My TRS was designed from the ground up to be easily installed and
+        myTRS was designed from the ground up to be easily installed and
         integrated with your existing systems, getting you up and running quickly.
       </>
     ),
@@ -18,7 +18,7 @@ const FeatureList = [
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        My TRS lets you focus on your business goals, while we handle the complex
+        myTRS lets you focus on your business goals, while we handle the complex
         reporting requirements. Simplify your transaction reporting and compliance processes.
       </>
     ),
@@ -28,7 +28,7 @@ const FeatureList = [
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Built on cutting-edge technology, My TRS offers a robust platform that can be
+        Built on cutting-edge technology, myTRS offers a robust platform that can be
         customized to meet your specific reporting needs with industry-leading security.
       </>
     ),

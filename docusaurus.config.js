@@ -88,7 +88,7 @@ const config = {
       navbar: {
         title: 'myTRS',
         logo: {
-          alt: 'My TRS Logo',
+          alt: 'myTRS Logo',
           src: 'img/myTRSlogo.png',
         },
         items: [
@@ -136,7 +136,7 @@ const config = {
             title: 'Company',
             items: [
               {
-                label: 'About My TRS',
+                label: 'About myTRS',
                 href: 'https://www.my-trs.com/about',
               },
               {
@@ -167,7 +167,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My TRS, Inc. All rights reserved.`,
+        copyright: `Copyright © ${new Date().getFullYear()} myTRS, Inc. All rights reserved.`,
       },
       prism: {
         theme: prismThemes.github,

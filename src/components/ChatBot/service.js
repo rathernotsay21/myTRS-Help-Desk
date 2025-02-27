@@ -13,11 +13,11 @@ class ChatBotService {
           keywords: ['dashboard', 'overview', 'home', 'main screen']
         },
         'login': {
-          content: 'To log in to My TRS, visit the login page and enter your credentials. If you don\'t have an account, please contact your administrator for access.',
+          content: 'To log in to myTRS, visit the login page and enter your credentials. If you don\'t have an account, please contact your administrator for access.',
           keywords: ['login', 'sign in', 'account', 'credentials', 'password']
         },
         'reports': {
-          content: 'You can generate and export reports from the Reports section in the main menu. My TRS offers customizable reports for transaction analysis and compliance purposes.',
+          content: 'You can generate and export reports from the Reports section in the main menu. myTRS offers customizable reports for transaction analysis and compliance purposes.',
           keywords: ['report', 'reporting', 'export', 'generate report', 'analysis']
         },
         'transactions': {
@@ -29,7 +29,7 @@ class ChatBotService {
           keywords: ['support', 'help', 'contact', 'assistance', 'problem']
         },
         'features': {
-          content: 'My TRS offers automated transaction reporting, customizable dashboards, real-time data processing, compliance features, secure data storage, and integration capabilities with existing business systems.',
+          content: 'myTRS offers automated transaction reporting, customizable dashboards, real-time data processing, compliance features, secure data storage, and integration capabilities with existing business systems.',
           keywords: ['features', 'capabilities', 'what can you do', 'functionality']
         },
         'settings': {
@@ -41,11 +41,11 @@ class ChatBotService {
           keywords: ['export', 'download', 'save', 'csv', 'excel', 'pdf']
         },
         'compliance': {
-          content: 'My TRS helps ensure compliance with industry standards and regulations by providing built-in validation, audit trails, and compliance reports.',
+          content: 'myTRS helps ensure compliance with industry standards and regulations by providing built-in validation, audit trails, and compliance reports.',
           keywords: ['compliance', 'regulation', 'audit', 'standard', 'legal']
         },
         'security': {
-          content: 'My TRS implements robust security measures including encryption, secure authentication, regular backups, and role-based access control to protect your data.',
+          content: 'myTRS implements robust security measures including encryption, secure authentication, regular backups, and role-based access control to protect your data.',
           keywords: ['security', 'encryption', 'protection', 'secure', 'privacy']
         }
       };
@@ -66,7 +66,7 @@ class ChatBotService {
       
       // Check for greetings
       if (this.isGreeting(queryLower)) {
-        return "Hello! I'm the My TRS Assistant. How can I help you today?";
+        return "Hello! I'm the myTRS Assistant. How can I help you today?";
       }
       
       // Check for thank you messages
@@ -144,8 +144,8 @@ class ChatBotService {
         "I'm not sure I understand your question. Could you rephrase it?",
         "I don't have specific information on that topic. You can check our documentation for more details or contact support at support@my-trs.com.",
         "That's a great question, but I don't have enough information to answer it accurately. Could you provide more details?",
-        "I'm still learning about My TRS. For this question, you might want to check the documentation or contact our support team.",
-        "I'm not sure about that. Can I help you with something else related to My TRS?"
+        "I'm still learning about myTRS. For this question, you might want to check the documentation or contact our support team.",
+        "I'm not sure about that. Can I help you with something else related to myTRS?"
       ];
       
       // Return a random default response

@@ -34,7 +34,7 @@ export default function Home() {
   return (
     <Layout
       title={`Welcome to ${siteConfig.title}`}
-      description="My TRS Help Desk - Resources, guides, and support for all your TRS needs">
+      description="myTRS Help Desk - Resources, guides, and support for all your TRS needs">
       <HomepageHeader />
       <ClientLogos />
       <main>
@@ -44,15 +44,15 @@ export default function Home() {
         <div className="row">
           <div className="col col--8 col--offset-2">
             <div className="padding-vert--md">
-              <h2>About My TRS</h2>
+              <h2>About myTRS</h2>
               <p>
-                My TRS is a comprehensive transaction reporting system designed to simplify 
+                myTRS is a comprehensive transaction reporting system designed to simplify 
                 complex reporting processes for businesses. Our platform offers intuitive
                 solutions for financial reporting, compliance, and data management.
               </p>
               <p>
                 With a focus on user-friendly interfaces and powerful backend capabilities,
-                My TRS helps organizations streamline their reporting workflows and gain
+                myTRS helps organizations streamline their reporting workflows and gain
                 valuable insights from their transaction data.
               </p>
             </div>
@@ -73,7 +73,7 @@ export default function Home() {
               <h2>Need Help?</h2>
               <p>
                 This help desk contains comprehensive documentation, tutorials, and
-                resources to help you get the most out of My TRS. Browse our documentation
+                resources to help you get the most out of myTRS. Browse our documentation
                 sections or use the search feature to find specific information.
               </p>
               <p>

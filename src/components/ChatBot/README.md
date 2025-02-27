@@ -1,6 +1,6 @@
 // src/components/ChatBot/README.md
 
-# My TRS ChatBot Integration Guide
+# myTRS ChatBot Integration Guide
 
 This document explains how to integrate the AI-powered chatbot into various pages of your Docusaurus site.
 

@@ -10,7 +10,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'My TRS Help Desk',
+  title: 'myTRS',
   tagline: 'Your resource for all things TRS',
   favicon: 'img/favicon.ico',
 
@@ -86,7 +86,7 @@ const config = {
       // Replace with your project's social card
       image: 'img/my-trs-social-card.jpg',
       navbar: {
-        title: 'My TRS Help Desk',
+        title: 'myTRS',
         logo: {
           alt: 'My TRS Logo',
           src: 'img/logo.svg',
@@ -100,8 +100,8 @@ const config = {
           },
           {to: '/blog', label: 'Updates', position: 'left'},
           {
-            href: 'https://www.my-trs.com',
-            label: 'Main Website',
+            href: 'https://admin.my-trs.com/administrators/sign_in',
+            label: 'myTRS Login',
             position: 'right',
           },
           {

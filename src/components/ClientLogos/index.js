@@ -17,12 +17,6 @@ const clientLogos = [
   { file: 'PGA_of_America_Logo_2023-min.png', name: 'PGA of America 2023' },
 ];
 
-// Group logos into arrays for the animation to work in waves
-const groupedLogos = [
-  clientLogos.slice(0, Math.ceil(clientLogos.length / 2)),
-  clientLogos.slice(Math.ceil(clientLogos.length / 2)),
-];
-
 export default function ClientLogos() {
   const logosRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -56,28 +50,26 @@ export default function ClientLogos() {
       <div className="container">
         <h2 className={styles.sectionTitle}>Trusted by industry leaders</h2>
         <p className={styles.sectionSubtitle}>More than software. We are committed to building true partnerships.</p>
+        
+        {/* New simplified logo grid layout */}
         <div className={styles.logoGrid}>
-          {groupedLogos.map((group, groupIndex) => (
-            <div key={groupIndex} className={styles.logoRow}>
-              {group.map((logo, index) => (
-                <div 
-                  key={index} 
-                  className={clsx(
-                    styles.logoWrapper,
-                    isVisible && styles.animate,
-                    `${styles.delayedAppearance}${index + (groupIndex * 7)}`
-                  )}
-                >
-                  <div className={styles.logoInner}>
-                    <img
-                      src={`/img/client_logos/${logo.file}`}
-                      alt={`${logo.name} logo`}
-                      className={styles.logo}
-                      loading="lazy"
-                    />
-                  </div>
-                </div>
-              ))}
+          {clientLogos.map((logo, index) => (
+            <div 
+              key={index} 
+              className={clsx(
+                styles.logoWrapper,
+                isVisible && styles.animate,
+                styles[`delayedAppearance${index % 14}`]
+              )}
+            >
+              <div className={styles.logoInner}>
+                <img
+                  src={`/img/client_logos/${logo.file}`}
+                  alt={`${logo.name} logo`}
+                  className={styles.logo}
+                  loading="lazy"
+                />
+              </div>
             </div>
           ))}
         </div>

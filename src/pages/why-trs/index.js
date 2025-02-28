@@ -132,7 +132,7 @@ export default function WhyTRS() {
           </section>
 
           {/* Demo Request Form Section */}
-          <section className={styles.formSection}>
+          <section id="request-demo" className={styles.formSection}>
             <h2 className={styles.formTitle}>Request a Demo</h2>
             
             {formSubmitted ? (

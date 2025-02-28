@@ -98,16 +98,23 @@
     }
   }
 
-  /* Form Section Styles */
+/* Form Section Styles */
 .formSection {
   margin: 6rem 0;
   padding: 2rem 0;
+  scroll-margin-top: 120px; /* Increased scroll margin for better visibility */
 }
 
 .formTitle {
   font-size: 2rem;
   font-weight: 600;
   margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* Add scroll margin to account for fixed headers */
+.formSection {
+  scroll-margin-top: 100px;
 }
 
 .demoForm {

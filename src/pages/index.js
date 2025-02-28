@@ -16,14 +16,20 @@ function HomepageHeader() {
         <Heading as="h1" className="hero__title">
           myTRS
         </Heading>
-        <p className="hero__subtitle">All-in-One Event & Registrant Management Software</p>
+        <p className="hero__subtitle">Powering the World's Most Prestigious Events</p>
         <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/docs/intro">
-            Explore Our Solutions
-          </Link>
-        </div>
+  <Link
+    className="button button--secondary button--lg"
+    to="/docs/intro">
+    Explore Our Solutions
+  </Link>
+  <Link
+  className="button button--secondary button--lg"
+  style={{ marginLeft: '1rem' }}
+  to="/why-trs#request-demo">
+  Request a Demo
+</Link>
+</div>
       </div>
     </header>
   );

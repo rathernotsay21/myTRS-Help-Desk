@@ -49,7 +49,7 @@ export default function ClientLogos() {
     <section className={styles.clientLogos} ref={logosRef}>
       <div className="container">
         <h2 className={styles.sectionTitle}>Trusted by the best.</h2>
-        <p className={styles.sectionSubtitle}>More than software. We are committed to building true partnerships.</p>
+        <p className={styles.sectionSubtitle}>Trusted by the biggest names in events for over 24 years.</p>
         
         {/* New simplified logo grid layout */}
         <div className={styles.logoGrid}>

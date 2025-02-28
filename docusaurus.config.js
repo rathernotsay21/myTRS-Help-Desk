@@ -85,6 +85,16 @@ const config = {
     ({
       // Replace with your project's social card
       image: 'img/my-trs-social-card.jpg',
+      head: [
+        {
+          tagName: 'link',
+          rel: 'stylesheet',
+          href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css',
+          integrity: 'sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==',
+          crossorigin: 'anonymous',
+          referrerpolicy: 'no-referrer',
+        }
+      ],
       navbar: {
         title: 'myTRS',
         logo: {
@@ -94,40 +104,40 @@ const config = {
         items: [
           {to: '/why-trs', label: 'Why TRS?', position: 'left'},
           {
-            type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
+            to: '/features',
             position: 'left',
-            label: 'Documentation',
+            label: 'Features',
           },
           {to: '/blog', label: 'Updates', position: 'left'},
+          {
+            to: '/docs/intro',
+            label: 'Support',
+            position: 'right',
+          },
           {
             href: 'https://admin.my-trs.com/administrators/sign_in',
             label: 'myTRS Login',
             position: 'right',
           },
-          {
-            href: 'https://www.my-trs.com/contact',
-            label: 'Support',
-            position: 'right',
-          },
+          
         ],
       },
       footer: {
         style: 'dark',
         links: [
           {
-            title: 'Documentation',
+            title: 'Features',
             items: [
               {
                 label: 'Getting Started',
-                to: '/docs/intro',
+                to: '/features',
               },
               {
-                label: 'Tutorials',
-                to: '/docs/tutorial-basics/create-a-page',
+                label: 'Platform Overview',
+                to: '/features',
               },
               {
-                label: 'Advanced Features',
+                label: 'Support Resources',
                 to: '/docs/tutorial-extras/manage-docs-versions',
               },
             ],
@@ -167,7 +177,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} myTRS, Inc. All rights reserved.`,
+        copyright: `Copyright ${new Date().getFullYear()} myTRS, Inc. All rights reserved.`,
       },
       prism: {
         theme: prismThemes.github,

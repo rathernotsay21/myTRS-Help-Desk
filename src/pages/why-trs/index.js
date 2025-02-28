@@ -75,15 +75,55 @@ export default function WhyTRS() {
       <main className={styles.whyTrsPage}>
         <div className="container">
           <section className={styles.introSection}>
-            <h2 className={styles.sectionHeading}>EXPLORE MYTRS SOLUTIONS</h2>
+            <h2 className={styles.sectionHeading}>Why Choose TRS?</h2>
             <div className={styles.sectionContent}>
               <h3 className={styles.mainTitle}>
-                We provide powerful registration solutions for events of any size
+              Unparalleled Support & Partnership
               </h3>
               <p className={styles.subtext}>
-                myTRS offers comprehensive registration management tailored to your organization's needs.
-                Our solutions are designed to streamline the registration process while providing 
-                powerful reporting and analytics tools.
+              More than just software, TRS is your dedicated partner. At myTRS, we understand that successful volunteer management requires more than just powerful software. That's why we provide unparalleled 1-on-1 support and personalized guidance from experienced event professionals. Even on weekends, our team is here to help you navigate any challenge, from initial setup and training to troubleshooting and onsite support at the event. We're committed to your success every step of the way.
+              </p>
+              <div className={styles.quoteContainer}>
+                <blockquote className={styles.testimonialQuote}>
+                  <p>"Your customer service is by far one of the best I ever experienced."</p>
+                  <footer>- Lindsey Macyauski - <span className={styles.organizationHighlight}>Methodist Health Foundation</span></footer>
+                </blockquote>
+              </div>
+            </div>
+          </section>
+
+          <section className={styles.introSection}>
+            <h2 className={styles.sectionHeading}>Expertise You Can Trust</h2>
+            <div className={styles.sectionContent}>
+              <h3 className={styles.mainTitle}>
+              Trusted by the World's Leading Events
+              </h3>
+              <p className={styles.subtext}>
+              Having supported the world's most prestigious events since 2000—from Super Bowls and NCAA Final Fours to Disney Sports and Special Olympics, myTRS has the expertise to handle events of any size and complexity. We've helped our clients manage millions of volunteers, contributing to the success of countless events across the globe. Our proven track record speaks for itself.
+              </p>
+            </div>
+          </section>
+
+          <section className={styles.introSection}>
+            <h2 className={styles.sectionHeading}>Powerful Technology</h2>
+            <div className={styles.sectionContent}>
+              <h3 className={styles.mainTitle}>
+              Built for the Challenges of Large-Scale Events
+              </h3>
+              <p className={styles.subtext}>
+              myTRS is streamlined to handle the complexities of large-scale event management. From customizable registration platform and automated scheduling to real-time reporting and seamless communication tools, our intuitive software empowers you to manage multiple sites, committees, and communications with ease. Access the platform from anywhere, anytime, with our mobile-friendly interface.
+              </p>
+            </div>
+          </section>
+
+          <section className={styles.introSection}>
+            <h2 className={styles.sectionHeading}> Our Commitment</h2>
+            <div className={styles.sectionContent}>
+              <h3 className={styles.mainTitle}>
+              Your Success is Our Priority
+              </h3>
+              <p className={styles.subtext}>
+              TRS is more than just a software provider; we're your partner in volunteer management. We're committed to continuous improvement, constantly adding new features and enhancements based on client feedback. Our veteran-owned, woman-owned, and LGBTQ+ supportive company is dedicated to providing exceptional service and building long-term relationships with our clients. Your success is our ultimate goal.
               </p>
             </div>
           </section>
@@ -133,7 +173,7 @@ export default function WhyTRS() {
 
           {/* Demo Request Form Section */}
           <section id="request-demo" className={styles.formSection}>
-            <h2 className={styles.formTitle}>Request a Demo</h2>
+            <h2 className={styles.formTitle}>Ready to Experience the TRS Difference?</h2>
             
             {formSubmitted ? (
               <div className={styles.formSuccess}>

@@ -3,11 +3,56 @@
  * and scoped locally.
  */
 
-.heroBanner {
-  padding: 4rem 0;
+ .heroBanner {
+  padding: 0; /* Remove padding */
   text-align: center;
   position: relative;
   overflow: hidden;
+  background-image: url('/img/event_photos/volunteer_check-in-min.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  height: auto; /* Let height be determined by content */
+  min-height: 600px; /* Set a larger minimum height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Keep the overlay */
+.heroBanner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.heroBanner > div {
+  position: relative;
+  z-index: 2;
+  padding: 4rem 1rem; /* Add padding to the content container instead */
+}
+
+/* Add this class to create a dark overlay */
+.heroBanner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Dark overlay with 60% opacity */
+  z-index: 1;
+}
+
+/* Make sure the content appears on top of the overlay */
+.heroBanner > div {
+  position: relative;
+  z-index: 2;
 }
 
 @media screen and (max-width: 996px) {

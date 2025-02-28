@@ -48,7 +48,7 @@ export default function ClientLogos() {
   return (
     <section className={styles.clientLogos} ref={logosRef}>
       <div className="container">
-        <h2 className={styles.sectionTitle}>Trusted by the biggest names in events for 24 years.</h2>
+        <h2 className={styles.sectionTitle}>Trusted by the best.</h2>
         <p className={styles.sectionSubtitle}>More than software. We are committed to building true partnerships.</p>
         
         {/* New simplified logo grid layout */}

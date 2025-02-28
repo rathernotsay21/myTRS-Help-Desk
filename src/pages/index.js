@@ -14,9 +14,9 @@ function HomepageHeader() {
     <header className={clsx('hero', styles.heroBanner)}>
       <div className="container">
         <Heading as="h1" className="hero__title">
-          myTRS
+        Powering the World's Most Prestigious Events
         </Heading>
-        <p className="hero__subtitle">Powering the World's Most Prestigious Events</p>
+        <p className="hero__subtitle">Trusted by the biggest names in events for over 24 years.</p>
         <div className={styles.buttons}>
   <Link
     className="button button--secondary button--lg"

@@ -4,19 +4,59 @@
  */
 
  .heroBanner {
-  padding: 0; /* Remove padding */
+  padding: 0;
   text-align: center;
   position: relative;
   overflow: hidden;
   background-image: url('/img/event_photos/volunteer_check-in-min.jpg');
   background-size: cover;
-  background-position: center;
+  background-position: 25% 20%; /* Focus on the interaction while keeping top of heads visible */
   color: white;
-  height: auto; /* Let height be determined by content */
-  min-height: 600px; /* Set a larger minimum height */
+  height: auto;
+  min-height: 600px;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/* Target very wide screens specifically */
+@media screen and (min-width: 1600px) {
+  .heroBanner {
+    background-position: 25% 15%; /* Show more of the top on very wide screens */
+  }
+}
+
+@media screen and (min-width: 2000px) {
+  .heroBanner {
+    background-position: 25% 10%; /* Show even more top on ultra-wide screens */
+  }
+}
+
+/* Existing media queries for narrower screens */
+@media screen and (max-width: 1200px) {
+  .heroBanner {
+    background-position: 30% 20%;
+  }
+}
+
+@media screen and (max-width: 996px) {
+  .heroBanner {
+    background-position: 35% 20%;
+    min-height: 500px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .heroBanner {
+    background-position: 40% 20%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .heroBanner {
+    background-position: 45% 20%;
+    min-height: 400px;
+  }
 }
 
 /* Keep the overlay */

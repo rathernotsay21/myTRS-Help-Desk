@@ -37,24 +37,31 @@ export default function Features() {
       title="Features"
       description="Explore the powerful features of myTRS registration management platform">
       <main className={styles.featuresPage}>
-        <div className={styles.hero}>
-          <div className="container">
-            <h1 className={styles.heroTitle}>Powerful Features for Exceptional Event Management</h1>
-            <p className={styles.heroSubtitle}>Discover how myTRS simplifies volunteer management with our comprehensive suite of tools</p>
+        {/* Hero Section with Background Image */}
+        <div className={styles.heroWrapper}>
+          <div className={styles.hero}>
+            <div className="container">
+              <h1 className={styles.heroTitle}>Powerful Features for Exceptional Event Management</h1>
+              <p className={styles.heroSubtitle}>Discover how myTRS simplifies volunteer management with our comprehensive suite of tools</p>
+            </div>
           </div>
         </div>
 
         <div className="container">
           <div className={styles.introSection}>
-            <h2 className={styles.sectionTitle}>Streamlined Solutions for Every Event</h2>
-            <p className={styles.introText}>
-              At myTRS, we understand that successful event management requires powerful, flexible tools that adapt to your unique needs. 
-              Our platform combines intuitive design with robust functionality to help you manage registrations, scheduling, 
-              communication, and reporting with ease. Explore our key features below to see how myTRS can transform your event management process.
-            </p>
+            <div className={styles.introContent}>
+              <h2 className={styles.sectionTitle}>Streamlined Solutions for Every Event</h2>
+              <div className={styles.titleUnderline}></div>
+              <p className={styles.introText}>
+                At myTRS, we understand that successful event management requires powerful, flexible tools that adapt to your unique needs. 
+                Our platform combines intuitive design with robust functionality to help you manage registrations, scheduling, 
+                communication, and reporting with ease. Explore our key features below to see how myTRS can transform your event management process.
+              </p>
+            </div>
           </div>
 
           <div className={styles.featureSections} ref={featureSectionsRef}>
+            {/* Custom Registration Feature */}
             <div className={clsx(styles.featureSection, styles.featureSectionLeft)}>
               <div className={styles.featureContent}>
                 <div className={styles.featureIcon}>
@@ -66,13 +73,26 @@ export default function Features() {
                 </p>
               </div>
               <div className={styles.featureImage}>
-                <div className={styles.imagePlaceholder}></div>
+                <div className={styles.imageWrapper}>
+                  <img 
+                    src="/img/event_photos/Disney_Fun_Run_Celebration_(1)-min.jpg" 
+                    alt="Disney Fun Run event registration" 
+                    className={styles.actualImage}
+                  />
+                </div>
               </div>
             </div>
 
+            {/* Automated Scheduling Feature */}
             <div className={clsx(styles.featureSection, styles.featureSectionRight)}>
               <div className={styles.featureImage}>
-                <div className={styles.imagePlaceholder}></div>
+                <div className={styles.imageWrapper}>
+                  <img 
+                    src="/img/event_photos/Disney_Fun_Run_Celebration-min.jpg" 
+                    alt="Disney Fun Run Celebration event scheduling" 
+                    className={styles.actualImage}
+                  />
+                </div>
               </div>
               <div className={styles.featureContent}>
                 <div className={styles.featureIcon}>
@@ -85,6 +105,7 @@ export default function Features() {
               </div>
             </div>
 
+            {/* Reporting Feature */}
             <div className={clsx(styles.featureSection, styles.featureSectionLeft)}>
               <div className={styles.featureContent}>
                 <div className={styles.featureIcon}>
@@ -96,13 +117,26 @@ export default function Features() {
                 </p>
               </div>
               <div className={styles.featureImage}>
-                <div className={styles.imagePlaceholder}></div>
+                <div className={styles.imageWrapper}>
+                  <img 
+                    src="/img/event_photos/Disney_Social_Media_Moms_Fun_Run_(2)-min.jpg" 
+                    alt="Disney Marathon event reporting" 
+                    className={styles.actualImage}
+                  />
+                </div>
               </div>
             </div>
 
+            {/* Communication Feature */}
             <div className={clsx(styles.featureSection, styles.featureSectionRight)}>
               <div className={styles.featureImage}>
-                <div className={styles.imagePlaceholder}></div>
+                <div className={styles.imageWrapper}>
+                  <img 
+                    src="/img/event_photos/tennis_stadium-min.jpg" 
+                    alt="Tennis event communications" 
+                    className={styles.actualImage}
+                  />
+                </div>
               </div>
               <div className={styles.featureContent}>
                 <div className={styles.featureIcon}>
@@ -115,6 +149,7 @@ export default function Features() {
               </div>
             </div>
 
+            {/* Admin Access Feature */}
             <div className={clsx(styles.featureSection, styles.featureSectionLeft)}>
               <div className={styles.featureContent}>
                 <div className={styles.featureIcon}>
@@ -126,13 +161,26 @@ export default function Features() {
                 </p>
               </div>
               <div className={styles.featureImage}>
-                <div className={styles.imagePlaceholder}></div>
+                <div className={styles.imageWrapper}>
+                  <img 
+                    src="/img/event_photos/Special_Olympics_image-min.jpg" 
+                    alt="Special Olympics event admin management" 
+                    className={styles.actualImage}
+                  />
+                </div>
               </div>
             </div>
 
+            {/* Mobile Feature */}
             <div className={clsx(styles.featureSection, styles.featureSectionRight)}>
               <div className={styles.featureImage}>
-                <div className={styles.imagePlaceholder}></div>
+                <div className={styles.imageWrapper}>
+                  <img 
+                    src="/img/event_photos/volunteer-min.jpg" 
+                    alt="Mobile check-in functionality" 
+                    className={styles.actualImage}
+                  />
+                </div>
               </div>
               <div className={styles.featureContent}>
                 <div className={styles.featureIcon}>
@@ -146,10 +194,16 @@ export default function Features() {
             </div>
           </div>
 
+          {/* Enhanced CTA Section */}
           <div className={styles.ctaSection}>
-            <h2 className={styles.ctaTitle}>Ready to see myTRS in action?</h2>
-            <p className={styles.ctaText}>Schedule a personalized demo and discover how myTRS can transform your event management process.</p>
-            <a href="#request-demo" className={styles.ctaButton}>Request a Demo</a>
+            <div className={styles.ctaContent}>
+              <h2 className={styles.ctaTitle}>Ready to see myTRS in action?</h2>
+              <p className={styles.ctaText}>Schedule a personalized demo and discover how myTRS can transform your event management process.</p>
+              <a href="/why-trs#request-demo" className={styles.ctaButton}>
+                Request a Demo
+                <i className="fas fa-arrow-right" style={{ marginLeft: '10px' }}></i>
+              </a>
+            </div>
           </div>
         </div>
       </main>

@@ -116,3 +116,85 @@
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
+
+/* Add this to the end of src/css/custom.css */
+
+/* Social Media Icons in Footer */
+.footer-social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.footer-social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.footer-social-links a:hover {
+  background-color: var(--ifm-color-primary);
+  transform: translateY(-3px);
+  color: white;
+  text-decoration: none;
+}
+
+/* Remove the padding from the copyright section to make the icons fit better */
+.footer__copyright {
+  text-align: center;
+  width: 100%;
+  margin-top: 0;
+  padding: 0;
+}
+
+/* Add this to the end of src/css/custom.css */
+
+/* Social Media Icons in Footer */
+.footer-social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.footer-social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.footer-social-links a:hover {
+  background-color: var(--ifm-color-primary);
+  transform: translateY(-3px);
+  color: white;
+  text-decoration: none;
+}
+
+/* Style for SVG icons */
+.footer-social-links svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Remove the padding from the copyright section to make the icons fit better */
+.footer__copyright {
+  text-align: center;
+  width: 100%;
+  margin-top: 0;
+  padding: 0;
+}

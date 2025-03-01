@@ -28,7 +28,7 @@
 .hero {
   position: relative;
   color: white;
-  padding: 5rem 0;
+  padding: var(--my-trs-space-xxxl) 0;
   text-align: center;
   z-index: 2;
 }
@@ -36,7 +36,7 @@
 .heroTitle {
   font-size: 2.75rem;
   font-weight: 700;
-  margin-bottom: 1.5rem;
+  margin-bottom: var(--my-trs-space-lg);
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
@@ -54,7 +54,7 @@
 
 /* Intro Section */
 .introSection {
-  padding: 4rem 0 2rem;
+  padding: var(--my-trs-space-xxxl) 0 var(--my-trs-space-xl);
   text-align: center;
 }
 
@@ -66,7 +66,7 @@
 .sectionTitle {
   font-size: 2.2rem;
   font-weight: 600;
-  margin-bottom: 0.5rem;
+  margin-bottom: var(--my-trs-space-xs);
   color: var(--ifm-color-primary);
   position: relative;
   display: inline-block;
@@ -76,29 +76,29 @@
   width: 80px;
   height: 3px;
   background-color: var(--my-trs-accent);
-  margin: 0.5rem auto 2rem;
+  margin: var(--my-trs-space-xs) auto var(--my-trs-space-xl);
   border-radius: 1.5px;
 }
 
 .introText {
   font-size: 1.2rem;
   line-height: 1.8;
-  color: var(--ifm-color-emphasis-700);
+  color: var(--my-trs-text-light);
 }
 
-/* New Services Grid Layout */
+/* Services Grid Layout */
 .servicesGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  padding: 2rem 0 4rem;
+  gap: var(--my-trs-space-xl);
+  padding: var(--my-trs-space-xl) 0 var(--my-trs-space-xxxl);
 }
 
 .serviceCard {
   background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-  padding: 2rem;
+  border-radius: var(--my-trs-border-radius-md);
+  box-shadow: var(--my-trs-shadow-md);
+  padding: var(--my-trs-space-xl);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -108,7 +108,7 @@
 
 .serviceCard:hover {
   transform: translateY(-10px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--my-trs-shadow-lg);
 }
 
 .serviceIcon {
@@ -118,7 +118,7 @@
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  margin-bottom: 1.5rem;
+  margin-bottom: var(--my-trs-space-lg);
   background-color: #eef5ff;
   color: var(--ifm-color-primary);
   align-self: center;
@@ -127,16 +127,16 @@
 .serviceTitle {
   font-size: 1.5rem;
   font-weight: 600;
-  margin-bottom: 1rem;
+  margin-bottom: var(--my-trs-space-md);
   color: var(--ifm-heading-color);
 }
 
 .serviceDescription {
   font-size: 1rem;
   line-height: 1.6;
-  color: var(--ifm-color-emphasis-700);
+  color: var(--my-trs-text-light);
   flex-grow: 1;
-  margin-bottom: 1.5rem;
+  margin-bottom: var(--my-trs-space-lg);
 }
 
 .serviceLink {
@@ -162,9 +162,9 @@ html[data-theme='dark'] .serviceCard {
 .ctaSection {
   background: linear-gradient(135deg, var(--ifm-color-primary-darkest) 0%, var(--ifm-color-primary) 100%);
   padding: 0;
-  margin: 4rem 0 5rem;
-  border-radius: 16px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  margin: var(--my-trs-space-xxxl) 0 var(--my-trs-space-xxxl);
+  border-radius: var(--my-trs-border-radius-lg);
+  box-shadow: var(--my-trs-shadow-lg);
   overflow: hidden;
   position: relative;
 }
@@ -186,20 +186,20 @@ html[data-theme='dark'] .serviceCard {
 .ctaContent {
   position: relative;
   z-index: 2;
-  padding: 4rem 2rem;
+  padding: var(--my-trs-space-xxxl) var(--my-trs-space-xl);
   text-align: center;
   color: white;
 }
 
 .ctaTitle {
   font-size: 2.4rem;
-  margin-bottom: 1.25rem;
+  margin-bottom: var(--my-trs-space-lg);
   font-weight: 600;
 }
 
 .ctaText {
   font-size: 1.3rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: var(--my-trs-space-xxl);
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
@@ -213,12 +213,12 @@ html[data-theme='dark'] .serviceCard {
   background-color: white;
   color: var(--ifm-color-primary);
   font-weight: 600;
-  padding: 1rem 2.5rem;
+  padding: var(--my-trs-space-md) var(--my-trs-space-xxl);
   border-radius: 50px;
   text-decoration: none;
   transition: all 0.3s ease;
   font-size: 1.1rem;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: var(--my-trs-shadow-md);
 }
 
 .ctaButton:hover {
@@ -226,7 +226,7 @@ html[data-theme='dark'] .serviceCard {
   transform: translateY(-3px);
   text-decoration: none;
   color: white;
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--my-trs-shadow-lg);
 }
 
 html[data-theme='dark'] .ctaButton {
@@ -256,7 +256,7 @@ html[data-theme='dark'] .ctaButton:hover {
 
 @media (max-width: 768px) {
   .hero {
-    padding: 3.5rem 0;
+    padding: var(--my-trs-space-xxl) 0;
   }
   
   .heroTitle {
@@ -278,7 +278,7 @@ html[data-theme='dark'] .ctaButton:hover {
   
   .servicesGrid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: var(--my-trs-space-lg);
   }
   
   .ctaTitle {
@@ -286,7 +286,7 @@ html[data-theme='dark'] .ctaButton:hover {
   }
   
   .ctaButton {
-    padding: 0.9rem 2rem;
+    padding: var(--my-trs-space-sm) var(--my-trs-space-xl);
     font-size: 1rem;
   }
 }

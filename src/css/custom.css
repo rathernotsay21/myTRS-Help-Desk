@@ -6,6 +6,7 @@
 
 /* You can override the default Infima variables here. */
 :root {
+  /* Primary color palette */
   --ifm-color-primary: #0056b3; /* Professional blue color */
   --ifm-color-primary-dark: #004d9e;
   --ifm-color-primary-darker: #004894;
@@ -13,14 +14,49 @@
   --ifm-color-primary-light: #005fc8;
   --ifm-color-primary-lighter: #0064d2;
   --ifm-color-primary-lightest: #0071ec;
+  
+  /* Accent colors */
+  --my-trs-accent: #f39c12; /* Accent color for buttons or highlights */
+  --my-trs-accent-dark: #e67e22;
+  --my-trs-accent-darker: #d35400;
+  --my-trs-accent-light: #f5b041;
+  --my-trs-accent-lighter: #f8c471;
+  
+  /* Text colors */
+  --my-trs-text: #333333; /* Main text color */
+  --my-trs-text-light: #666666;
+  --my-trs-text-lighter: #999999;
+  
+  /* Background colors */
+  --my-trs-light-bg: #f9f9f9; /* Light background for sections */
+  --my-trs-light-bg-darker: #f0f0f0;
+  
+  /* Border colors */
+  --my-trs-border: #e0e0e0; /* Border color */
+  --my-trs-border-dark: #cccccc;
+  
+  /* Spacing system */
+  --my-trs-space-xs: 0.25rem;
+  --my-trs-space-sm: 0.5rem;
+  --my-trs-space-md: 1rem;
+  --my-trs-space-lg: 1.5rem;
+  --my-trs-space-xl: 2rem;
+  --my-trs-space-xxl: 3rem;
+  --my-trs-space-xxxl: 4rem;
+  
+  /* Other variables */
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
   
-  /* Additional custom colors */
-  --my-trs-accent: #f39c12; /* Accent color for buttons or highlights */
-  --my-trs-text: #333333; /* Main text color */
-  --my-trs-light-bg: #f9f9f9; /* Light background for sections */
-  --my-trs-border: #e0e0e0; /* Border color */
+  /* Border radius */
+  --my-trs-border-radius-sm: 4px;
+  --my-trs-border-radius-md: 8px;
+  --my-trs-border-radius-lg: 12px;
+  
+  /* Shadows */
+  --my-trs-shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --my-trs-shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --my-trs-shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -36,41 +72,142 @@
   
   /* Dark mode custom colors */
   --my-trs-accent: #f9a825; /* Brighter accent for dark mode */
+  --my-trs-accent-dark: #f39c12;
+  --my-trs-accent-darker: #e67e22;
+  --my-trs-accent-light: #fbc02d;
+  --my-trs-accent-lighter: #fdd835;
+  
   --my-trs-text: #e0e0e0; /* Light text for dark mode */
+  --my-trs-text-light: #b0b0b0;
+  --my-trs-text-lighter: #909090;
+  
   --my-trs-light-bg: #2d2d2d; /* Darker section background */
+  --my-trs-light-bg-darker: #252525;
+  
   --my-trs-border: #444444; /* Darker border for dark mode */
+  --my-trs-border-dark: #555555;
+  
+  /* Shadow adjustments for dark mode */
+  --my-trs-shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.2);
+  --my-trs-shadow-md: 0 4px 8px rgba(0, 0, 0, 0.25);
+  --my-trs-shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
-/* Additional custom styles */
+/* Unified button styles */
+.button {
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid transparent;
+}
+
+.button--primary {
+  background-color: var(--ifm-color-primary);
+  color: white;
+}
+
+.button--primary:hover {
+  background-color: var(--ifm-color-primary-dark);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--my-trs-shadow-md);
+}
+
+.button--secondary {
+  background-color: var(--my-trs-accent);
+  color: white;
+}
+
+.button--secondary:hover {
+  background-color: var(--my-trs-accent-dark);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--my-trs-shadow-md);
+}
+
+.button--outline-primary {
+  background-color: transparent;
+  border-color: var(--ifm-color-primary);
+  color: var(--ifm-color-primary);
+}
+
+.button--outline-primary:hover {
+  background-color: var(--ifm-color-primary);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--my-trs-shadow-md);
+}
+
+.button--outline-secondary {
+  background-color: transparent;
+  border-color: var(--my-trs-accent);
+  color: var(--my-trs-accent);
+}
+
+.button--outline-secondary:hover {
+  background-color: var(--my-trs-accent);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--my-trs-shadow-md);
+}
+
+/* Card styling */
+.trs-card {
+  background-color: white;
+  border-radius: var(--my-trs-border-radius-md);
+  box-shadow: var(--my-trs-shadow-md);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.trs-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--my-trs-shadow-lg);
+}
+
+[data-theme='dark'] .trs-card {
+  background-color: var(--ifm-background-surface-color);
+}
+
+/* Section styling */
+.trs-section {
+  padding: var(--my-trs-space-xxl) 0;
+}
+
+.trs-section-title {
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: var(--my-trs-space-lg);
+  color: var(--ifm-color-primary);
+  position: relative;
+}
+
+.trs-section-subtitle {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: var(--my-trs-space-xl);
+  color: var(--my-trs-text-light);
+}
+
+/* Hero styling */
 .hero--primary {
   background-color: var(--ifm-color-primary);
   color: white;
-  padding: 4rem 0;
+  padding: var(--my-trs-space-xxxl) 0;
 }
 
 .hero__subtitle {
-  margin-bottom: 1.5rem;
+  margin-bottom: var(--my-trs-space-lg);
 }
 
 .hero__title {
   font-size: 3rem;
 }
 
-.button--secondary {
-  background-color: var(--my-trs-accent);
-  border-color: var(--my-trs-accent);
-  color: white;
-  font-weight: bold;
-}
-
-.button--secondary:hover {
-  background-color: #e67e22;
-  border-color: #e67e22;
-}
-
 /* Feature sections styling */
 .features {
-  padding: 3rem 0;
+  padding: var(--my-trs-space-xxl) 0;
   background-color: var(--my-trs-light-bg);
   border-bottom: 1px solid var(--my-trs-border);
 }
@@ -78,28 +215,7 @@
 .featureSvg {
   height: 180px;
   width: 180px;
-  margin-bottom: 1rem;
-}
-
-/* Card-like styling for important sections */
-.card-container {
-  border: 1px solid var(--my-trs-border);
-  border-radius: 8px;
-  overflow: hidden;
-  margin-bottom: 2rem;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-}
-
-.card-header {
-  background-color: var(--ifm-color-primary);
-  color: white;
-  padding: 1rem;
-  font-weight: bold;
-}
-
-.card-body {
-  padding: 1.5rem;
-  background-color: var(--my-trs-light-bg);
+  margin-bottom: var(--my-trs-space-md);
 }
 
 /* Helper utility classes */
@@ -108,61 +224,21 @@
 }
 
 .margin-vert--xl {
-  margin-top: 3rem;
-  margin-bottom: 3rem;
+  margin-top: var(--my-trs-space-xxl);
+  margin-bottom: var(--my-trs-space-xxl);
 }
 
 .padding-vert--md {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-top: var(--my-trs-space-xl);
+  padding-bottom: var(--my-trs-space-xl);
 }
-
-/* Add this to the end of src/css/custom.css */
 
 /* Social Media Icons in Footer */
 .footer-social-links {
   display: flex;
   justify-content: center;
   gap: 1.5rem;
-  margin-top: 1rem;
-}
-
-.footer-social-links a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.1);
-  color: white;
-  font-size: 1.2rem;
-  transition: all 0.3s ease;
-}
-
-.footer-social-links a:hover {
-  background-color: var(--ifm-color-primary);
-  transform: translateY(-3px);
-  color: white;
-  text-decoration: none;
-}
-
-/* Remove the padding from the copyright section to make the icons fit better */
-.footer__copyright {
-  text-align: center;
-  width: 100%;
-  margin-top: 0;
-  padding: 0;
-}
-
-/* Add this to the end of src/css/custom.css */
-
-/* Social Media Icons in Footer */
-.footer-social-links {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-top: 1rem;
+  margin-top: var(--my-trs-space-md);
 }
 
 .footer-social-links a {
@@ -197,4 +273,19 @@
   width: 100%;
   margin-top: 0;
   padding: 0;
+}
+
+/* Responsive typography */
+@media (max-width: 768px) {
+  .trs-section-title {
+    font-size: 1.8rem;
+  }
+  
+  .hero__title {
+    font-size: 2.2rem;
+  }
+  
+  .trs-section-subtitle {
+    font-size: 1.1rem;
+  }
 }

@@ -37,13 +37,13 @@
   }
   
   .testimonialQuote {
-    background-color: var(--ifm-background-surface-color);
+    background-color: #e6f2ff;
     border-left: 5px solid var(--ifm-color-primary);
     padding: 1.5rem 2rem;
     font-style: italic;
     margin: 0;
-    border-radius: 4px;
-    box-shadow: 0 2px 8px var(--ifm-color-shadow--lw);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   }
   
   .testimonialQuote p {

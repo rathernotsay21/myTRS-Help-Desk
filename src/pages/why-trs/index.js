@@ -84,9 +84,28 @@ export default function WhyTRS() {
               More than just software, TRS is your dedicated partner. At myTRS, we understand that successful volunteer management requires more than just powerful software. That's why we provide unparalleled 1-on-1 support and personalized guidance from experienced event professionals. Even on weekends, our team is here to help you navigate any challenge, from initial setup and training to troubleshooting and onsite support at the event. We're committed to your success every step of the way.
               </p>
               <div className={styles.quoteContainer}>
-                <blockquote className={styles.testimonialQuote}>
-                  <p>"Your customer service is by far one of the best I ever experienced."</p>
-                  <footer>- Lindsey Macyauski - <span className={styles.organizationHighlight}>Methodist Health Foundation</span></footer>
+                <blockquote 
+                  className={styles.testimonialQuote} 
+                  style={{
+                    backgroundColor: 'var(--ifm-background-surface-color)',
+                    borderLeft: '5px solid var(--ifm-color-primary)'
+                  }}
+                >
+                  <p style={{
+                    color: 'var(--ifm-color-emphasis-900)',
+                    fontSize: '1.3rem',
+                    fontWeight: 500
+                  }}>
+                    "Your customer service is by far one of the best I ever experienced."
+                  </p>
+                  <footer style={{
+                    color: 'var(--ifm-color-primary)'
+                  }}>
+                    - Lindsey Macyauski - <span style={{
+                      color: 'var(--my-trs-accent)',
+                      fontWeight: 700
+                    }}>Methodist Health Foundation</span>
+                  </footer>
                 </blockquote>
               </div>
             </div>

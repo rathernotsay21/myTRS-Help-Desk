@@ -4,62 +4,71 @@ import styles from './styles.module.css';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import chatBotService from './service';
 
+// Define initial messages outside of the component
+const initialMessages = [
+  { 
+    text: "👋 Hi there! I'm the myTRS Assistant. How can I help you today?", 
+    sender: 'bot' 
+  },
+  {
+    text: "Here are some things you can ask me about:",
+    sender: 'bot'
+  },
+  {
+    text: "• How to use the dashboard",
+    sender: 'bot',
+    isQuickQuestion: true,
+    question: "How do I use the dashboard?"
+  },
+  {
+    text: "• How to generate reports",
+    sender: 'bot',
+    isQuickQuestion: true,
+    question: "How do I generate reports?"
+  },
+  {
+    text: "• How to create transactions",
+    sender: 'bot',
+    isQuickQuestion: true,
+    question: "How do I create transactions?"
+  }
+];
+
 export default function ChatBot() {
   const [isOpen, setIsOpen] = useState(false);
-  const [messages, setMessages] = useState(() => {
-    // Try to load messages from localStorage
-    try {
-      const savedMessages = localStorage.getItem('myTRSChatHistory');
-      return savedMessages ? JSON.parse(savedMessages) : [
-        { 
-          text: "👋 Hi there! I'm the myTRS Assistant. How can I help you today?", 
-          sender: 'bot' 
-        },
-        {
-          text: "Here are some things you can ask me about:",
-          sender: 'bot'
-        },
-        {
-          text: "• How to use the dashboard",
-          sender: 'bot',
-          isQuickQuestion: true,
-          question: "How do I use the dashboard?"
-        },
-        {
-          text: "• How to generate reports",
-          sender: 'bot',
-          isQuickQuestion: true,
-          question: "How do I generate reports?"
-        },
-        {
-          text: "• How to create transactions",
-          sender: 'bot',
-          isQuickQuestion: true,
-          question: "How do I create transactions?"
-        }
-      ];
-    } catch (error) {
-      console.error('Error loading chat history:', error);
-      return [
-        { 
-          text: "👋 Hi there! I'm the myTRS Assistant. How can I help you today?", 
-          sender: 'bot' 
-        }
-      ];
-    }
-  });
+  const [messages, setMessages] = useState(initialMessages);
   const [inputValue, setInputValue] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [showFeedback, setShowFeedback] = useState(false);
   const [lastResponseIndex, setLastResponseIndex] = useState(null);
   const messagesEndRef = useRef(null);
   const {siteConfig} = useDocusaurusContext();
-  
-  // Get the current color mode from document attributes
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isClient, setIsClient] = useState(false);
+  
+  // Set isClient to true once component mounts
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+  
+  // Load chat history from localStorage only on client side
+  useEffect(() => {
+    if (isClient) {
+      try {
+        const savedMessages = localStorage.getItem('myTRSChatHistory');
+        if (savedMessages) {
+          setMessages(JSON.parse(savedMessages));
+        }
+      } catch (error) {
+        console.error('Error loading chat history:', error);
+      }
+    }
+  }, [isClient]);
   
   // Update dark mode detection when mounted and when it changes
   useEffect(() => {
+    if (!isClient) return;
+    
     const updateTheme = () => {
       const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
       setIsDarkMode(isDark);
@@ -80,16 +89,18 @@ export default function ChatBot() {
     observer.observe(document.documentElement, { attributes: true });
     
     return () => observer.disconnect();
-  }, []);
+  }, [isClient]);
   
   // Scroll to the bottom of the chat when new messages appear
   const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    if (messagesEndRef.current) {
+      messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   // Save messages to localStorage whenever they change
   useEffect(() => {
-    if (messages.length > 0) {
+    if (isClient && messages.length > 0) {
       try {
         localStorage.setItem('myTRSChatHistory', JSON.stringify(messages.slice(-50))); // Keep last 50 messages
       } catch (error) {
@@ -97,7 +108,7 @@ export default function ChatBot() {
       }
       scrollToBottom();
     }
-  }, [messages]);
+  }, [messages, isClient]);
   
   // Handle chat initialization when opened
   useEffect(() => {
@@ -184,38 +195,16 @@ export default function ChatBot() {
   
   // Clear chat history
   const clearChat = () => {
+    if (!isClient) return;
+    
     const confirmClear = window.confirm("Are you sure you want to clear your chat history?");
     if (confirmClear) {
-      const initialMessages = [
-        { 
-          text: "👋 Hi there! I'm the myTRS Assistant. How can I help you today?", 
-          sender: 'bot' 
-        },
-        {
-          text: "Here are some things you can ask me about:",
-          sender: 'bot'
-        },
-        {
-          text: "• How to use the dashboard",
-          sender: 'bot',
-          isQuickQuestion: true,
-          question: "How do I use the dashboard?"
-        },
-        {
-          text: "• How to generate reports",
-          sender: 'bot',
-          isQuickQuestion: true,
-          question: "How do I generate reports?"
-        },
-        {
-          text: "• How to create transactions",
-          sender: 'bot',
-          isQuickQuestion: true,
-          question: "How do I create transactions?"
-        }
-      ];
       setMessages(initialMessages);
-      localStorage.removeItem('myTRSChatHistory');
+      try {
+        localStorage.removeItem('myTRSChatHistory');
+      } catch (error) {
+        console.error('Error clearing chat history:', error);
+      }
     }
   };
 
@@ -223,6 +212,24 @@ export default function ChatBot() {
   const toggleChat = () => {
     setIsOpen(!isOpen);
   };
+
+  // If not client-side yet, render a simplified version without localStorage dependency
+  if (!isClient) {
+    return (
+      <div className={styles.chatbotContainer}>
+        <button 
+          className={styles.chatButton} 
+          onClick={toggleChat}
+          aria-label="Open chat assistant"
+        >
+          <svg className={styles.chatIcon} viewBox="0 0 24 24" width="24" height="24">
+            <path fill="currentColor" d="M12 1C5.925 1 1 5.925 1 12s4.925 11 11 11 11-4.925 11-11S18.075 1 12 1zm0 20c-4.97 0-9-4.03-9-9s4.03-9 9-9 9 4.03 9 9-4.03 9-9 9z"/>
+            <path fill="currentColor" d="M12 6.5c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5 1.5-.67 1.5-1.5-.67-1.5-1.5-1.5zM12 10c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5 1.5-.67 1.5-1.5-.67-1.5-1.5-1.5zM12 14c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5 1.5-.67 1.5-1.5-.67-1.5-1.5-1.5z"/>
+          </svg>
+        </button>
+      </div>
+    );
+  }
 
   return (
     <div className={`${styles.chatbotContainer} ${isDarkMode ? styles.dark : ''}`}>

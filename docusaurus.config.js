@@ -76,6 +76,13 @@ const config = {
         theme: {
           customCss: './src/css/custom.css',
         },
+        // Enable sitemap generation
+        sitemap: {
+          changefreq: 'weekly',
+          priority: 0.5,
+          ignorePatterns: ['/tags/**'],
+          filename: 'sitemap.xml',
+        },
       }),
     ],
   ],
@@ -138,7 +145,7 @@ const config = {
               },
               {
                 label: 'Support Resources',
-                to: '/docs/tutorial-extras/manage-docs-versions',
+                to: '/docs/overview/dashboard_navigation',
               },
             ],
           },
@@ -195,6 +202,12 @@ const config = {
           </a>
         </div>`,
       },
+      metadata: [
+        {name: 'keywords', content: 'myTRS, volunteer management, event registration, transaction reporting system'},
+        {name: 'description', content: 'myTRS Help Desk - Resources, guides, and support for myTRS volunteer management system'},
+        {name: 'og:title', content: 'myTRS Help Desk'},
+        {name: 'og:description', content: 'Resources, guides, and support for myTRS volunteer management system'},
+      ],
       prism: {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,

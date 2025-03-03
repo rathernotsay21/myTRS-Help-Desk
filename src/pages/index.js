@@ -15,20 +15,21 @@ function HomepageHeader() {
     <header className={clsx('hero', styles.heroBanner)}>
       <div className="container">
         <Heading as="h1" className="hero__title">
-          Powering the World's Most Prestigious Events
+          The Registration System
         </Heading>
         <div className={styles.buttons}>
           <Link
+            className="button button--outline-secondary button--lg"
+            to="/why-trs#request-demo">
+            Request a Free Demo
+          </Link>
+          <Link
             className="button button--secondary button--lg"
+            style={{ marginLeft: '1rem' }}
             to="/docs/intro">
             Explore Our Solutions
           </Link>
-          <Link
-            className="button button--outline-secondary button--lg"
-            style={{ marginLeft: '1rem' }}
-            to="/why-trs#request-demo">
-            Request a Demo
-          </Link>
+          
         </div>
       </div>
     </header>

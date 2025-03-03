@@ -83,15 +83,15 @@ export default function WhyTRS() {
                 Unparalleled Support & Partnership
               </h3>
               <p className={styles.subtext}>
-                More than just software, TRS is your dedicated partner. At myTRS, we understand that successful volunteer management requires more than just powerful software. That's why we provide unparalleled 1-on-1 support and personalized guidance from experienced event professionals. Even on weekends, our team is here to help you navigate any challenge, from initial setup and training to troubleshooting and onsite support at the event. We're committed to your success every step of the way.
+              More than just a software company, TRS brings world-class customer service to major events. At myTRS, we understand that successful volunteer management requires more than just powerful software. Our staff provides unparalleled 1-on-1 support and expert advice. We share lessons learned and options gleaned from 25+ years of online event and volunteer management experiences. Even on weekends and holidays, our team is here to help you navigate any challenge, from initial setup and training to troubleshooting and on-site support at the event. We're committed to your success every step of the way.
               </p>
               <div className={styles.quoteContainer}>
                 <blockquote className={styles.testimonialQuote}>
                   <p>
-                    "Your customer service is by far one of the best I ever experienced."
+                  My experience using the TRS platform has been spectacular. The incredible customer service and consistency in software leaves me and my robust volunteer community at ease. For anyone looking to manage volunteers, I'd strongly recommend looking at this software.
                   </p>
                   <footer>
-                    - Lindsey Macyauski - <span className={styles.organizationHighlight}>Methodist Health Foundation</span>
+                    - Reilly Haas - <span className={styles.organizationHighlight}>Greater Cleveland Sports Commission</span>
                   </footer>
                 </blockquote>
               </div>
@@ -102,10 +102,10 @@ export default function WhyTRS() {
             <h2 className={styles.sectionHeading}>Expertise You Can Trust</h2>
             <div className={styles.sectionContent}>
               <h3 className={styles.mainTitle}>
-                Trusted by the World's Leading Events
+              Trusted by the Industry Experts
               </h3>
               <p className={styles.subtext}>
-                Having supported the world's most prestigious events since 2000—from Super Bowls and NCAA Final Fours to Disney Sports and Special Olympics, myTRS has the expertise to handle events of any size and complexity. We've helped our clients manage millions of volunteers, contributing to the success of countless events across the globe. Our proven track record speaks for itself.
+              With a track record of supporting top-tier events—ranging from professional sports and national conventions to corporate conferences and festivals, myTRS has been the trusted choice for seamless event and volunteer management since 2000. Our expertise in handling complex logistics ensures every event runs smoothly, no matter the size or scope.
               </p>
             </div>
           </section>
@@ -114,10 +114,10 @@ export default function WhyTRS() {
             <h2 className={styles.sectionHeading}>Powerful Technology</h2>
             <div className={styles.sectionContent}>
               <h3 className={styles.mainTitle}>
-                Built for the Challenges of Large-Scale Events
+              Powerful Event Management Software
               </h3>
               <p className={styles.subtext}>
-                myTRS is streamlined to handle the complexities of large-scale event management. From customizable registration platform and automated scheduling to real-time reporting and seamless communication tools, our intuitive software empowers you to manage multiple sites, committees, and communications with ease. Access the platform from anywhere, anytime, with our mobile-friendly interface.
+              myTRS is streamlined to handle events in many scales. From customizable registration platform and automated scheduling to real-time reporting and seamless communication tools, our software empowers you to manage multiple sites, committees, and communications with ease. Access the platform from anywhere, anytime, with our mobile-friendly interface.
               </p>
             </div>
           </section>

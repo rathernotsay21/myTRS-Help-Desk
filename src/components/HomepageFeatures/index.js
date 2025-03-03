@@ -4,32 +4,30 @@ import styles from './styles.module.css';
 
 const FeatureList = [
   {
-    title: 'Easy to Implement',
+    title: 'Unparalleled Support & Partnership',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        myTRS was designed from the ground up to be easily installed and
-        integrated with your existing systems, getting you up and running quickly.
+        TRS delivers more than software: we offer unmatched 1-on-1 support, even on weekends and holidays. Our team has consistently delivered world-class customer service for the past 25+ years. We are committed to your success as much as you are.
+
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
+    title: 'Trusted by the Industry Experts',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        myTRS lets you focus on your business goals, while we handle the complex
-        reporting requirements. Simplify your transaction reporting and compliance processes.
+        Since 2000, TRS has been the trusted choice for major events, from Super Bowls to national conventions. Our proven expertise ensures seamless management.
       </>
     ),
   },
   {
-    title: 'Powered by Modern Technology',
+    title: 'Powerful Event & Volunteer Registration Software',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Built on cutting-edge technology, myTRS offers a robust platform that can be
-        customized to meet your specific reporting needs with industry-leading security.
+        TRS streamlines complex events with a highly configurable registration platform, automated scheduling, and powerful reporting tools. Manage with ease, anytime, anywhere.
       </>
     ),
   },

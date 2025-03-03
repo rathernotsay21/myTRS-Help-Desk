@@ -105,4 +105,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+@media screen and (max-width: 480px) {
+  .buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .buttons a {
+    width: 80%;
+    margin-left: 0 !important;
+  }
 }

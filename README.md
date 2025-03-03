@@ -1,41 +1,19 @@
-# Website
+About myTRS
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+myTRS is a comprehensive transaction reporting system designed to simplify complex reporting processes for businesses. Our platform offers intuitive solutions for financial reporting, compliance, and data management.
 
-### Installation
+With a focus on user-friendly interfaces and powerful backend capabilities, myTRS helps organizations streamline their reporting workflows and gain valuable insights from their transaction data.
+Key Features
 
-```
-$ yarn
-```
+    Automated transaction reporting and analysis
+    Customizable dashboards and reports
+    Real-time data processing and visualization
+    Compliance with industry standards and regulations
+    Secure data storage and management
+    Integration with existing business systems
 
-### Local Development
+Need Help?
 
-```
-$ yarn start
-```
+This help desk contains comprehensive documentation, tutorials, and resources to help you get the most out of myTRS. Browse our documentation sections or use the search feature to find specific information.
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
-
-### Build
-
-```
-$ yarn build
-```
-
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
-
-### Deployment
-
-Using SSH:
-
-```
-$ USE_SSH=true yarn deploy
-```
-
-Not using SSH:
-
-```
-$ GIT_USER=<Your GitHub username> yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+For additional support, please contact our customer service team at support@my-trs.com.

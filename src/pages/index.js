@@ -21,13 +21,12 @@ function HomepageHeader() {
           <Link
             className="button button--outline-secondary button--lg"
             to="/why-trs#request-demo">
-            Request a Free Demo
+            Free Demo
           </Link>
           <Link
             className="button button--secondary button--lg"
-            style={{ marginLeft: '1rem' }}
             to="/docs/intro">
-            Explore Our Solutions
+            Solutions
           </Link>
           
         </div>

@@ -35,35 +35,27 @@ export default function WhyTRS() {
     };
   }, []);
 
-  // Form submission handler
+  // Updated form submission handler for Netlify
   const handleSubmit = async (e) => {
     e.preventDefault();
     setFormSubmitting(true);
     setFormError(null);
     
-    const formData = new FormData(e.target);
-    const data = Object.fromEntries(formData.entries());
-    
     try {
-      // This is a placeholder - replace YOUR_FORM_ID with your actual form endpoint
-      const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+      // Let Netlify handle the form submission
+      const form = e.target;
+      const formData = new FormData(form);
+      
+      await fetch('/', {
         method: 'POST',
-        body: JSON.stringify(data),
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-        }
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formData).toString(),
       });
       
-      if (response.ok) {
-        setFormSubmitted(true);
-        e.target.reset();
-      } else {
-        const responseData = await response.json();
-        throw new Error(responseData.error || 'Something went wrong. Please try again.');
-      }
+      setFormSubmitted(true);
+      form.reset();
     } catch (error) {
-      setFormError(error.message);
+      setFormError("Something went wrong. Please try again.");
       console.error('Form submission error:', error);
     } finally {
       setFormSubmitting(false);
@@ -177,7 +169,7 @@ export default function WhyTRS() {
             </div>
           </section>
 
-          {/* Demo Request Form Section */}
+          {/* Demo Request Form Section - Updated for Netlify Forms */}
           <ErrorBoundary>
             <section id="request-demo" className={styles.formSection}>
               <h2 className={styles.formTitle}>Ready to Experience the TRS Difference?</h2>
@@ -188,8 +180,18 @@ export default function WhyTRS() {
                   <p>We've received your demo request and will be in touch shortly.</p>
                 </div>
               ) : (
-                <form className={styles.demoForm} onSubmit={handleSubmit} name="demo-request" method="POST" data-netlify="true">
+                <form 
+                  className={styles.demoForm} 
+                  onSubmit={handleSubmit} 
+                  name="demo-request" 
+                  method="POST" 
+                  data-netlify="true"
+                  netlify-honeypot="bot-field"
+                >
+                  {/* Hidden fields for Netlify Forms */}
                   <input type="hidden" name="form-name" value="demo-request" />
+                  <input type="hidden" name="bot-field" />
+                  
                   <div className={styles.formRow}>
                     <div className={styles.formField}>
                       <label htmlFor="firstName">First name <span className={styles.required}>*</span></label>

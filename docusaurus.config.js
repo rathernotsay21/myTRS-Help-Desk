@@ -109,7 +109,6 @@ const config = {
           src: 'img/myTRSlogo.png',
         },
         items: [
-          {to: '/why-trs', label: 'Why TRS?', position: 'left'},
           {
             to: '/features',
             position: 'left',

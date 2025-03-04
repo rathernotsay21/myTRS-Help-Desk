@@ -5,7 +5,6 @@
 
  .heroBanner {
   padding: 0;
-  text-align: center;
   position: relative;
   overflow: hidden;
   background-image: url('/img/event_photos/volunteer_check-in-min.jpg');
@@ -15,8 +14,17 @@
   height: auto;
   min-height: 600px;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-end; /* Position content at bottom */
+  justify-content: center; /* Keep horizontally centered */
+}
+
+/* Style for the container */
+.heroBanner > div {
+  position: relative;
+  z-index: 2;
+  padding: 2rem 2rem 4rem 2rem; /* Increased bottom padding */
+  text-align: center; /* Left align text within the container */
+  max-width: 1200px; /* Control width of the container */
 }
 
 /* Target very wide screens specifically */
@@ -44,6 +52,10 @@
     background-position: 35% 20%;
     min-height: 500px;
   }
+  
+  .heroBanner > div {
+    padding: 2rem 1.5rem 3rem 1.5rem; /* Adjust padding for smaller screens */
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -56,6 +68,10 @@
   .heroBanner {
     background-position: 45% 20%;
     min-height: 400px;
+  }
+  
+  .heroBanner > div {
+    padding: 1.5rem 1rem 2rem 1rem; /* Further reduce padding for mobile */
   }
 }
 
@@ -71,52 +87,306 @@
   z-index: 1;
 }
 
-.heroBanner > div {
-  position: relative;
-  z-index: 2;
-  padding: 4rem 1rem; /* Add padding to the content container instead */
+/* Adjust title size and spacing */
+.heroTitle {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  text-align: left; /* Ensure the title is left-aligned */
 }
 
-/* Add this class to create a dark overlay */
-.heroBanner::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.6); /* Dark overlay with 60% opacity */
-  z-index: 1;
+@media screen and (max-width: 768px) {
+  .heroTitle {
+    font-size: 2.5rem;
+  }
 }
 
-/* Make sure the content appears on top of the overlay */
-.heroBanner > div {
-  position: relative;
-  z-index: 2;
-}
-
-@media screen and (max-width: 996px) {
-  .heroBanner {
-    padding: 2rem;
+@media screen and (max-width: 480px) {
+  .heroTitle {
+    font-size: 2rem;
   }
 }
 
 .buttons {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; /* Center the buttons */
   flex-wrap: wrap;
   gap: 1rem;
+  width: 100%; /* Ensure the container takes full width for proper centering */
+}
+
+/* Fixed width buttons */
+.fixedWidthButton {
+  width: 220px; /* Set a fixed width for both buttons */
+  text-align: center; /* Center the text within buttons */
+  justify-content: center; /* Center the text for flex buttons */
+  display: inline-flex; /* Use flex for better text alignment */
+  align-items: center;
 }
 
 @media screen and (max-width: 480px) {
   .buttons {
     flex-direction: column;
+    align-items: center; /* Center buttons on mobile */
     width: 100%;
   }
   
   .buttons a {
-    width: 80%;
-    margin-left: 0 !important;
+    width: 220px; /* Keep consistent width on mobile */
+  }
+}
+
+/* Why TRS Styles */
+.whyTrsSection {
+  padding: var(--my-trs-space-xxl) 0;
+}
+
+.sectionHeading {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: var(--my-trs-space-lg);
+  color: var(--ifm-color-primary);
+}
+
+.mainTitle {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  margin-bottom: var(--my-trs-space-lg);
+  font-weight: 600;
+  max-width: 800px;
+}
+
+.subtext {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: var(--my-trs-space-xl);
+  max-width: 800px;
+  color: var(--my-trs-text-light);
+}
+
+.introSection, .tracksSection {
+  margin-bottom: var(--my-trs-space-xxxl);
+}
+
+.quoteContainer {
+  margin: var(--my-trs-space-xl) 0 var(--my-trs-space-xxl);
+  max-width: 800px;
+}
+
+.testimonialQuote {
+  background-color: var(--my-trs-light-bg);
+  border-left: 5px solid var(--ifm-color-primary);
+  padding: var(--my-trs-space-lg) var(--my-trs-space-xl);
+  font-style: italic;
+  margin: 0;
+  border-radius: var(--my-trs-border-radius-md);
+  box-shadow: var(--my-trs-shadow-md);
+}
+
+.testimonialQuote p {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  margin-bottom: var(--my-trs-space-sm);
+  color: var(--my-trs-text);
+}
+
+.testimonialQuote footer {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--ifm-color-primary);
+  text-align: right;
+  font-style: normal;
+}
+
+.organizationHighlight {
+  color: var(--my-trs-accent);
+  font-weight: 700;
+}
+
+.blocksContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--my-trs-space-xl);
+  margin-top: var(--my-trs-space-xxl);
+}
+
+.solutionBlock {
+  padding: var(--my-trs-space-xxl);
+  border-radius: var(--my-trs-border-radius-md);
+  box-shadow: var(--my-trs-shadow-md);
+  transform: translateY(100px);
+  opacity: 0;
+  transition: transform 0.7s ease-out, opacity 0.7s ease-out;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.solutionBlock.animate {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.primaryBlock {
+  background-color: rgba(var(--ifm-color-primary-rgb), 0.1);
+}
+
+.secondaryBlock {
+  background-color: var(--my-trs-light-bg);
+}
+
+.blockNumber {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: var(--my-trs-space-md);
+  color: var(--ifm-color-primary);
+  opacity: 0.7;
+}
+
+.blockTitle {
+  font-size: 1.8rem;
+  margin-bottom: var(--my-trs-space-md);
+  font-weight: 600;
+}
+
+.blockText {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--my-trs-text-light);
+  flex-grow: 1;
+}
+
+@media (max-width: 768px) {
+  .blocksContainer {
+    grid-template-columns: 1fr;
+  }
+  
+  .mainTitle {
+    font-size: 2rem;
+  }
+  
+  .solutionBlock {
+    padding: var(--my-trs-space-xl);
+  }
+}
+
+/* Form Section Styles */
+.formSection {
+  margin: var(--my-trs-space-xxxl) 0;
+  padding: var(--my-trs-space-xl) 0;
+  scroll-margin-top: 120px; /* Increased scroll margin for better visibility */
+}
+
+.formTitle {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: var(--my-trs-space-xl);
+  text-align: center;
+}
+
+/* Add scroll margin to account for fixed headers */
+.formSection {
+  scroll-margin-top: 100px;
+}
+
+.demoForm {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.formRow {
+  display: flex;
+  gap: var(--my-trs-space-xl);
+  margin-bottom: var(--my-trs-space-lg);
+}
+
+.formField {
+  flex: 1;
+  margin-bottom: var(--my-trs-space-lg);
+}
+
+.formField label {
+  display: block;
+  margin-bottom: var(--my-trs-space-xs);
+  font-weight: 500;
+}
+
+.required {
+  color: #e53e3e;
+}
+
+.formField input,
+.formField textarea {
+  width: 100%;
+  padding: var(--my-trs-space-sm) var(--my-trs-space-md);
+  border: 1px solid var(--my-trs-border);
+  border-radius: var(--my-trs-border-radius-sm);
+  background-color: white;
+  font-size: 1rem;
+  transition: border-color 0.2s ease;
+}
+
+.formField input:focus,
+.formField textarea:focus {
+  outline: none;
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 0 0 1px var(--ifm-color-primary-lightest);
+}
+
+.submitButton {
+  display: block;
+  width: 200px;
+  padding: var(--my-trs-space-sm) var(--my-trs-space-lg);
+  background-color: var(--ifm-color-primary);
+  color: white;
+  border: none;
+  border-radius: var(--my-trs-border-radius-sm);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.submitButton:hover {
+  background-color: var(--ifm-color-primary-dark);
+}
+
+.submitButton:disabled {
+  background-color: var(--ifm-color-primary-lightest);
+  cursor: not-allowed;
+}
+
+.formSuccess {
+  background-color: rgba(72, 187, 120, 0.1);
+  border-left: 4px solid #48bb78;
+  padding: var(--my-trs-space-xl);
+  border-radius: var(--my-trs-border-radius-sm);
+  margin-top: var(--my-trs-space-md);
+}
+
+.formError {
+  background-color: rgba(229, 62, 62, 0.1);
+  border-left: 4px solid #e53e3e;
+  padding: var(--my-trs-space-md);
+  border-radius: var(--my-trs-border-radius-sm);
+  margin-bottom: var(--my-trs-space-lg);
+}
+
+.formSuccess h3 {
+  color: #2f855a;
+  margin-bottom: var(--my-trs-space-xs);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .formRow {
+    flex-direction: column;
+    gap: 0;
+  }
+  
+  .submitButton {
+    width: 100%;
   }
 }

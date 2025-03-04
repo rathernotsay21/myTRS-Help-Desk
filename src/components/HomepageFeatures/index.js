@@ -8,8 +8,7 @@ const FeatureList = [
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        TRS delivers more than software: we offer unmatched 1-on-1 support, even on weekends and holidays. Our team has consistently delivered world-class customer service for the past 25+ years. We are committed to your success as much as you are.
-
+        More than just a software company, myTRS team brings world-class customer service to major events. At myTRS, we understand that successful volunteer management requires more than just powerful software. Our staff provides unparalleled 1-on-1 support and expert advice. We share lessons learned and options gleaned from 25+ years of online event and volunteer management experiences. Even on weekends and holidays, our team is here to help you navigate any challenge, from initial setup and training to troubleshooting and on-site support at the event. We're committed to your success every step of the way.
       </>
     ),
   },

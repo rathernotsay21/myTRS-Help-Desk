@@ -289,3 +289,100 @@
     font-size: 1.1rem;
   }
 }
+
+/* Add these CSS rules to your src/css/custom.css file */
+
+/* Apply consistent width and centering to all main content sections */
+.whyTrsSection .sectionContent,
+.introSection .sectionContent,
+.tracksSection {
+  max-width: 1040px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Make section headings align with content */
+.sectionHeading {
+  max-width: 1040px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Ensure main titles align with content */
+.mainTitle {
+  max-width: 1040px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Ensure subtext aligns with content */
+.subtext {
+  max-width: 1040px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Ensure testimonial quotes align with content */
+.quoteContainer {
+  max-width: 1040px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Adjust the blocks container to match the carousel width */
+.blocksContainer {
+  max-width: 1040px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Add these CSS rules to your src/css/custom.css file */
+
+/* Make container consistent */
+.container {
+  max-width: 1200px;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+/* Align the carousel to the left */
+.carouselContainer {
+  max-width: 1040px;
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
+}
+
+/* Make section content left-aligned */
+.whyTrsSection .sectionContent,
+.introSection .sectionContent,
+.whyTrsSection .container,
+.introSection .container,
+.tracksSection {
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* Style section titles for left alignment */
+.sectionHeading,
+.mainTitle,
+.subtext,
+.quoteContainer,
+.blocksContainer {
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* For client logos section */
+.clientLogos .container {
+  margin-left: 0;
+  padding-left: 2rem;
+}
+
+/* Ensure client logo grid aligns with content */
+.logoGrid {
+  margin-left: 0;
+  margin-right: 0;
+}

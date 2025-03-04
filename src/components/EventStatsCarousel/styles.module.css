@@ -2,7 +2,7 @@
     position: relative;
     width: 100%;
     max-width: 1040px; /* Show 3.5 cards */
-    margin: 2rem auto; /* Center the carousel */
+    margin: 2rem 0; /* Center the carousel */
   }
   
   .scrollContainer {

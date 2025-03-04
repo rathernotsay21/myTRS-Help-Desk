@@ -64,14 +64,14 @@ const config = {
         docs: {
           sidebarPath: './sidebars.js',
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/my-trs/helpdesk/tree/main/',
+          // editUrl:
+          //  'https://github.com/my-trs/helpdesk/tree/main/',
         },
         blog: {
           showReadingTime: true,
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/my-trs/helpdesk/tree/main/',
+          // editUrl:
+          //  'https://github.com/my-trs/helpdesk/tree/main/',
         },
         theme: {
           customCss: './src/css/custom.css',

@@ -5,16 +5,20 @@ import clsx from 'clsx';
 
 // Define client logos with names for better accessibility
 const clientLogos = [
-  { file: 'Superbowl_Logo-min.png', name: 'Super Bowl' },
-  { file: 'Special_Olympics_Logo-min.png', name: 'Special Olympics' },
-  { file: 'USA_Gymnastics_Logo-min.jpg', name: 'USA Gymnastics' },
-  { file: 'USA_Track_and_Field_Logo-min.png', name: 'USA Track and Field' },
-  { file: 'NCAA_Logo-min.png', name: 'NCAA' },
-  { file: 'big_ten_conference_logo-min.jpg', name: 'Big Ten Conference' },
-  { file: 'National_League_of_Cities_Logo-min.jpg', name: 'National League of Cities' },
-  { file: 'RunDisney_Logo-min.png', name: 'Run Disney' },
-  { file: 'usa_diving_logo-min.png', name: 'USA Diving' },
-  { file: 'PGA_of_America_Logo_2023-min.png', name: 'PGA of America 2023' },
+  { file: 'superbowl_logo_processed.png', name: 'Super Bowl' },
+  { file: 'Special_Olympics_Logo.png', name: 'Special Olympics' },
+  { file: 'USA_Gymnastics_Logo.jpg', name: 'USA Gymnastics' },
+  { file: 'USA_Track_and_Field_Logo.webp', name: 'USA Track and Field' },
+  { file: 'NCAA_Logo.png', name: 'NCAA' },
+  { file: 'big_ten_conference_logo.jpg', name: 'Big Ten Conference' },
+  { file: 'National_League_of_Cities_Logo.jpg', name: 'National League of Cities' },
+  { file: 'indy_500_logo.png', name: 'Indianapolis 500' },
+  { file: 'usa_diving_logo.png', name: 'USA Diving' },
+  { file: 'PGA_of_America_Logo_2023.png', name: 'PGA of America' },
+  { file: 'NFL_Draft_Logo.png', name: 'NFL Draft' },
+  { file: 'ciaa_logo.png', name: 'CIAA' },
+  { file: 'National_FFA-Logo.png', name: 'National FFA' },
+  { file: 'NorthCarolinaAzaleaFestival.png', name: 'North Carolina Azalea Festival' },
 ];
 
 export default function ClientLogos() {
@@ -48,8 +52,8 @@ export default function ClientLogos() {
   return (
     <section className={styles.clientLogos} ref={logosRef}>
       <div className="container">
-        <h2 className={styles.sectionTitle}>All-in-One Event, Volunteer & Registrant Management Software</h2>
-        <p className={styles.sectionSubtitle}>Trusted by the Industry Experts since 2000.</p>
+        <h2 className={styles.sectionTitle}>Trusted by the Industry Experts since 2000</h2>
+        <p className={styles.sectionSubtitle}>Who do we serve?</p>
         
         {/* New simplified logo grid layout */}
         <div className={styles.logoGrid}>

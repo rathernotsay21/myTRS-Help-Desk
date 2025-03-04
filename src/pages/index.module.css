@@ -87,11 +87,11 @@
   z-index: 1;
 }
 
-/* Adjust title size and spacing */
 .heroTitle {
-  font-size: 3rem;
+  font-size: 3.5rem;
   margin-bottom: 1.5rem;
-  text-align: left; /* Ensure the title is left-aligned */
+  text-align: center;
+  line-height: 1.2;
 }
 
 @media screen and (max-width: 768px) {
@@ -388,5 +388,35 @@
   
   .submitButton {
     width: 100%;
+  }
+}
+
+.primaryText {
+  color: #4d9fff; /* Lighter blue that's readable on dark backgrounds */
+}
+
+.accentText {
+  color: #f39c12; /* Accent orange color */
+}
+
+/* Hide the mobile break on larger screens */
+.mobileBreak {
+  display: none;
+}
+
+/* Show the line break on mobile screens */
+@media screen and (max-width: 768px) {
+  .mobileBreak {
+    display: block;
+  }
+  
+  .heroTitle {
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .heroTitle {
+    font-size: 2rem;
   }
 }

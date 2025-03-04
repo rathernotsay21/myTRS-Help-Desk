@@ -9,12 +9,12 @@ const eventData = [
   },
   {
     count: "4",
-    type: "Super Bowls & Numerous NFL Events",
-    examples: ["Drafts", "Combines"]
+    type: "NFL Events",
+    examples: ["Super Bowls", "Drafts", "Combines"]
   },
   {
     count: "10+",
-    type: "National Political Conventions",
+    type: "Political Conventions",
     examples: ["RNC", "DNC", "National League of Cities", "US Conference of Mayors"]
   },
   {
@@ -24,12 +24,12 @@ const eventData = [
   },
   {
     count: "24+",
-    type: "Men's & Women's NCAA Final Fours",
-    examples: []
+    type: "NCAA Final Fours",
+    examples: ["Men's", "Women's"]
   },
   {
     count: "21+",
-    type: "Professional Golf Events",
+    type: "Professional Golf",
     examples: []
   },
   {
@@ -44,7 +44,7 @@ const eventData = [
   },
   {
     count: "10+",
-    type: "Professional Tennis Events",
+    type: "Professional Tennis",
     examples: []
   },
   {

@@ -11,13 +11,16 @@ import EventStatsCarousel from '@site/src/components/EventStatsCarousel';
 import Heading from '@theme/Heading';
 import styles from './index.module.css';
 
+// In src/pages/index.js - Update the HomepageHeader component
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <header className={clsx('hero', styles.heroBanner)}>
       <div className="container">
         <Heading as="h1" className={clsx('hero__title', styles.heroTitle)}>
-          Event & Volunteer Management Made Simple
+          <span className={styles.primaryText}>Event Management </span>
+          <br className={styles.mobileBreak} />
+          <span className={styles.accentText}>Made Simple</span>
         </Heading>
         <div className={styles.buttons}>
           <Link

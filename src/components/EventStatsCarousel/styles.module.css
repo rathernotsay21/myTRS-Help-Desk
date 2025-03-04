@@ -1,130 +1,175 @@
 .carouselContainer {
-    position: relative;
-    width: 100%;
-    max-width: 1040px; /* Show 3.5 cards */
-    margin: 2rem 0; /* Center the carousel */
-  }
-  
-  .scrollContainer {
-    display: flex;
-    overflow-x: auto;
-    padding: 1rem 0.5rem 1.5rem;
-    margin: 0 -1rem;
-    scroll-behavior: smooth;
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE and Edge */
-    gap: 1rem;
-  }
-  
-  /* Hide scrollbar for Chrome, Safari and Opera */
-  .scrollContainer::-webkit-scrollbar {
-    display: none;
-  }
-  
-  .eventCard {
-    flex-shrink: 0;
-    width: 288px; /* w-72 in Tailwind */
-    background-color: white;
-    border-radius: 0.5rem;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    overflow: hidden;
-    transition: box-shadow 0.3s ease;
-  }
-  
-  .eventCard:hover {
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  }
-  
-  .cardContent {
-    padding: 1.5rem;
-  }
-  
-  .countContainer {
-    margin-bottom: 1rem;
+  position: relative;
+  width: 100%;
+  max-width: 1040px; /* Show 3.5 cards */
+  margin: 2rem 0; /* Left-align the carousel */
+}
+
+.scrollContainer {
+  display: flex;
+  overflow-x: auto;
+  padding: 1rem 0.5rem 1.5rem;
+  margin: 0 -1rem;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  gap: 1rem;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scrollContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.eventCard {
+  flex-shrink: 0;
+  width: 288px; /* w-72 in Tailwind */
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: box-shadow 0.3s ease, border 0.3s ease;
+  border: 1px solid transparent;
+}
+
+/* Dark mode enhancements */
+[data-theme='dark'] .eventCard {
+  background-color: #1e2125; /* Darker background for better contrast */
+  border-color: #384152; /* Subtle border to define card edges */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
+}
+
+.eventCard:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Enhanced hover effect for dark mode */
+[data-theme='dark'] .eventCard:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.3);
+  border-color: #4d76a8; /* Highlight border on hover */
+}
+
+.cardContent {
+  padding: 1.5rem;
+}
+
+.countContainer {
+  margin-bottom: 1rem;
+}
+
+.count {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--ifm-color-primary);
+}
+
+/* Enhance count visibility in dark mode */
+[data-theme='dark'] .count {
+  color: #4da3ff; /* Brighter blue for dark mode */
+  text-shadow: 0 0 20px rgba(77, 163, 255, 0.15); /* Subtle glow effect */
+}
+
+.eventType {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--my-trs-text);
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+}
+
+/* Improve text contrast in dark mode */
+[data-theme='dark'] .eventType {
+  color: rgba(255, 255, 255, 0.9); /* Brighter text for better contrast */
+}
+
+.examplesContainer {
+  margin-top: 1rem;
+}
+
+.examples {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.exampleTag {
+  display: inline-block;
+  background-color: #e6f0ff; /* Light blue background */
+  color: #0056b3; /* Blue text matching your primary color */
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+}
+
+/* Enhanced tags for dark mode */
+[data-theme='dark'] .exampleTag {
+  background-color: rgba(77, 163, 255, 0.2); /* Slightly translucent blue background */
+  color: #78baff; /* Lighter blue text for dark mode */
+  border: 1px solid rgba(77, 163, 255, 0.4); /* Subtle border */
+}
+
+.navArrow {
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: white;
+  border-radius: 9999px; /* Full rounded */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border: none;
+  cursor: pointer;
+  color: var(--ifm-color-primary);
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+/* Dark mode enhancements for nav arrows */
+[data-theme='dark'] .navArrow {
+  background-color: #1e2125; /* Match card background */
+  border: 1px solid #384152; /* Subtle border */
+  color: #4da3ff; /* Bright blue color */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.navArrow:hover {
+  background-color: var(--my-trs-light-bg);
+}
+
+[data-theme='dark'] .navArrow:hover {
+  background-color: #2a3038; /* Darker hover for dark mode */
+  color: #78baff; /* Lighter blue on hover */
+}
+
+.navArrow:focus {
+  box-shadow: 0 0 0 3px rgba(var(--ifm-color-primary-rgb), 0.3);
+}
+
+.leftArrow {
+  left: 0;
+  transform: translate(-50%, -50%);
+}
+
+.rightArrow {
+  right: 0;
+  transform: translate(50%, -50%);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .navArrow {
+    width: 2rem;
+    height: 2rem;
   }
   
   .count {
-    font-size: 3rem;
-    font-weight: 700;
-    color: var(--ifm-color-primary);
+    font-size: 2.5rem;
   }
   
   .eventType {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: var(--my-trs-text);
-    margin-bottom: 0.75rem;
-    line-height: 1.4;
+    font-size: 1.1rem;
   }
-  
-  .examplesContainer {
-    margin-top: 1rem;
-  }
-  
-  .examples {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-  
-  .exampleTag {
-    display: inline-block;
-    background-color: #e6f0ff; /* Light blue background */
-    color: #0056b3; /* Blue text matching your primary color */
-    font-size: 0.75rem;
-    padding: 0.25rem 0.5rem;
-    border-radius: 0.25rem;
-  }
-  
-  .navArrow {
-    position: absolute;
-    top: 50%;
-    z-index: 10;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 2.5rem;
-    height: 2.5rem;
-    background-color: white;
-    border-radius: 9999px; /* Full rounded */
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    border: none;
-    cursor: pointer;
-    color: var(--ifm-color-primary);
-    transition: background-color 0.2s;
-    outline: none;
-  }
-  
-  .navArrow:hover {
-    background-color: var(--my-trs-light-bg);
-  }
-  
-  .navArrow:focus {
-    box-shadow: 0 0 0 3px rgba(var(--ifm-color-primary-rgb), 0.3);
-  }
-  
-  .leftArrow {
-    left: 0;
-    transform: translate(-50%, -50%);
-  }
-  
-  .rightArrow {
-    right: 0;
-    transform: translate(50%, -50%);
-  }
-  
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
-    .navArrow {
-      width: 2rem;
-      height: 2rem;
-    }
-    
-    .count {
-      font-size: 2.5rem;
-    }
-    
-    .eventType {
-      font-size: 1.1rem;
-    }
-  }
+}

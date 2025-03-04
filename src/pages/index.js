@@ -6,6 +6,7 @@ import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import ClientLogos from '@site/src/components/ClientLogos';
 import ErrorBoundary from '@site/src/components/ErrorBoundary';
+import EventStatsCarousel from '@site/src/components/EventStatsCarousel';
 
 import Heading from '@theme/Heading';
 import styles from './index.module.css';
@@ -134,6 +135,7 @@ export default function Home() {
               <p className={styles.subtext}>
               With a track record of supporting top-tier events—ranging from professional sports and national conventions to corporate conferences and festivals, myTRS has been the trusted choice for seamless event and volunteer management since 2000. Our expertise in handling complex logistics ensures every event runs smoothly, no matter the size or scope.
               </p>
+              <EventStatsCarousel />
             </div>
           </section>
 

@@ -80,6 +80,7 @@
 .delayedAppearance12 { transition-delay: 0.65s; }
 .delayedAppearance13 { transition-delay: 0.7s; }
 
+/* Replace the current .logoInner and hover states with these */
 .logoInner {
   height: 100%;
   width: 100%;
@@ -87,13 +88,12 @@
   align-items: center;
   justify-content: center;
   padding: 1rem;
-  background-color: #ffffff; /* Always white background */
+  background-color: #ffffff;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
+  /* Change to a border instead of shadow */
+  border: 1px solid rgba(0, 0, 0, 0.08);
   position: relative;
   overflow: hidden;
-  transform-style: preserve-3d;
 }
 
 .logoInner::before {
@@ -110,29 +110,32 @@
 /* Maintain white background in dark mode */
 [data-theme='dark'] .logoInner {
   background-color: #ffffff;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 [data-theme='dark'] .logoInner::before {
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 100%);
 }
 
+/* Change hover effect to use a border color change and a glow effect rather than movement */
 .logoWrapper:hover .logoInner {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 0 15px rgba(0, 86, 179, 0.15);
 }
 
 .logo {
   max-width: 85%;
   max-height: 80px;
   object-fit: contain;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
   z-index: 2;
   position: relative;
 }
 
+/* Scale the logo slightly on hover without using transform */
 .logoWrapper:hover .logo {
-  transform: scale(1.05);
+  max-width: 90%;
+  max-height: 85px;
 }
 
 /* Remove filter adjustments for dark mode since we're using white backgrounds */

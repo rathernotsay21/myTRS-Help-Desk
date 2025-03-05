@@ -151,59 +151,102 @@ export default function Home() {
               <p className={styles.subtext}>
               myTRS is streamlined to handle events in many scales. From customizable registration platform and automated scheduling to real-time reporting and seamless communication tools, our software empowers you to manage multiple sites, committees, and communications with ease. Access the platform from anywhere, anytime, with our mobile-friendly interface.
               </p>
+              <div style={{ marginTop: 'var(--my-trs-space-lg)' }}>
+  <Link
+    className="button button--secondary button--lg"
+    to="/features">
+    Explore Features
+  </Link>
+</div>
             </div>
           </section>
 
           <section className={styles.introSection}>
-            <h2 className={styles.sectionHeading}> Our Commitment</h2>
+            <h2 className={styles.sectionHeading}>We've got you</h2>
             <div className={styles.sectionContent}>
-              <h3 className={styles.mainTitle}>
-                Your Success is Our Priority
+            <h3 className={styles.mainTitle}>
+              Every Industry Under the Sun
               </h3>
-              <p className={styles.subtext}>
-                TRS is more than just a software provider; we're your partner in volunteer management. We're committed to continuous improvement, constantly adding new features and enhancements based on client feedback. Our veteran-owned, woman-owned, and LGBTQ+ supportive company is dedicated to providing exceptional service and building long-term relationships with our clients. Your success is our ultimate goal.
-              </p>
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))',
+                gap: 'var(--my-trs-space-md)',
+                marginTop: 'var(--my-trs-space-lg)'
+              }}>
+                {[
+                  'Local Organizing Committees',
+                  'Sports Commissions',
+                  'Visitor Bureaus',
+                  'Event Management',
+                  'Destination Management',
+                  'Fortune 500 Businesses',
+                  'Healthcare Organizations',
+                  'Medical Organizations',
+                  'Sports & Event Rights Holders',
+                  'Governing Bodies',
+                  'Event Sponsors',
+                  'Tour Operators'
+                ].map((item, i) => (
+                  <div key={i} style={{
+                    backgroundColor: 'white',
+                    borderRadius: 'var(--my-trs-border-radius-md)',
+                    boxShadow: 'var(--my-trs-shadow-md)',
+                    padding: 'var(--my-trs-space-md)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                    height: '100%',
+                    borderLeft: '4px solid var(--ifm-color-primary)'
+                  }}
+                  className="client-card"
+                  >
+                    <div style={{
+                      fontSize: '1rem',
+                      fontWeight: '500',
+                      lineHeight: '1.4'
+                    }}>
+                      {item}
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </section>
 
           <section className={styles.tracksSection}>
-            <h2 className={styles.sectionHeading}>CHOOSE YOUR TRACK</h2>
-            <h3 className={styles.mainTitle}>Customized plans for every industry sector</h3>
+            <h2 className={styles.sectionHeading}>What do our clients say?</h2>
+            <h3 className={styles.mainTitle}>We Value Our Client's Feedback</h3>
             
             <div className={styles.blocksContainer} ref={blocksRef}>
               <div className={clsx(styles.solutionBlock, styles.primaryBlock)}>
-                <div className={styles.blockNumber}>01</div>
-                <h3 className={styles.blockTitle}>Personal</h3>
+                <div className={styles.blockNumber}>Customer Service</div>
+                <h3 className={styles.blockTitle}>Special Olympics New Jersey</h3>
                 <p className={styles.blockText}>
-                  Perfect for individual event organizers and small-scale events. Get started quickly 
-                  with our intuitive platform and essential features for seamless registration management.
+                “If there are any items that need to be addressed, customer support is always excellent. The features they continue to add on are terrific!”
                 </p>
               </div>
               
               <div className={clsx(styles.solutionBlock, styles.secondaryBlock)}>
-                <div className={styles.blockNumber}>02</div>
-                <h3 className={styles.blockTitle}>Insurance</h3>
+                <div className={styles.blockNumber}>Total Coverage</div>
+                <h3 className={styles.blockTitle}>North Carolina Azalea Festival</h3>
                 <p className={styles.blockText}>
-                  Specialized solutions for insurance events and training sessions. Includes built-in 
-                  compliance features, attendee certification tracking, and industry-specific reporting.
+                “We have had a great experience using TRS to register vendors, parade participants, volunteers, and more!”
                 </p>
               </div>
               
               <div className={clsx(styles.solutionBlock, styles.secondaryBlock)}>
-                <div className={styles.blockNumber}>03</div>
-                <h3 className={styles.blockTitle}>Business</h3>
+                <div className={styles.blockNumber}>Repeat Customers</div>
+                <h3 className={styles.blockTitle}>Destination Cleveland</h3>
                 <p className={styles.blockText}>
-                  Designed for mid-sized businesses hosting multiple events. Includes advanced reporting, 
-                  custom branding options, payment processing, and multi-user account management.
+                “I am continually impressed with myTRS. Through every job and event, I have brought myTRS with me and encouraged the company to get on board with it as well. I will always support and be an advocate to get people to use this system.”
                 </p>
               </div>
               
               <div className={clsx(styles.solutionBlock, styles.primaryBlock)}>
-                <div className={styles.blockNumber}>04</div>
-                <h3 className={styles.blockTitle}>Enterprise</h3>
+                <div className={styles.blockNumber}>Stree-Free</div>
+                <h3 className={styles.blockTitle}>USA Diving</h3>
                 <p className={styles.blockText}>
-                  Our most comprehensive solution for large organizations with complex registration needs. 
-                  Includes API access, white-label options, advanced integrations, and dedicated support.
+                "myTRS helped me to recruit, organize, and manage my event and volunteers. It provided USA Diving a stress-free way to manage 100+ volunteers over the course of our 7-day event."
                 </p>
               </div>
             </div>

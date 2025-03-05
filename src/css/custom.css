@@ -386,3 +386,25 @@
   margin-left: 0;
   margin-right: 0;
 }
+
+/* Client card styling */
+.client-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.client-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--my-trs-shadow-lg);
+}
+
+/* Dark mode adjustments with !important to ensure override */
+[data-theme='dark'] .client-card {
+  background-color: #2d2d2d !important; /* Explicit dark gray */
+  color: #e0e0e0 !important; /* Explicit light text */
+  border-left-color: #4d9fff !important; /* Explicit primary color */
+}
+
+[data-theme='dark'] .client-card:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5) !important;
+  background-color: #333 !important;
+}

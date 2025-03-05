@@ -17,11 +17,7 @@ const eventData = [
     type: "Political Conventions",
     examples: ["RNC", "DNC", "National League of Cities", "US Conference of Mayors"]
   },
-  {
-    count: "30+",
-    type: "Multi-Event Games",
-    examples: ["USA Games", "Special Olympic State Games", "National Senior", "Transplant", "Golden Age", "Wheelchair", "The Gay Games", "The Euro Games"]
-  },
+ 
   {
     count: "24+",
     type: "NCAA Final Fours",
@@ -58,6 +54,8 @@ export default function EventStatsCarousel() {
   const scrollContainerRef = useRef(null);
   const [showLeftArrow, setShowLeftArrow] = useState(false);
   const [showRightArrow, setShowRightArrow] = useState(true);
+  const [isPaused, setIsPaused] = useState(false);
+  const autoScrollIntervalRef = useRef(null);
 
   // Function to scroll left
   const scrollLeft = () => {
@@ -89,7 +87,59 @@ export default function EventStatsCarousel() {
       
       // Show right arrow if not at the end
       setShowRightArrow(scrollLeft + clientWidth < scrollWidth - 10);
+      
+      // If we've reached the end, scroll back to the beginning after a short delay
+      if (scrollLeft + clientWidth >= scrollWidth - 10) {
+        setTimeout(() => {
+          if (scrollContainerRef.current) {
+            scrollContainerRef.current.scrollTo({
+              left: 0,
+              behavior: 'smooth'
+            });
+          }
+        }, 2000); // 2 seconds delay before scrolling back to start
+      }
     }
+  };
+
+  // Set up auto-scrolling
+  useEffect(() => {
+    const startAutoScroll = () => {
+      autoScrollIntervalRef.current = setInterval(() => {
+        if (!isPaused && scrollContainerRef.current) {
+          const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
+          
+          // If near the end, scroll back to start
+          if (scrollLeft + clientWidth >= scrollWidth - 50) {
+            scrollContainerRef.current.scrollTo({
+              left: 0,
+              behavior: 'smooth'
+            });
+          } else {
+            // Otherwise, scroll right
+            scrollRight();
+          }
+        }
+      }, 4000); // Scroll every 4 seconds
+    };
+
+    startAutoScroll();
+
+    // Clean up on unmount
+    return () => {
+      if (autoScrollIntervalRef.current) {
+        clearInterval(autoScrollIntervalRef.current);
+      }
+    };
+  }, [isPaused]);
+
+  // Pause auto-scrolling when user interacts
+  const handleMouseEnter = () => {
+    setIsPaused(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsPaused(false);
   };
 
   // Add scroll event listener
@@ -127,6 +177,10 @@ export default function EventStatsCarousel() {
       <div 
         ref={scrollContainerRef}
         className={styles.scrollContainer}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        onTouchStart={handleMouseEnter}
+        onTouchEnd={handleMouseLeave}
       >
         {eventData.map((event, index) => (
           <div 

@@ -1,11 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Layout from '@theme/Layout';
 import styles from './styles.module.css';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 export default function Features() {
-  return (
+  const {siteConfig} = useDocusaurusContext();
+  
+  // Add these state variables for the tabbed features
+  const [emailActiveTab, setEmailActiveTab] = useState('creation');
+  const [scheduleActiveTab, setScheduleActiveTab] = useState('self');
+  const [reportingActiveTab, setReportingActiveTab] = useState('filters');
+  const [adminActiveTab, setAdminActiveTab] = useState('full');
+  
+return (
     <Layout
       title="Features"
       description="Explore the powerful features of myTRS registration management platform">
@@ -37,59 +46,250 @@ export default function Features() {
           <div className={styles.servicesGrid}>
             {/* Feature 1 */}
             <div className={styles.serviceCard}>
-              <div className={styles.serviceIcon}>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" width="28" height="28" aria-hidden="true">
-                  {/* Font Awesome Palette */}
-                  <path d="M204.3 5C104.9 24.4 24.8 104.3 5.2 203.4c-37 187 131.7 326.4 258.8 306.7c41.2-6.4 61.4-54.6 42.5-91.7c-23.1-45.4 9.9-98.4 60.9-98.4h79.7c35.8 0 64.8-29.6 64.9-65.3c0-58.8-31.8-113.8-83.4-217.7C386.7 14.3 302.4 0 204.3 5zm4 432.9c-42.6-6.9-82.7-34.8-110.5-81.2c-10.7-17.9-18.4-37.8-22.9-59.6c-3.5-16.9 8.9-32.1 25.9-35.6c3.9-.8 7.9-.8 11.8 0c34 6.9 68.2 10.4 102.6 10.4c51.2 0 101.6-8.5 149.9-25.3c13.5-4.7 28.3 1.6 36.1 13.8c8.5 13.3 8.9 30.8 .9 44.5c-32.2 54.7-89.3 77.3-143.9 83.5l-49.9 49.9zM256 352a96 96 0 1 0 0-192 96 96 0 1 0 0 192zm173.7-160H234.6c-29.4 0-53.3-23.9-53.3-53.3c0-29.4 23.9-53.3 53.3-53.3h195.1c29.4 0 53.3 23.9 53.3 53.3c0 29.4-23.9 53.3-53.3 53.3z"/>
-                </svg>
-              </div>
-              <h3 className={styles.serviceTitle}>Multi-level admin access</h3>
-              <p className={styles.serviceDescription}>
-              Empower your team with granular admin access to ensure seamless collaboration and efficient management of your event. Easily delegate management responsibilities by granting specific permissions based on their roles and management areas:
-              </p>
-            </div>
+  <div className={styles.serviceIcon}>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" fill="currentColor" width="28" height="28" aria-hidden="true">
+      <path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/>
+    </svg>
+  </div>
+  <h3 className={styles.serviceTitle}>Multi-Level Admin Access</h3>
+  <p className={styles.serviceDescription}>
+    Empower your team with granular admin access. Easily delegate responsibilities by granting specific permissions to team members for sites, activities, areas and groups they oversee.
+  </p>
+  
+  {/* Tabbed Features */}
+  <div className={styles.featureTabs}>
+    <button 
+      className={`${styles.tabButton} ${adminActiveTab === 'full' ? styles.activeTab : ''}`}
+      onClick={() => setAdminActiveTab('full')}
+    >
+      Full Access
+    </button>
+    <button 
+      className={`${styles.tabButton} ${adminActiveTab === 'limited' ? styles.activeTab : ''}`}
+      onClick={() => setAdminActiveTab('limited')}
+    >
+      Limited Access
+    </button>
+    <button 
+      className={`${styles.tabButton} ${adminActiveTab === 'specialized' ? styles.activeTab : ''}`}
+      onClick={() => setAdminActiveTab('specialized')}
+    >
+      Specialized Access
+    </button>
+  </div>
+  
+  <div className={styles.tabContent}>
+    {adminActiveTab === 'full' && (
+      <ul className={styles.featureList}>
+        <li>Full manager capability</li>
+      </ul>
+    )}
+    
+    {adminActiveTab === 'limited' && (
+      <ul className={styles.featureList}>
+        <li>Build and set up registration site</li>
+        <li>View, save, and export reports</li>
+      </ul>
+    )}
+    
+    {adminActiveTab === 'specialized' && (
+      <ul className={styles.featureList}>
+        <li>Send emails & messages</li>
+        <li>Manage finances and transactions</li>
+      </ul>
+    )}
+  </div>
+  
+  
+</div>
 
             {/* Feature 2 */}
             <div className={styles.serviceCard}>
-              <div className={styles.serviceIcon}>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor" width="28" height="28" aria-hidden="true">
-                  {/* Font Awesome Calendar Alt */}
-                  <path d="M152 24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H64C28.7 64 0 92.7 0 128v320c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V128c0-35.3-28.7-64-64-64H344V24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H152V24zM48 192H400V448c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V192zm320-80c0 8.8-7.2 16-16 16s-16-7.2-16-16s7.2-16 16-16s16 7.2 16 16zm-208 0c0 8.8-7.2 16-16 16s-16-7.2-16-16s7.2-16 16-16s16 7.2 16 16zm-96 0c0 8.8-7.2 16-16 16s-16-7.2-16-16s7.2-16 16-16s16 7.2 16 16zm304 0c0 8.8-7.2 16-16 16s-16-7.2-16-16s7.2-16 16-16s16 7.2 16 16z"/>
-                </svg>
-              </div>
-              <h3 className={styles.serviceTitle}>Automated Scheduling</h3>
-              <p className={styles.serviceDescription}>
-              Every event is unique. Whether you're managing a small local event or a large-scale festival, our system can handle it.
-              </p>
-            </div>
+  <div className={styles.serviceIcon}>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor" width="28" height="28" aria-hidden="true">
+      <path d="M152 24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H64C28.7 64 0 92.7 0 128v320c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V128c0-35.3-28.7-64-64-64H344V24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H152V24z"/>
+    </svg>
+  </div>
+  <h3 className={styles.serviceTitle}>Automated Scheduling</h3>
+  <p className={styles.serviceDescription}>
+    Every event is unique. myTRS offers flexible scheduling that adapts to your needs. Our system can handle anything from local festivals to the Super Bowl.
+  </p>
+  
+  {/* Tabbed Features */}
+  <div className={styles.featureTabs}>
+    <button 
+      className={`${styles.tabButton} ${scheduleActiveTab === 'self' ? styles.activeTab : ''}`}
+      onClick={() => setScheduleActiveTab('self')}
+    >
+      Self-Service
+    </button>
+    <button 
+      className={`${styles.tabButton} ${scheduleActiveTab === 'admin' ? styles.activeTab : ''}`}
+      onClick={() => setScheduleActiveTab('admin')}
+    >
+      Admin Tools
+    </button>
+    <button 
+      className={`${styles.tabButton} ${scheduleActiveTab === 'management' ? styles.activeTab : ''}`}
+      onClick={() => setScheduleActiveTab('management')}
+    >
+      Management
+    </button>
+  </div>
+  
+  <div className={styles.tabContent}>
+    {scheduleActiveTab === 'self' && (
+      <ul className={styles.featureList}>
+        <li>Registrant self-scheduling</li>
+        <li>Group registration</li>
+        <li>General availability collection</li>
+      </ul>
+    )}
+    
+    {scheduleActiveTab === 'admin' && (
+      <ul className={styles.featureList}>
+        <li>Bulk schedule assignment</li>
+        <li>Registration imports</li>
+      </ul>
+    )}
+    
+    {scheduleActiveTab === 'management' && (
+      <ul className={styles.featureList}>
+        <li>Automatic time conflict checks</li>
+        <li>Capacity management for activities & time slots</li>
+      </ul>
+    )}
+  </div>
+  
+  
+</div>
 
             {/* Feature 3 */}
             <div className={styles.serviceCard}>
-              <div className={styles.serviceIcon}>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" width="28" height="28" aria-hidden="true">
-                  {/* Font Awesome Chart Bar */}
-                  <path d="M32 32c17.7 0 32 14.3 32 32V400c0 8.8 7.2 16 16 16H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H80c-44.2 0-80-35.8-80-80V64C0 46.3 14.3 32 32 32zm96 96c0-17.7 14.3-32 32-32H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H160c-17.7 0-32-14.3-32-32zm0 96c0-17.7 14.3-32 32-32H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H160c-17.7 0-32-14.3-32-32zm0 96c0-17.7 14.3-32 32-32H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H160c-17.7 0-32-14.3-32-32z"/>
-                </svg>
-              </div>
-              <h3 className={styles.serviceTitle}>Powerful Reporting</h3>
-              <p className={styles.serviceDescription}>
-              Gain real-time insights into your program with our custom reports. Instantly access up-to-date data on registrations, scheduling, attendance, and more.
-              </p>
-            </div>
+  <div className={styles.serviceIcon}>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" width="28" height="28" aria-hidden="true">
+      <path d="M32 32c17.7 0 32 14.3 32 32V400c0 8.8 7.2 16 16 16H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H80c-44.2 0-80-35.8-80-80V64C0 46.3 14.3 32 32 32z"/>
+    </svg>
+  </div>
+  <h3 className={styles.serviceTitle}>Powerful Reporting</h3>
+  <p className={styles.serviceDescription}>
+    Gain real-time insights into your program with our custom reports. Instantly access up-to-date data on registrations, scheduling, attendance, and more.
+  </p>
+  
+  {/* Tabbed Features */}
+  <div className={styles.featureTabs}>
+    <button 
+      className={`${styles.tabButton} ${reportingActiveTab === 'filters' ? styles.activeTab : ''}`}
+      onClick={() => setReportingActiveTab('filters')}
+    >
+      Filters
+    </button>
+    <button 
+      className={`${styles.tabButton} ${reportingActiveTab === 'tracking' ? styles.activeTab : ''}`}
+      onClick={() => setReportingActiveTab('tracking')}
+    >
+      Tracking
+    </button>
+    <button 
+      className={`${styles.tabButton} ${reportingActiveTab === 'export' ? styles.activeTab : ''}`}
+      onClick={() => setReportingActiveTab('export')}
+    >
+      Export
+    </button>
+  </div>
+  
+  <div className={styles.tabContent}>
+    {reportingActiveTab === 'filters' && (
+      <ul className={styles.featureList}>
+        <li>Filter by registrant types & activities</li>
+        <li>Filter by time slots & schedules</li>
+        <li>Advanced filters for custom fields</li>
+      </ul>
+    )}
+    
+    {reportingActiveTab === 'tracking' && (
+      <ul className={styles.featureList}>
+        <li>Track background check status</li>
+        <li>Track terms & conditions signatures</li>
+        <li>Track hours, shifts, and activities</li>
+        <li>Track payments & refunds</li>
+      </ul>
+    )}
+    
+    {reportingActiveTab === 'export' && (
+      <ul className={styles.featureList}>
+        <li>Save & view real-time reports</li>
+        <li>Export to CSV files</li>
+        <li>Custom report layouts</li>
+      </ul>
+    )}
+  </div>
+  
+  
+</div>
 
             {/* Feature 4 */}
             <div className={styles.serviceCard}>
-              <div className={styles.serviceIcon}>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" width="28" height="28" aria-hidden="true">
-                  {/* Font Awesome Comment Dots */}
-                  <path d="M256 448c141.4 0 256-93.1 256-208S397.4 32 256 32S0 125.1 0 240c0 45.1 17.7 86.8 47.7 120.9c-1.9 24.5-11.4 46.3-21.4 62.9c-5.5 9.2-11.1 16.6-15.2 21.6c-2.1 2.5-3.7 4.4-4.9 5.7c-.6 .6-1 1.1-1.3 1.4l-.3 .3 0 0 0 0 0 0 0 0c-4.6 4.6-5.9 11.4-3.4 17.4c2.5 6 8.3 9.9 14.8 9.9c28.7 0 57.6-8.9 81.6-19.3c22.9-10 42.4-21.9 54.3-30.6c31.8 11.5 67 17.9 104.1 17.9zM128 208a32 32 0 1 1 0 64 32 32 0 1 1 0-64zm128 0a32 32 0 1 1 0 64 32 32 0 1 1 0-64zm96 32a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"/>
-                </svg>
-              </div>
-              <h3 className={styles.serviceTitle}>Email and SMS</h3>
-              <p className={styles.serviceDescription}>
-                Streamline volunteer communication with myTRS's powerful tools.
-              </p>
-            </div>
+  <div className={styles.serviceIcon}>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" width="28" height="28" aria-hidden="true">
+      <path d="M64 0C28.7 0 0 28.7 0 64V352c0 35.3 28.7 64 64 64h96v80c0 6.1 3.4 11.6 8.8 14.3s11.9 2.1 16.8-1.5L309.3 416H448c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64H64z"/>
+    </svg>
+  </div>
+  <h3 className={styles.serviceTitle}>Email and SMS</h3>
+  <p className={styles.serviceDescription}>
+    Streamline volunteer communication with myTRS's powerful tools. Automate confirmation emails, create custom email templates, and schedule your targeted messages – all from one central platform.
+  </p>
+  
+  {/* Tabbed Features */}
+  <div className={styles.featureTabs}>
+    <button 
+      className={`${styles.tabButton} ${emailActiveTab === 'creation' ? styles.activeTab : ''}`}
+      onClick={() => setEmailActiveTab('creation')}
+    >
+      Creation
+    </button>
+    <button 
+      className={`${styles.tabButton} ${emailActiveTab === 'delivery' ? styles.activeTab : ''}`}
+      onClick={() => setEmailActiveTab('delivery')}
+    >
+      Delivery
+    </button>
+    <button 
+      className={`${styles.tabButton} ${emailActiveTab === 'tracking' ? styles.activeTab : ''}`}
+      onClick={() => setEmailActiveTab('tracking')}
+    >
+      Tracking
+    </button>
+  </div>
+  
+  <div className={styles.tabContent}>
+    {emailActiveTab === 'creation' && (
+      <ul className={styles.featureList}>
+        <li>Create email templates for each event</li>
+        <li>Automate confirmation emails</li>
+        <li>Schedule your targeted messages</li>
+      </ul>
+    )}
+    
+    {emailActiveTab === 'delivery' && (
+      <ul className={styles.featureList}>
+        <li>Emails/SMS individual registrants</li>
+        <li>Bulk send from filtered reports</li>
+        <li>Personalized dynamic field messages</li>
+      </ul>
+    )}
+    
+    {emailActiveTab === 'tracking' && (
+      <ul className={styles.featureList}>
+        <li>Review complete email history</li>
+        <li>Track message delivery status</li>
+        <li>Monitor open and engagement rates</li>
+      </ul>
+    )}
+  </div>
+  
+  
+</div>
 
             {/* Feature 5 */}
             <div className={styles.serviceCard}>

@@ -1,0 +1,31 @@
+.icon-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fixed-width {
+  width: 1.25em;
+  text-align: center;
+}
+
+.with-text {
+  margin-right: var(--my-trs-space-xs);
+}
+
+.spin {
+  animation: icon-spin 2s infinite linear;
+}
+
+.pulse {
+  animation: icon-spin 1s infinite steps(8);
+}
+
+@keyframes icon-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

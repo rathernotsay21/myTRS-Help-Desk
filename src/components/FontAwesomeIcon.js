@@ -1,21 +1,11 @@
-import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faCircleInfo,
-  faGear,
-  faFileInvoice,
-  faQuestion,
-} from '@fortawesome/free-solid-svg-icons';
+// This file is deprecated and has been replaced by the FAIcon component.
+// Please use the FAIcon component instead.
+// This file will be removed in a future update.
 
-// Map of icon names to their imported variables
-const iconMap = {
-  'circle-info': faCircleInfo,
-  'gear': faGear,
-  'file-invoice': faFileInvoice,
-  'question': faQuestion
-};
+import React from 'react';
+import FAIcon from './FAIcon';
 
 export default function Icon({name, size = "1x", ...props}) {
-  // Use the mapped icon directly
-  return <FontAwesomeIcon icon={iconMap[name]} size={size} {...props} />;
+  console.warn('FontAwesomeIcon is deprecated. Please use FAIcon component instead.');
+  return <FAIcon name={name} size={size} {...props} />;
 }

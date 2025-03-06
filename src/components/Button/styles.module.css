@@ -1,0 +1,151 @@
+.button {
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid transparent;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  line-height: 1.4;
+}
+
+/* Button Variants */
+.primary {
+  background-color: var(--ifm-color-primary);
+  color: white;
+}
+
+.primary:hover, .primary:focus {
+  background-color: var(--ifm-color-primary-dark);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--my-trs-shadow-md);
+}
+
+.secondary {
+  background-color: var(--my-trs-accent);
+  color: white;
+}
+
+.secondary:hover, .secondary:focus {
+  background-color: var(--my-trs-accent-dark);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--my-trs-shadow-md);
+}
+
+.outline-primary {
+  background-color: transparent;
+  border-color: var(--ifm-color-primary);
+  color: var(--ifm-color-primary);
+}
+
+.outline-primary:hover, .outline-primary:focus {
+  background-color: var(--ifm-color-primary);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--my-trs-shadow-md);
+}
+
+.outline-secondary {
+  background-color: transparent;
+  border-color: var(--my-trs-accent);
+  color: var(--my-trs-accent);
+}
+
+.outline-secondary:hover, .outline-secondary:focus {
+  background-color: var(--my-trs-accent);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--my-trs-shadow-md);
+}
+
+.text {
+  background-color: transparent;
+  color: var(--ifm-color-primary);
+  padding: 0.5rem 1rem;
+}
+
+.text:hover, .text:focus {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: var(--ifm-color-primary-dark);
+}
+
+/* Button Sizes */
+.sm {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.875rem;
+}
+
+.md {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+}
+
+.lg {
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+}
+
+/* Full width button */
+.full-width {
+  width: 100%;
+}
+
+/* Fixed width button */
+.fixed-width {
+  width: 220px;
+}
+
+/* Icon button */
+.icon-left {
+  margin-right: 0.5rem;
+}
+
+.icon-right {
+  margin-left: 0.5rem;
+}
+
+/* Disabled state */
+.disabled, 
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Focus styles for accessibility */
+.button:focus-visible {
+  outline: 2px solid var(--ifm-color-primary-darker);
+  outline-offset: 3px;
+}
+
+/* Animation */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading {
+  position: relative;
+  color: transparent !important;
+}
+
+.loading::after {
+  content: "";
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  animation: spin 0.8s linear infinite;
+}

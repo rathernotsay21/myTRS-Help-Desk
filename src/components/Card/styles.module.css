@@ -1,0 +1,116 @@
+.card {
+  background-color: white;
+  border-radius: var(--my-trs-border-radius-md);
+  box-shadow: var(--my-trs-shadow-md);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--my-trs-shadow-lg);
+}
+
+/* Card with border on left/top */
+.card-border-left {
+  border-left: 4px solid var(--ifm-color-primary);
+}
+
+.card-border-top {
+  border-top: 4px solid var(--ifm-color-primary);
+}
+
+/* Card with hover animation */
+.card-hover {
+  cursor: pointer;
+}
+
+/* Card sections */
+.card-header {
+  padding: var(--my-trs-space-md) var(--my-trs-space-lg);
+  border-bottom: 1px solid var(--my-trs-border);
+}
+
+.card-body {
+  padding: var(--my-trs-space-lg);
+  flex: 1;
+}
+
+.card-footer {
+  padding: var(--my-trs-space-md) var(--my-trs-space-lg);
+  border-top: 1px solid var(--my-trs-border);
+  background-color: var(--my-trs-light-bg);
+}
+
+/* Card with image */
+.card-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.card-image-top {
+  border-radius: var(--my-trs-border-radius-md) var(--my-trs-border-radius-md) 0 0;
+}
+
+.card-image-bottom {
+  border-radius: 0 0 var(--my-trs-border-radius-md) var(--my-trs-border-radius-md);
+}
+
+/* Card title and content */
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: var(--my-trs-space-sm);
+  color: var(--my-trs-text);
+}
+
+.card-subtitle {
+  font-size: 1rem;
+  margin-top: calc(-1 * var(--my-trs-space-xs));
+  margin-bottom: var(--my-trs-space-md);
+  color: var(--my-trs-text-light);
+}
+
+.card-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--my-trs-text);
+}
+
+/* Card variants */
+.primary {
+  border-color: var(--ifm-color-primary);
+}
+
+.secondary {
+  border-color: var(--my-trs-accent);
+}
+
+.success {
+  border-color: #22c55e;
+}
+
+.info {
+  border-color: #0ea5e9;
+}
+
+.warning {
+  border-color: #f59e0b;
+}
+
+.danger {
+  border-color: #ef4444;
+}
+
+/* Dark mode adjustments */
+[data-theme='dark'] .card {
+  background-color: var(--ifm-background-surface-color);
+}
+
+[data-theme='dark'] .card-footer {
+  background-color: var(--my-trs-light-bg);
+}

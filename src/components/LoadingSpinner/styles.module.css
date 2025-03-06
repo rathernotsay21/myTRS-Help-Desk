@@ -1,0 +1,76 @@
+.spinner-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  min-height: 100px;
+  padding: var(--my-trs-space-lg);
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(0, 86, 179, 0.2);
+  border-radius: 50%;
+  border-top-color: var(--ifm-color-primary);
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.text {
+  margin-left: var(--my-trs-space-md);
+  color: var(--my-trs-text-light);
+  font-size: 0.9rem;
+}
+
+/* Content placeholder for smooth transitions */
+.content-placeholder {
+  background-color: var(--my-trs-light-bg);
+  border-radius: var(--my-trs-border-radius-md);
+  height: 100%;
+  min-height: 200px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+
+/* Different sized placeholders */
+.placeholder-line {
+  height: 20px;
+  background-color: rgba(0, 0, 0, 0.08);
+  border-radius: var(--my-trs-border-radius-sm);
+  margin-bottom: var(--my-trs-space-sm);
+  animation: pulse 1.5s infinite;
+}
+
+.placeholder-line-sm {
+  width: 30%;
+}
+
+.placeholder-line-md {
+  width: 60%;
+}
+
+.placeholder-line-lg {
+  width: 85%;
+}
+
+[data-theme='dark'] .placeholder-line {
+  background-color: rgba(255, 255, 255, 0.08);
+}

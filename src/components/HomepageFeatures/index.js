@@ -1,3 +1,5 @@
+import React from 'react';
+import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
@@ -47,6 +49,12 @@ function Feature({Svg, title, description}) {
     </div>
   );
 }
+
+Feature.propTypes = {
+  Svg: PropTypes.func.isRequired,
+  title: PropTypes.string.isRequired,
+  description: PropTypes.node.isRequired
+};
 
 export default function HomepageFeatures() {
   return (

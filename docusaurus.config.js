@@ -63,6 +63,7 @@ const config = {
       ({
         docs: {
           sidebarPath: './sidebars.js',
+          sidebarCollapsible: true,
           // Remove this to remove the "edit this page" links.
           // editUrl:
           //  'https://github.com/my-trs/helpdesk/tree/main/',

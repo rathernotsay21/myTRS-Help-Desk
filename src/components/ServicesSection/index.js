@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import styles from './styles.module.css';
 import clsx from 'clsx';
 
@@ -52,6 +53,18 @@ const AccordionItem = ({ title, icon, description, listTitle, items, footer, isO
       </div>
     </div>
   );
+};  
+
+AccordionItem.propTypes = {
+  title: PropTypes.string.isRequired,
+  icon: PropTypes.node.isRequired,
+  description: PropTypes.string.isRequired,
+  listTitle: PropTypes.string.isRequired,
+  items: PropTypes.arrayOf(PropTypes.string).isRequired,
+  footer: PropTypes.string,
+  isOpen: PropTypes.bool.isRequired,
+  toggleOpen: PropTypes.func.isRequired,
+  index: PropTypes.number.isRequired
 };
 
 const ServicesSection = () => {
@@ -165,3 +178,7 @@ const ServicesSection = () => {
 };
 
 export default ServicesSection;
+
+ServicesSection.propTypes = {
+  // This component doesn't accept any props currently
+};

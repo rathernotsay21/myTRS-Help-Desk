@@ -1,7 +1,9 @@
 import React, { useRef, useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import styles from './styles.module.css';
 
-const eventData = [
+// Default event data if none is provided
+const defaultEventData = [
   {
     count: "100+",
     type: "Industry Conferences",
@@ -17,7 +19,6 @@ const eventData = [
     type: "Political Conventions",
     examples: ["RNC", "DNC", "National League of Cities", "US Conference of Mayors"]
   },
- 
   {
     count: "24+",
     type: "NCAA Final Fours",
@@ -50,12 +51,26 @@ const eventData = [
   }
 ];
 
-export default function EventStatsCarousel() {
+/**
+ * A carousel component that displays event statistics with auto-scrolling
+ * 
+ * @param {Array} customData - Optional custom data to display in the carousel
+ * @param {number} autoScrollInterval - Time in ms between auto-scrolls
+ * @param {boolean} initialPaused - Whether auto-scrolling should be paused initially
+ */
+function EventStatsCarousel({ 
+  customData,
+  autoScrollInterval = 4000, 
+  initialPaused = false 
+}) {
   const scrollContainerRef = useRef(null);
   const [showLeftArrow, setShowLeftArrow] = useState(false);
   const [showRightArrow, setShowRightArrow] = useState(true);
-  const [isPaused, setIsPaused] = useState(false);
+  const [isPaused, setIsPaused] = useState(initialPaused);
   const autoScrollIntervalRef = useRef(null);
+  
+  // Use custom data if provided, otherwise use default data
+  const displayData = customData || defaultEventData;
 
   // Function to scroll left
   const scrollLeft = () => {
@@ -120,7 +135,7 @@ export default function EventStatsCarousel() {
             scrollRight();
           }
         }
-      }, 4000); // Scroll every 4 seconds
+      }, autoScrollInterval);
     };
 
     startAutoScroll();
@@ -131,7 +146,7 @@ export default function EventStatsCarousel() {
         clearInterval(autoScrollIntervalRef.current);
       }
     };
-  }, [isPaused]);
+  }, [isPaused, autoScrollInterval]);
 
   // Pause auto-scrolling when user interacts
   const handleMouseEnter = () => {
@@ -164,7 +179,7 @@ export default function EventStatsCarousel() {
       {showLeftArrow && (
         <button 
           onClick={scrollLeft}
-          className={styles.navArrow + ' ' + styles.leftArrow}
+          className={`${styles.navArrow} ${styles.leftArrow}`}
           aria-label="Scroll left"
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -182,7 +197,7 @@ export default function EventStatsCarousel() {
         onTouchStart={handleMouseEnter}
         onTouchEnd={handleMouseLeave}
       >
-        {eventData.map((event, index) => (
+        {displayData.map((event, index) => (
           <div 
             key={index} 
             className={styles.eventCard}
@@ -212,7 +227,7 @@ export default function EventStatsCarousel() {
       {showRightArrow && (
         <button 
           onClick={scrollRight}
-          className={styles.navArrow + ' ' + styles.rightArrow}
+          className={`${styles.navArrow} ${styles.rightArrow}`}
           aria-label="Scroll right"
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -223,3 +238,17 @@ export default function EventStatsCarousel() {
     </div>
   );
 }
+
+EventStatsCarousel.propTypes = {
+  customData: PropTypes.arrayOf(
+    PropTypes.shape({
+      count: PropTypes.string.isRequired,
+      type: PropTypes.string.isRequired,
+      examples: PropTypes.arrayOf(PropTypes.string).isRequired
+    })
+  ),
+  autoScrollInterval: PropTypes.number,
+  initialPaused: PropTypes.bool
+};
+
+export default EventStatsCarousel;

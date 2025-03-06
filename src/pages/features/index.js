@@ -5,6 +5,7 @@ import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import FeatureCards from '@site/src/components/FeatureCards';
+import ServicesSection from '@site/src/components/ServicesSection';
 
 export default function Features() {
   const {siteConfig} = useDocusaurusContext();
@@ -30,15 +31,15 @@ export default function Features() {
               <h2 className={styles.sectionTitle}>Streamlined Solutions for Every Event</h2>
               <div className={styles.titleUnderline}></div>
               <p className={styles.introText}>
-                At myTRS, we understand that successful event management requires powerful, flexible tools that adapt to your unique needs. 
-                Our platform combines intuitive design with robust functionality to help you manage registrations, scheduling, 
-                communication, and reporting with ease. Explore our key features below to see how myTRS can transform your event management process.
-              </p>
+             myTRS combines intuitive design with robust functionality to help you manage registrations, scheduling, communication and reporting with ease. Save time and reduce effort by cloning your registration sites year after year. Duplicate your existing setup, including all settings, structures and questions. Simply update your branding and scheduling details. We provide templates from similar events to help you get started. Your registrant data is always secure and not included in the cloning process.</p>
             </div>
           </div>
 
-          {/* New Grid Layout for Features */}
           <FeatureCards />
+          
+          <ServicesSection />
+
+
 
           {/* Enhanced CTA Section */}
           <div className={styles.ctaSection}>

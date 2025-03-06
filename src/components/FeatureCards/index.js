@@ -122,18 +122,18 @@ const featureCardsData = [
     tabs: [
       {
         id: "full",
-        label: "Full Access",
+        label: "Manager",
         items: ["Complete system access", "Manage all settings", "Oversee all registrations"]
       },
       {
         id: "limited",
-        label: "Limited Access",
-        items: ["Restricted to specific areas", "View-only reports", "Limited user management"]
+        label: "Site Builder",
+        items: ["Restricted to specific areas", "Build and setup registration site", "Limited user management"]
       },
       {
         id: "specialized",
-        label: "Specialized Access",
-        items: ["Send emails & messages", "Manage finances and transactions", "Handle specific event types"]
+        label: "Communication",
+        items: ["Send emails & messages", "View, save, and export reports", "Handle specific event types"]
       }
     ]
   },
@@ -145,17 +145,17 @@ const featureCardsData = [
       {
         id: "self-service",
         label: "Self-Service",
-        items: ["User-selected time slots", "Calendar view of availability", "Automatic waitlist management"]
+        items: ["User-selected time slots", "Calendar view of availability", "Automatic time conflict checks"]
       },
       {
         id: "admin-tools",
         label: "Admin Tools",
-        items: ["Bulk scheduling options", "Drag-and-drop interface", "Schedule template library"]
+        items: ["Bulk scheduling assignment", "Group registration", "Schedule template library"]
       },
       {
         id: "management",
         label: "Management",
-        items: ["Automatic time conflict checks", "Capacity management for activities & time slots", "Schedule change notifications"]
+        items: ["Automatic time conflict checks", "Capacity management", "General availability collection"]
       }
     ]
   },
@@ -167,7 +167,7 @@ const featureCardsData = [
       {
         id: "filters",
         label: "Filters",
-        items: ["Filter by date ranges", "Filter by registrant types", "Filter by activities or groups"]
+        items: ["Sort by registrant types", "Categorize by activities", "Order by time slots", "Advanced custom fields"]
       },
       {
         id: "tracking",
@@ -177,7 +177,7 @@ const featureCardsData = [
       {
         id: "export",
         label: "Export",
-        items: ["Export to CSV", "Export to Excel", "Scheduled automated exports"]
+        items: ["Save and view real-time reports", "Export to CSV", "Customize reports to view specific data"]
       }
     ]
   },
@@ -189,17 +189,17 @@ const featureCardsData = [
       {
         id: "creation",
         label: "Creation",
-        items: ["Create email templates for each event", "Drag-and-drop email builder", "Rich text formatting options"]
+        items: ["Create email templates for each event", "Automate confirmation emails"]
       },
       {
         id: "delivery",
         label: "Delivery",
-        items: ["Scheduled message delivery", "Bulk email sending", "SMS text messaging"]
+        items: ["Scheduled messages", "Bulk email and SMS", "Targeted messages and reports"]
       },
       {
         id: "tracking",
         label: "Tracking",
-        items: ["Open and click tracking", "Delivery status monitoring", "Message history reporting"]
+        items: ["Review email history", "Track delivery status"]
       }
     ]
   },
@@ -211,7 +211,9 @@ const featureCardsData = [
       {
         id: "payments",
         label: "Payments",
-        items: ["Stripe integration", "Authorize.net support", "PayPal compatibility"]
+        items: ["Stripe integration", "Authorize.net support", "PayPal compatibility", 
+        "Payflow Pro", "Payeezy", "Braintree"
+        ]
       },
       {
         id: "external",
@@ -228,12 +230,12 @@ const featureCardsData = [
       {
         id: "features",
         label: "Features",
-        items: ["Responsive design", "Touch-friendly interface", "On-the-go check-in"]
+        items: ["Universal access to myTRS", "Admin reports and bookmarks", "On-the-go check-in"]
       },
       {
         id: "compatibility",
         label: "Compatibility",
-        items: ["Works on iOS and Android", "No app installation required", "Offline mode support"]
+        items: ["Works on iOS and Android", "No app installation required"]
       }
     ]
   }

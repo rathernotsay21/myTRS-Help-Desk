@@ -1,6 +1,5 @@
-/* Updated Feature Cards Styles with Fixed Tab Alignment */
+/* Feature Cards Styles - Clean design with no visible scrollbars */
 
-/* Grid layout for feature cards */
 .featureCardsGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -10,12 +9,12 @@
   margin: 0 auto;
 }
 
-/* Card styling */
+/* Card styling with sufficient height */
 .featureCard {
   background-color: #1e1e1e;
   border-radius: 12px;
   padding: 2rem;
-  height: 480px; /* Fixed height for all cards */
+  height: 500px; /* Increased height to accommodate content */
   display: flex;
   flex-direction: column;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
@@ -29,7 +28,7 @@
   box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Icon styling - centered with consistent sizing */
+/* Icon styling */
 .featureIcon {
   width: 60px;
   height: 60px;
@@ -38,49 +37,58 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 1.5rem;
+  margin: 0 auto 1.25rem;
   color: #4d9fff;
 }
 
-/* Title styling - centered with fixed height */
+/* Title styling */
 .featureTitle {
   font-size: 1.5rem;
   font-weight: 600;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
   text-align: center;
   color: white;
-  height: 40px; /* Fixed height for titles */
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 40px;
 }
 
-/* Description styling with fixed height */
+/* Description with no scrollbars */
 .featureDescription {
   font-size: 0.95rem;
   line-height: 1.5;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   color: rgba(255, 255, 255, 0.8);
-  height: 100px; /* Fixed height for descriptions */
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 4;
-  -webkit-box-orient: vertical;
+  min-height: 120px; /* Increased height */
+  overflow: visible; /* Show all content */
 }
 
-/* Tabs container with fixed position */
+/* Hide scrollbars but allow scrolling */
+.featureDescription::-webkit-scrollbar,
+.tabPane::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Chrome/Safari/Opera */
+}
+
+.featureDescription,
+.tabPane {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Tabs container */
 .tabsContainer {
-  flex-grow: 1;
   display: flex;
   flex-direction: column;
-  position: relative;
+  margin-top: auto; /* Push to bottom */
+  flex-grow: 1;
 }
 
-/* Tabs navigation with fixed position from top */
+/* Tabs navigation */
 .tabsNav {
   display: flex;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 }
 
 .tabButton {
@@ -105,10 +113,10 @@
   border-bottom: 2px solid #4d9fff;
 }
 
-/* Tab content with fixed height */
+/* Tab content */
 .tabContent {
   position: relative;
-  height: 150px; /* Fixed height */
+  height: 150px; /* Increased height */
   overflow: hidden;
 }
 
@@ -121,7 +129,7 @@
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease;
-  overflow-y: auto;
+  overflow-y: auto; /* Allow scrolling without showing scrollbar */
 }
 
 .tabPane.active {
@@ -140,7 +148,7 @@
 .featureList li {
   position: relative;
   padding-left: 1.5rem;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
   color: rgba(255, 255, 255, 0.9);
   font-size: 0.9rem;
 }
@@ -152,14 +160,14 @@
   color: #4d9fff;
 }
 
-/* Learn more link */
+/* Link */
 .featureLink {
   color: #4d9fff;
   font-weight: 600;
   text-decoration: none;
   display: inline-block;
   transition: color 0.2s ease;
-  margin-top: 1rem;
+  margin-top: 0.75rem;
 }
 
 .featureLink:hover {
@@ -167,7 +175,7 @@
   text-decoration: none;
 }
 
-/* Light theme styles */
+/* Light theme */
 [data-theme='light'] .featureCard {
   background-color: white;
   color: #333;
@@ -194,7 +202,7 @@
   color: #333;
 }
 
-/* Responsive styles */
+/* Responsive */
 @media (max-width: 996px) {
   .featureCardsGrid {
     grid-template-columns: repeat(2, 1fr);
@@ -208,11 +216,20 @@
   
   .featureCard {
     height: auto;
-    min-height: 480px;
+    min-height: 475px;
   }
   
   .featureDescription {
+    min-height: 0;
+  }
+  
+  .tabContent {
     height: auto;
-    -webkit-line-clamp: initial;
+    min-height: 150px;
+  }
+  
+  .tabPane {
+    position: relative;
+    height: auto;
   }
 }

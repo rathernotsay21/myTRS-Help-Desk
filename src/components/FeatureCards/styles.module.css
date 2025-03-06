@@ -14,13 +14,14 @@
   background-color: #1e1e1e;
   border-radius: 12px;
   padding: 2rem;
-  height: 500px; /* Increased height to accommodate content */
   display: flex;
   flex-direction: column;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   color: white;
+  /* Fixed height on desktop for consistent alignment */
+  height: 550px; /* Further increased to fit all content */
 }
 
 .featureCard:hover {
@@ -41,7 +42,7 @@
   color: #4d9fff;
 }
 
-/* Title styling */
+/* Title styling with consistent height */
 .featureTitle {
   font-size: 1.5rem;
   font-weight: 600;
@@ -51,17 +52,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 40px;
+  height: 60px; /* Fixed height for consistency */
 }
 
 /* Description with no scrollbars */
+/* Feature description with consistent height on desktop */
 .featureDescription {
   font-size: 0.95rem;
   line-height: 1.5;
   margin-bottom: 1rem;
   color: rgba(255, 255, 255, 0.8);
-  min-height: 120px; /* Increased height */
-  overflow: visible; /* Show all content */
+  height: 150px; /* Further increased height to fit more content */
+  overflow: hidden;
 }
 
 /* Hide scrollbars but allow scrolling */
@@ -76,12 +78,14 @@
   scrollbar-width: none;  /* Firefox */
 }
 
-/* Tabs container */
+/* Tabs container with fixed positioning on desktop */
 .tabsContainer {
   display: flex;
   flex-direction: column;
   margin-top: auto; /* Push to bottom */
   flex-grow: 1;
+  position: relative;
+  height: 200px; /* Fixed height for tab container */
 }
 
 /* Tabs navigation */
@@ -89,6 +93,7 @@
   display: flex;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   margin-bottom: 0.75rem;
+  width: 100%;
 }
 
 .tabButton {
@@ -98,10 +103,11 @@
   padding: 0.5rem;
   font-size: 0.875rem;
   cursor: pointer;
-  transition: color 0.2s ease;
+  transition: color 0.2s ease, border-color 0.2s ease;
   flex: 1;
   text-align: center;
   font-weight: 500;
+  white-space: nowrap;
 }
 
 .tabButton:hover {
@@ -116,25 +122,21 @@
 /* Tab content */
 .tabContent {
   position: relative;
-  height: 150px; /* Increased height */
-  overflow: hidden;
+  height: 150px; /* Fixed height for consistent alignment on desktop */
+  overflow: visible; /* Show all content */
 }
 
 .tabPane {
-  position: absolute;
-  top: 0;
-  left: 0;
+  display: none; /* Changed from position absolute to display none */
   width: 100%;
-  height: 100%;
   opacity: 0;
-  visibility: hidden;
   transition: opacity 0.3s ease;
-  overflow-y: auto; /* Allow scrolling without showing scrollbar */
+  overflow-y: visible; /* Changed from auto to visible */
 }
 
 .tabPane.active {
+  display: block; /* Show the active tab */
   opacity: 1;
-  visibility: visible;
   z-index: 1;
 }
 
@@ -206,30 +208,77 @@
 @media (max-width: 996px) {
   .featureCardsGrid {
     grid-template-columns: repeat(2, 1fr);
+    padding: 1.5rem 0;
+  }
+
+  /* Still maintain fixed heights on tablet for alignment */
+  .featureCard {
+    height: 550px; /* Match updated desktop height */
   }
 }
 
 @media (max-width: 768px) {
   .featureCardsGrid {
     grid-template-columns: 1fr;
+    gap: 1.5rem; /* Reduced gap for mobile */
+    padding: 1rem 0; /* Reduced padding for mobile */
   }
   
   .featureCard {
-    height: auto;
-    min-height: 475px;
+    height: auto; /* Allow height to be determined by content on mobile */
+    min-height: auto; /* Remove min-height constraint */
+    padding: 1.5rem; /* Slightly reduce padding on mobile */
+  }
+  
+  .featureTitle {
+    font-size: 1.3rem; /* Slightly smaller on mobile */
+    height: auto; /* Allow height to be determined by content */
+    min-height: auto;
   }
   
   .featureDescription {
-    min-height: 0;
+    min-height: auto;
+    height: auto; /* Override fixed height on mobile */
+    -webkit-line-clamp: unset;
+    overflow: visible; /* Show all content on mobile */
   }
   
+  .tabsContainer {
+    height: auto; /* Allow height to adjust on mobile */
+  }
+
   .tabContent {
-    height: auto;
-    min-height: 150px;
+    height: auto; /* Allow tab content to size based on content */
+    min-height: auto;
   }
   
-  .tabPane {
-    position: relative;
+  .tabsNav {
+    flex-wrap: wrap; /* Allow tab buttons to wrap if needed */
+    justify-content: center;
+  }
+  
+  .tabButton {
+    padding: 0.5rem 0.75rem; /* Slightly larger touch targets */
+    flex: 0 1 auto; /* Don't force equal widths on mobile */
+    margin-bottom: 4px; /* Space between wrapped buttons */
+  }
+  
+  .featureIcon {
+    width: 50px; /* Slightly smaller on mobile */
+    height: 50px;
+  }
+  
+  /* Fix for tab content display on small devices */
+  .tabPane.active {
+    display: block;
     height: auto;
+    min-height: 120px;
+  }
+  
+  /* Ensure list items are readable */
+  .featureList li {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
   }
 }

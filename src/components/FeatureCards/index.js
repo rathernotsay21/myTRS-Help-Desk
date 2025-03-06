@@ -34,17 +34,23 @@ const FeatureCard = ({
                 key={tab.id}
                 className={clsx(styles.tabButton, { [styles.active]: activeTab === tab.id })}
                 onClick={() => setActiveTab(tab.id)}
+                aria-selected={activeTab === tab.id}
+                role="tab"
+                aria-controls={`tabpanel-${tab.id}`}
               >
                 {tab.label}
               </button>
             ))}
           </div>
           
-          {/* Fixed height tab content area */}
+          {/* Responsive tab content area */}
           <div className={styles.tabContent}>
             {tabs.map((tab) => (
               <div
                 key={tab.id}
+                id={`tabpanel-${tab.id}`}
+                role="tabpanel"
+                aria-labelledby={`tab-${tab.id}`}
                 className={clsx(styles.tabPane, { [styles.active]: activeTab === tab.id })}
               >
                 <ul className={styles.featureList}>
@@ -127,7 +133,7 @@ const featureCardsData = [
       },
       {
         id: "limited",
-        label: "Site Builder",
+        label: "Builder",
         items: ["Restricted to specific areas", "Build and setup registration site", "Limited user management"]
       },
       {
@@ -149,7 +155,7 @@ const featureCardsData = [
       },
       {
         id: "admin-tools",
-        label: "Admin Tools",
+        label: "Admin",
         items: ["Bulk scheduling assignment", "Group registration", "Schedule template library"]
       },
       {
@@ -211,8 +217,8 @@ const featureCardsData = [
       {
         id: "payments",
         label: "Payments",
-        items: ["Stripe integration", "Authorize.net support", "PayPal compatibility", 
-        "Payflow Pro", "Payeezy", "Braintree"
+        items: ["Stripe, PayPal, and Authorize.net", 
+        "Payflow Pro, Payeezy, and Braintree"
         ]
       },
       {

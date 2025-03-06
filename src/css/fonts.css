@@ -1,0 +1,93 @@
+/**
+ * Font loading strategies
+ */
+
+/**
+ * Font loading classes to prevent FOIT (Flash of Invisible Text)
+ * - fonts-loading: Applied when JS detects that fonts aren't loaded yet
+ * - fonts-loaded: Applied when all fonts are successfully loaded
+ */
+
+/* When fonts are loading, use system fonts first to prevent FOIT */
+.fonts-loading {
+  /* Use system fonts initially */
+  --font-family-base-override: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-family-heading-override: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-family-mono-override: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+}
+
+/* Apply custom fonts once loaded */
+.fonts-loaded {
+  --font-family-base-override: var(--font-family-base);
+  --font-family-heading-override: var(--font-family-heading);
+  --font-family-mono-override: var(--font-family-mono);
+}
+
+/* Apply system fonts if a user prefers reduced data usage */
+@media (prefers-reduced-data: reduce) {
+  :root {
+    --font-family-base-override: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+    --font-family-heading-override: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+    --font-family-mono-override: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace !important;
+  }
+}
+
+/**
+ * Font usage throughout the site 
+ * We use CSS variables for consistent typography
+ */
+body {
+  font-family: var(--font-family-base-override, var(--font-family-base));
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-heading-override, var(--font-family-heading));
+}
+
+code, pre, kbd, samp {
+  font-family: var(--font-family-mono-override, var(--font-family-mono));
+}
+
+/* Optional: Variable font usage */
+.use-variable-fonts {
+  font-family: var(--font-family-variable), var(--font-family-base-override, var(--font-family-base));
+}
+
+.use-variable-fonts h1,
+.use-variable-fonts h2,
+.use-variable-fonts h3,
+.use-variable-fonts h4,
+.use-variable-fonts h5,
+.use-variable-fonts h6 {
+  font-family: var(--font-family-variable), var(--font-family-heading-override, var(--font-family-heading));
+}
+
+/* 
+ * Font-face declarations will be added here by the build process 
+ * using the generateFontCSS function from fontConfig.js
+ */
+
+/* Font size adjustments for users who prefer larger text */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Print styles */
+@media print {
+  body {
+    font-family: serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: serif;
+  }
+  
+  code, pre, kbd, samp {
+    font-family: monospace;
+  }
+}

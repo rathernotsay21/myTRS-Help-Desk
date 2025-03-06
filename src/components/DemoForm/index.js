@@ -118,7 +118,7 @@ const DemoForm = () => {
   };
 
   return (
-    <section id="request-demo" className={styles['form-section']}>
+    <section id="demo-form" className={styles['form-section']}>
       <h2 className={styles['form-title']}>Ready to Experience the TRS Difference?</h2>
       
       {formSubmitted ? (

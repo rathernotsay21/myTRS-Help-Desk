@@ -27,6 +27,7 @@ const config = {
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
+  onBrokenAnchors: 'warn',
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
@@ -54,6 +55,27 @@ const config = {
         indexPages: true,
       },
     ],
+    // Add bundle analyzer plugin (simpler implementation)
+    function (context, options) {
+      return {
+        name: 'webpack-bundle-analyzer',
+        configureWebpack(config, isServer) {
+          if (process.env.WEBPACK_BUNDLE_ANALYZER === 'true' && !isServer) {
+            const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+            return {
+              plugins: [
+                new BundleAnalyzerPlugin({
+                  analyzerMode: 'static',
+                  reportFilename: 'bundle-report.html',
+                  openAnalyzer: true,
+                }),
+              ],
+            };
+          }
+          return {};
+        },
+      };
+    },
   ],
 
   presets: [
@@ -64,15 +86,9 @@ const config = {
         docs: {
           sidebarPath: './sidebars.js',
           sidebarCollapsible: true,
-          // Remove this to remove the "edit this page" links.
-          // editUrl:
-          //  'https://github.com/my-trs/helpdesk/tree/main/',
         },
         blog: {
           showReadingTime: true,
-          // Remove this to remove the "edit this page" links.
-          // editUrl:
-          //  'https://github.com/my-trs/helpdesk/tree/main/',
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -94,6 +110,25 @@ const config = {
       // Replace with your project's social card
       image: 'img/my-trs-social-card.jpg',
       head: [
+        // Font preloading for better performance
+        {
+          tagName: 'link',
+          rel: 'preconnect',
+          href: 'https://fonts.googleapis.com',
+        },
+        {
+          tagName: 'link',
+          rel: 'preconnect',
+          href: 'https://fonts.gstatic.com',
+          crossorigin: 'anonymous',
+        },
+        {
+          tagName: 'link',
+          rel: 'stylesheet',
+          href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap',
+          media: 'print',
+          onload: "this.media='all'"
+        },
         {
           tagName: 'link',
           rel: 'stylesheet',
@@ -101,6 +136,45 @@ const config = {
           integrity: 'sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==',
           crossorigin: 'anonymous',
           referrerpolicy: 'no-referrer',
+        },
+        // Add font observer script for better font loading
+        {
+          tagName: 'script',
+          innerHTML: `
+            (function() {
+              // Simple font loading detection
+              function fontIsLoaded(fontFamily) {
+                return document.fonts.check('1em ' + fontFamily);
+              }
+              
+              // Add font loading class to help prevent FOIT
+              if (!fontIsLoaded('Inter')) {
+                document.documentElement.classList.add('fonts-loading');
+              }
+              
+              // Remove the class when fonts are loaded
+              document.fonts.ready.then(function() {
+                document.documentElement.classList.remove('fonts-loading');
+                document.documentElement.classList.add('fonts-loaded');
+              });
+            })();
+          `,
+        },
+        // Add prefetch hints for important pages
+        {
+          tagName: 'link',
+          rel: 'prefetch',
+          href: '/docs/intro',
+        },
+        {
+          tagName: 'link',
+          rel: 'prefetch',
+          href: '/features',
+        },
+        {
+          tagName: 'link',
+          rel: 'prefetch',
+          href: '/blog',
         }
       ],
       navbar: {

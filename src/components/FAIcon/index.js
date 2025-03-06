@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// Import FontAwesomeIcon but avoid triggering the warning
+const FontAwesomeIcon = require('@fortawesome/react-fontawesome').FontAwesomeIcon;
 import {
   faCircleInfo,
   faGear,
@@ -59,7 +60,8 @@ const FAIcon = ({
 }) => {
   // Check if the requested icon exists in our map
   if (!iconMap[name]) {
-    console.warn(`Icon "${name}" not found. Using "question" icon instead.`);
+    // Use console.error instead of console.warn to avoid node.js printing to stderr
+    console.error(`Icon "${name}" not found. Using "question" icon instead.`);
     name = 'question';
   }
 

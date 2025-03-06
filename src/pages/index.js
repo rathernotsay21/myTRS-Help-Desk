@@ -4,16 +4,20 @@ import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
-import HomepageFeatures from '@site/src/components/HomepageFeatures';
-import ClientLogos from '@site/src/components/ClientLogos';
 import ErrorBoundary from '@site/src/components/ErrorBoundary';
-import EventStatsCarousel from '@site/src/components/EventStatsCarousel';
-import DemoForm from '@site/src/components/DemoForm';
 import ClientCard from '@site/src/components/ClientCard';
 import HomepageHeader from '@site/src/components/HomepageHeader';
 import Section from '@site/src/components/Section';
-import SolutionGrid from '@site/src/components/SolutionGrid';
-import InfoCard from '@site/src/components/InfoCard';
+
+// Import lazy-loaded components
+import {
+  HomepageFeatures,
+  ClientLogos,
+  EventStatsCarousel,
+  DemoForm,
+  SolutionGrid,
+  InfoCard
+} from '../utils/lazyComponents';
 
 import Heading from '@theme/Heading';
 import styles from './index.module.css';

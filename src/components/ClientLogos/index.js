@@ -50,23 +50,23 @@ export default function ClientLogos() {
   }, []);
 
   return (
-    <section className={styles.clientLogos} ref={logosRef}>
+    <section className={styles['client-logos']} ref={logosRef}>
       <div className="container">
-        <h2 className={styles.sectionTitle}>Trusted by the Industry Experts since 2000</h2>
-        <p className={styles.sectionSubtitle}>Who do we serve?</p>
+        <h2 className={styles['section-title']}>Trusted by the Industry Experts since 2000</h2>
+        <p className={styles['section-subtitle']}>Who do we serve?</p>
         
-        {/* New simplified logo grid layout */}
-        <div className={styles.logoGrid}>
+        {/* Logo grid layout */}
+        <div className={styles['logo-grid']}>
           {clientLogos.map((logo, index) => (
             <div 
               key={index} 
               className={clsx(
-                styles.logoWrapper,
+                styles['logo-wrapper'],
                 isVisible && styles.animate,
                 styles[`delayedAppearance${index % 14}`]
               )}
             >
-              <div className={styles.logoInner}>
+              <div className={styles['logo-inner']}>
                 <img
                   src={`/img/client_logos/${logo.file}`}
                   alt={`${logo.name} logo`}

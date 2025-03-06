@@ -4,11 +4,9 @@ import OriginalLayout from '@theme-original/Layout';
 import ChatBot from '@site/src/components/ChatBot';
 
 export default function Layout(props) {
-  // Add console log for debugging
-  console.log('Custom Layout rendering with ChatBot');
-  
   return (
     <>
+      <a href="#main-content" className="skip-link">Skip to main content</a>
       <OriginalLayout {...props} />
       <ChatBot />
     </>

@@ -1,0 +1,14 @@
+.blocks-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--my-trs-space-xl);
+  margin-top: var(--my-trs-space-xxl);
+}
+
+@media (max-width: 768px) {
+  .blocks-container {
+    grid-template-columns: 1fr;
+    gap: var(--my-trs-space-lg);
+    margin-top: var(--my-trs-space-xl);
+  }
+}

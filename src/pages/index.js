@@ -11,12 +11,10 @@ import Section from '@site/src/components/Section';
 
 // Import lazy-loaded components
 import {
-  HomepageFeatures,
   ClientLogos,
   EventStatsCarousel,
   DemoForm,
-  SolutionGrid,
-  InfoCard
+  SolutionGrid
 } from '../utils/lazyComponents';
 
 import Heading from '@theme/Heading';
@@ -71,38 +69,7 @@ export default function Home() {
     'Tour Operators'
   ];
   
-  // Define info card sections
-  const infoCardSections = [
-    {
-      title: 'About myTRS',
-      content: [
-        'myTRS is a comprehensive transaction reporting system designed to simplify complex reporting processes for businesses. Our platform offers intuitive solutions for financial reporting, compliance, and data management.',
-        'With a focus on user-friendly interfaces and powerful backend capabilities, myTRS helps organizations streamline their reporting workflows and gain valuable insights from their transaction data.'
-      ]
-    },
-    {
-      title: 'Key Features',
-      listItems: [
-        'Automated transaction reporting and analysis',
-        'Customizable dashboards and reports',
-        'Real-time data processing and visualization',
-        'Compliance with industry standards and regulations',
-        'Secure data storage and management',
-        'Integration with existing business systems'
-      ]
-    },
-    {
-      title: 'Need Help?',
-      content: [
-        'This help desk contains comprehensive documentation, tutorials, and resources to help you get the most out of myTRS. Browse our documentation sections or use the search feature to find specific information.'
-      ],
-      contactInfo: {
-        text: 'For additional support, please contact our customer service team at',
-        link: 'mailto:support@my-trs.com',
-        linkText: 'support@my-trs.com'
-      }
-    }
-  ];
+  // Info card sections removed
 
   return (
     <Layout
@@ -199,15 +166,7 @@ export default function Home() {
   </div>
 </main>
       
-      <HomepageFeatures />
-      
-      <div className="responsive-container margin-vert--xl">
-        <div className="row">
-          <div className="col col--10 col--offset-1">
-            <InfoCard sections={infoCardSections} />
-          </div>
-        </div>
-      </div>
+      {/* Homepage Features and Info Card sections removed */}
     </Layout>
   );
 }

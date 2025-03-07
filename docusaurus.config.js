@@ -276,6 +276,11 @@ const config = {
               <path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/>
             </svg>
           </a>
+          <a href="https://www.google.com/maps/place/412+S+Maple+St,+Fortville,+IN+46040/@39.9307352,-85.8481937,20z/data=!4m5!3m4!1s0x8814cc9e304e27ab:0xedfee02aa7c90ad5!8m2!3d39.9307057!4d-85.8478644" target="_blank" rel="noopener noreferrer" aria-label="Location">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 384 512">
+              <path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/>
+            </svg>
+          </a>
         </div>`,
       },
       metadata: [

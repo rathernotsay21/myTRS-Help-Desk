@@ -193,6 +193,11 @@ const config = {
           },
           {to: '/blog', label: 'Updates', position: 'left'},
           {
+            to: '/contact',
+            position: 'left',
+            label: 'Contact',
+          },
+          {
             to: '/docs/intro',
             label: 'Support',
             position: 'right',
@@ -234,7 +239,7 @@ const config = {
               },
               {
                 label: 'Contact Us',
-                href: 'https://www.my-trs.com/contact',
+                to: '/contact',
               },
               {
                 label: 'LinkedIn',

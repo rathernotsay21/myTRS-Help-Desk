@@ -1,0 +1,58 @@
+/* Contact Page Styles - Now matching Features page */
+.featuresPage {
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.whyTrsSection {
+  padding: var(--my-trs-space-xxl) 0;
+}
+
+.heroWrapper {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/img/event_photos/volunteer_check-in-min.jpg');
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 0;
+}
+
+.hero {
+  padding: var(--my-trs-space-xxxl) 0;
+  color: white;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.heroTitle {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: var(--my-trs-space-md);
+}
+
+.heroSubtitle {
+  font-size: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto var(--my-trs-space-lg);
+  line-height: 1.5;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 2.5rem;
+  }
+  
+  .heroSubtitle {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroTitle {
+    font-size: 2rem;
+  }
+  
+  .heroSubtitle {
+    font-size: 1.1rem;
+  }
+}

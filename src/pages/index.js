@@ -13,7 +13,6 @@ import Section from '@site/src/components/Section';
 import {
   ClientLogos,
   EventStatsCarousel,
-  DemoForm,
   SolutionGrid
 } from '../utils/lazyComponents';
 
@@ -158,11 +157,22 @@ export default function Home() {
       <SolutionGrid solutions={solutionBlocks} />
     </Section>
 
-    {/* Demo Request Form Section */}
-    <div id="demo-form"></div>
-    <ErrorBoundary>
-      <DemoForm />
-    </ErrorBoundary>
+    {/* CTA Section */}
+    <div className="row" style={{ marginBottom: 'var(--my-trs-space-xxl)' }}>
+      <div className="col col--10 col--offset-1">
+        <div className="trs-card" style={{ padding: 'var(--my-trs-space-xl)', textAlign: 'center' }}>
+          <h2 style={{ fontSize: '2rem', marginBottom: 'var(--my-trs-space-md)' }}>Ready to Experience the TRS Difference?</h2>
+          <p style={{ fontSize: '1.2rem', marginBottom: 'var(--my-trs-space-lg)', maxWidth: '800px', margin: '0 auto var(--my-trs-space-lg)' }}>
+            Request a demo today and discover how myTRS can transform your event management process.
+          </p>
+          <Link
+            className="button button--primary button--lg"
+            to="/contact">
+            Contact Us
+          </Link>
+        </div>
+      </div>
+    </div>
   </div>
 </main>
       

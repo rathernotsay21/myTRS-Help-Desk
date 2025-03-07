@@ -3,7 +3,6 @@ yangshun:
   title: Account Manager
   url: https://www.linkedin.com/in/giangjentran/
   image_url: img/staff_photos/Giang.webp
-  page: true
   socials:
     linkedin: giangjentran
 
@@ -12,8 +11,5 @@ slorber:
   title: President
   url: https://www.linkedin.com/in/florencemay/
   image_url: img/staff_photos/Flory.webp
-  page:
-    # customize the url of the author page
-    permalink: '/all-sebastien-lorber-articles'
   socials:
     linkedin: florencemay

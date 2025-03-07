@@ -91,6 +91,12 @@ const config = {
         },
         blog: {
           showReadingTime: true,
+          blogTitle: 'myTRS Updates',
+          blogDescription: 'Latest updates and news about myTRS platform',
+          postsPerPage: 5,
+          blogSidebarCount: 'ALL',
+          blogSidebarTitle: 'Recent Posts',
+          tagsBasePath: 'tags',
         },
         theme: {
           customCss: './src/css/custom.css',

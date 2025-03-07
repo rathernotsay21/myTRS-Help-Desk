@@ -22,6 +22,10 @@ function BlogTagsPostPageMetadata({title, description}) {
 }
 
 function FixedAuthorAvatar({author}) {
+  // Safety check
+  if (!author) {
+    return null;
+  }
   // Fix the image URL to use WebP format
   const fixImageUrl = (url) => {
     if (!url) return null;
@@ -69,7 +73,21 @@ function FixedAuthorAvatar({author}) {
 }
 
 function BlogTagsPostsPageContent({metadata, items, sidebar, readingTime}) {
-  const {allTagsPath, name, count} = metadata;
+  // Add a safety check for metadata
+  if (!metadata) {
+    return (
+      <div className="container margin-vert--lg">
+        <div className="row">
+          <main className="col col--8 col--offset-2">
+            <h1>Error: Tag information is missing</h1>
+            <p>The tag data could not be found. Please check your configuration.</p>
+          </main>
+        </div>
+      </div>
+    );
+  }
+  
+  const {allTagsPath = '/blog/tags', name = 'Unknown Tag', count = 0} = metadata;
   const title = translateTagsPageTitle({
     tagName: name,
     count,
@@ -118,8 +136,24 @@ function BlogTagsPostsPageContent({metadata, items, sidebar, readingTime}) {
 }
 
 export default function BlogTagsPostsPage(props) {
+  // Safety check if metadata is missing
+  if (!props.metadata) {
+    console.error('Blog tag metadata is undefined');
+    return (
+      <div className="container margin-vert--lg">
+        <div className="row">
+          <main className="col col--8 col--offset-2">
+            <h1>Error: Tag information is missing</h1>
+            <p>The tag data could not be found. Please check your configuration.</p>
+            <Link href="/blog">Return to Blog</Link>
+          </main>
+        </div>
+      </div>
+    );
+  }
+
   // Fix up the author image URL in the metadata
-  if (props.metadata && props.metadata.authorImageURL) {
+  if (props.metadata.authorImageURL) {
     props.metadata.authorImageURL = props.metadata.authorImageURL.replace(/\.(jpg|jpeg|png)$/i, '.webp');
   }
   
@@ -131,10 +165,10 @@ export default function BlogTagsPostsPage(props) {
       )}>
       <BlogTagsPostPageMetadata
         title={translateTagsPageTitle({
-          tagName: props.metadata.name,
-          count: props.metadata.count,
+          tagName: props.metadata.name || 'Unknown Tag',
+          count: props.metadata.count || 0,
         })}
-        description={`Posts tagged with ${props.metadata.name}`}
+        description={`Posts tagged with ${props.metadata.name || 'Unknown Tag'}`}
       />
       <BlogTagsPostsPageContent {...props} />
     </HtmlClassNameProvider>

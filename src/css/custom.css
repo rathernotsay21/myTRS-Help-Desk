@@ -4,6 +4,11 @@
  * work well for content-centric websites.
  */
 
+/* Import Tailwind CSS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* Import font optimizations */
 @import './fonts.css';
 

@@ -1,11 +1,11 @@
 #!/bin/bash
 
-# Print node and npm versions for debugging
+# Print node and yarn versions for debugging
 echo "Node version: $(node -v)"
-echo "NPM version: $(npm -v)"
+echo "Yarn version: $(yarn --version)"
 
-# Install dependencies with fallback
-npm install --legacy-peer-deps || npm install --force
+# Install dependencies with Yarn
+yarn install
 
 # Build the site with SKIP_TAILWIND=true
-SKIP_TAILWIND=true npm run build
+SKIP_TAILWIND=true yarn build

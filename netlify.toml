@@ -1,11 +1,10 @@
 # Netlify configuration file
 [build]
-  command = "bash ./build.sh"
+  command = "yarn install && yarn build"
   publish = "build"
   
 [build.environment]
   NODE_VERSION = "18.19.0"
-  NPM_FLAGS = "--legacy-peer-deps"
   SKIP_TAILWIND = "true"
   
 [build.processing]

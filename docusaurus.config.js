@@ -39,6 +39,8 @@ const config = {
 
   // Add the search plugin
   plugins: [
+    // Custom webpack configuration
+    require('./docusaurus.webpack.js'),
     [
       require.resolve('@easyops-cn/docusaurus-search-local'),
       {

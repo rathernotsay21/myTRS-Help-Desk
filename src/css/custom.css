@@ -7,6 +7,12 @@
 /* Import font optimizations */
 @import './fonts.css';
 
+/* Import responsive background utilities */
+@import './responsive-backgrounds.css';
+
+/* Import author image fixes */
+@import './custom-fixes/author-images.css';
+
 /* You can override the default Infima variables here. */
 :root {
   /* Primary color palette */

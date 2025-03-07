@@ -4,6 +4,7 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import ErrorBoundary from '@site/src/components/ErrorBoundary';
 import styles from '../features/styles.module.css'; // Use the features page styles
+import clsx from 'clsx';
 
 // Import lazy-loaded components
 import { DemoForm } from '../../utils/lazyComponents';
@@ -17,7 +18,7 @@ export default function Contact() {
       description="Get in touch with the myTRS team for support, questions, and demo requests">
       
       {/* Hero Section with Background Image - Matching Features page */}
-      <div className={styles.heroWrapper}>
+      <div className={clsx(styles.heroWrapper, 'bg-special-olympics-before')}>
         <div className={styles.hero}>
           <div className="container">
             <h1 className={styles.heroTitle}>Contact Us</h1>

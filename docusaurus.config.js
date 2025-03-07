@@ -110,7 +110,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/my-trs-social-card.jpg',
+      image: 'img/my-trs-social-card.jpg', // Keep as JPG for social sharing compatibility
       head: [
         // Font preloading for better performance
         {
@@ -183,7 +183,7 @@ const config = {
         title: 'myTRS',
         logo: {
           alt: 'myTRS Logo',
-          src: 'img/myTRSlogo.png',
+          src: 'img/myTRSlogo.webp',
         },
         items: [
           {

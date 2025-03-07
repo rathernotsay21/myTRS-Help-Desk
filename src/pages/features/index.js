@@ -20,7 +20,7 @@ export default function Features() {
       description="Explore the powerful features of myTRS registration management platform">
       <main className={styles.featuresPage}>
         {/* Hero Section with Background Image */}
-        <div className={styles.heroWrapper}>
+        <div className={clsx(styles.heroWrapper, 'bg-special-olympics-before')}>
           <div className={styles.hero}>
             <div className="container">
               <h1 className={styles.heroTitle}>Powerful Event Management Features</h1>
@@ -46,7 +46,7 @@ export default function Features() {
 
 
           {/* Enhanced CTA Section */}
-          <div className={styles.ctaSection}>
+          <div className={clsx(styles.ctaSection, 'bg-special-olympics-before')}>
             <div className={styles.ctaContent}>
               <h2 className={styles.ctaTitle}>Ready to see myTRS in action?</h2>
               <p className={styles.ctaText}>Schedule a personalized demo and discover how myTRS can transform your event management process.</p>

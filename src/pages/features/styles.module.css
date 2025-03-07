@@ -18,7 +18,6 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url('/img/event_photos/2003_Special_Olympics_Opening_Crowd-min.jpeg');
   background-size: cover;
   background-position: center;
   opacity: 0.15;
@@ -176,7 +175,6 @@ html[data-theme='dark'] .serviceCard {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url('/img/event_photos/2003_Special_Olympics_Opening_Crowd-min.jpeg');
   background-size: cover;
   background-position: center;
   opacity: 0.08;

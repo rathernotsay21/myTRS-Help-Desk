@@ -17,7 +17,7 @@ const HomepageHeader = ({
   const {siteConfig} = useDocusaurusContext();
   
   return (
-    <header className={clsx('hero', styles['hero-banner'])}>
+    <header className={clsx('hero', styles['hero-banner'], 'bg-volunteer-checkin')}>
       <div className="container">
         <Heading as="h1" className={clsx('hero__title', styles['hero-title'])}>
           <span className={styles['primary-text']}>{primaryText} </span>

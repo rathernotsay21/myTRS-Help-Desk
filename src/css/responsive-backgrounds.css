@@ -1,0 +1,50 @@
+/**
+ * Responsive background image utilities
+ * These classes help with responsive background images
+ */
+
+/* Base class for responsive background images */
+.bg-responsive {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Volunteer Check-in background - desktop */
+.bg-volunteer-checkin {
+  background-image: url('/img/event_photos/volunteer_check-in-min.webp');
+}
+
+/* Special Olympics background - desktop */
+.bg-special-olympics {
+  background-image: url('/img/event_photos/2003_Special_Olympics_Opening_Crowd-min.webp');
+}
+
+/* Basketball tournament background - desktop */
+.bg-basketball {
+  background-image: url('/img/event_photos/basketball_tournament-min.webp');
+}
+
+/* Pseudo-element classes for backgrounds that use ::before */
+.bg-special-olympics-before::before {
+  background-image: url('/img/event_photos/2003_Special_Olympics_Opening_Crowd-min.webp') !important;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+  .bg-volunteer-checkin {
+    background-image: url('/img/event_photos/mobile/volunteer_check-in-min-mobile.webp');
+  }
+  
+  .bg-special-olympics {
+    background-image: url('/img/event_photos/mobile/2003_Special_Olympics_Opening_Crowd-min-mobile.webp');
+  }
+  
+  .bg-basketball {
+    background-image: url('/img/event_photos/mobile/basketball_tournament-min-mobile.webp');
+  }
+  
+  .bg-special-olympics-before::before {
+    background-image: url('/img/event_photos/mobile/2003_Special_Olympics_Opening_Crowd-min-mobile.webp') !important;
+  }
+}

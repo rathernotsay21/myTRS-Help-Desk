@@ -2,7 +2,6 @@
   padding: 0;
   position: relative;
   overflow: hidden;
-  background-image: url('/img/event_photos/volunteer_check-in-min.jpg');
   background-size: cover;
   background-position: 25% 20%; /* Focus on the interaction while keeping top of heads visible */
   color: white;

@@ -2,7 +2,7 @@ yangshun:
   name: Giang (Jen) Tran
   title: Account Manager
   url: https://www.linkedin.com/in/giangjentran/
-  image_url: img/staff_photos/Giang.jpg
+  image_url: img/staff_photos/Giang.webp
   page: true
   socials:
     linkedin: giangjentran
@@ -11,9 +11,9 @@ slorber:
   name: Florence (Fleck) May
   title: President
   url: https://www.linkedin.com/in/florencemay/
-  image_url: img/staff_photos/Flory.jpg
+  image_url: img/staff_photos/Flory.webp
   page:
-    # customize the url of the author page at /blog/authors/<permalink>
+    # customize the url of the author page
     permalink: '/all-sebastien-lorber-articles'
   socials:
     linkedin: florencemay

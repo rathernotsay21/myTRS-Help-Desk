@@ -10,14 +10,14 @@
 import { lazyLoad } from './lazyLoad';
 import LoadingSpinner from '../components/LoadingSpinner';
 
-// Home page components
-export const HomepageFeatures = lazyLoad(
-  () => import('@site/src/components/HomepageFeatures'),
-  { 
-    fallback: <LoadingSpinner text="Loading features..." />,
-    preload: true // Preload since it's visible on homepage
-  }
-);
+// HomepageFeatures component removed - no longer used
+// export const HomepageFeatures = lazyLoad(
+//   () => import('@site/src/components/HomepageFeatures'),
+//   { 
+//     fallback: <LoadingSpinner text="Loading features..." />,
+//     preload: true // Preload since it's visible on homepage
+//   }
+// );
 
 export const ClientLogos = lazyLoad(
   () => import('@site/src/components/ClientLogos'),

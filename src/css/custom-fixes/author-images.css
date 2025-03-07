@@ -1,0 +1,42 @@
+/**
+ * Fixes for author images
+ */
+
+/* Florence May */
+.avatar__photo-link[href="https://www.linkedin.com/in/florencemay/"] .avatar__photo {
+  background-image: url('/img/staff_photos/Flory.webp');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Giang Tran */
+.avatar__photo-link[href="https://www.linkedin.com/in/giangjentran/"] .avatar__photo {
+  background-image: url('/img/staff_photos/Giang.webp');
+  background-size: cover;
+  background-position: center;
+}
+
+/* General fix for broken avatar images */
+.avatar__photo-link .avatar__photo img[src$=".jpg"],
+.avatar__photo-link .avatar__photo img[src$=".jpeg"],
+.avatar__photo-link .avatar__photo img[src$=".png"] {
+  /* Hide broken image and use CSS background instead */
+  opacity: 0;
+}
+
+/* Apply specific backgrounds for author images */
+.avatar__photo-link .avatar__photo img[src*="Flory.jpg"],
+.avatar__photo-link .avatar__photo img[src*="Flory.jpeg"],
+.avatar__photo-link .avatar__photo img[src*="Flory.png"] {
+  background-image: url('/img/staff_photos/Flory.webp');
+  background-size: cover;
+  background-position: center;
+}
+
+.avatar__photo-link .avatar__photo img[src*="Giang.jpg"],
+.avatar__photo-link .avatar__photo img[src*="Giang.jpeg"],
+.avatar__photo-link .avatar__photo img[src*="Giang.png"] {
+  background-image: url('/img/staff_photos/Giang.webp');
+  background-size: cover;
+  background-position: center;
+}

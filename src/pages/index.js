@@ -192,6 +192,7 @@ export default function Home() {
     </Section>
 
     {/* Demo Request Form Section */}
+    <div id="demo-form"></div>
     <ErrorBoundary>
       <DemoForm />
     </ErrorBoundary>

@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
-    "start": "cross-env SKIP_TAILWIND=true docusaurus start",
-    "build": "cross-env SKIP_TAILWIND=true docusaurus build",
+    "start": "docusaurus start",
+    "build": "docusaurus build",
     "build:analyze": "cross-env WEBPACK_BUNDLE_ANALYZER=true docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",

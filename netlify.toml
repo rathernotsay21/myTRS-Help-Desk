@@ -1,5 +1,6 @@
+# Netlify configuration file
 [build]
-  command = "npm ci && npm run build"
+  command = "bash ./build.sh"
   publish = "build"
   
 [build.environment]

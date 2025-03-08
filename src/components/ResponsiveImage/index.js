@@ -53,13 +53,18 @@ export default function ResponsiveImage({
   return (
     <img 
       src={src}
-      srcSet={finalSrcSet}
-      sizes={finalSizes}
+      srcSet={finalSrcSet || undefined}
+      sizes={finalSizes || undefined}
       alt={alt}
       width={width}
       height={height}
       loading={lazy ? "lazy" : "eager"}
       className={className}
+      onError={(e) => {
+        // Fallback to main source if there's an error loading the image
+        e.target.onerror = null;
+        e.target.srcset = '';
+      }}
     />
   );
 }

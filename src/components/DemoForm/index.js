@@ -328,8 +328,8 @@ const DemoForm = () => {
           <div className={styles['contact-info']}>
             <div className={styles['contact-details']}>
               <p className={styles['contact-address']}>
-                <strong>The Registration System LLC.</strong><br />
-                412 S Maple St. Ste. 230<br />
+                <strong>The Registration System LLC</strong><br />
+                412 S Maple St Ste 230<br />
                 Fortville, IN 46040
               </p>
               <div className={styles['contact-email']}>

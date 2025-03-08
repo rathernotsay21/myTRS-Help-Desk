@@ -189,7 +189,7 @@ const config = {
         title: 'myTRS',
         logo: {
           alt: 'myTRS Logo',
-          src: 'img/myTRSlogo.webp',
+          src: 'img/myTRSlogo.png',
         },
         items: [
           {

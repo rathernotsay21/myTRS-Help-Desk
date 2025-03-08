@@ -123,22 +123,22 @@ const Icons = {
 const featureCardsData = [
   {
     icon: Icons.MultiLevelAdmin,
-    title: "Multi-Level Admin Access",
+    title: "Multi-Level Access",
     description: "Empower your team with granular access. Delegate responsibilities by granting specific permissions to team members for the sites, activities, areas and groups they oversee.",
     tabs: [
       {
         id: "full",
-        label: "Manager",
+        label: "Manage",
         items: ["Complete system access", "Manage all settings", "Oversee all registrations"]
       },
       {
         id: "limited",
-        label: "Builder",
+        label: "Build",
         items: ["Restricted to specific areas", "Build and setup registration site", "Limited user management"]
       },
       {
         id: "specialized",
-        label: "Communication",
+        label: "Deliver",
         items: ["Send emails & messages", "View, save, and export reports", "Handle specific event types"]
       }
     ]
@@ -150,40 +150,40 @@ const featureCardsData = [
     tabs: [
       {
         id: "self-service",
-        label: "Self-Service",
-        items: ["User-selected time slots", "Calendar view of availability", "Automatic time conflict checks"]
+        label: "Volunteers",
+        items: ["User-selected time slots", "Group registration", "Calendar view of availability", "Automatic time conflict checks"]
       },
       {
         id: "admin-tools",
         label: "Admin",
-        items: ["Bulk scheduling assignment", "Group registration", "Schedule template library"]
+        items: ["Bulk scheduling assignment",  "Schedule template library", "Add registrant type/activities questions", "Protect activities/groups with codes"]
       },
       {
         id: "management",
-        label: "Management",
-        items: ["Automatic time conflict checks", "Capacity management", "General availability collection"]
+        label: "Manage",
+        items: ["Automatic time conflict checks", "Capacity management", "Match volunteer with opportunities"]
       }
     ]
   },
   {
     icon: Icons.PowerfulReporting,
-    title: "Powerful Reporting",
+    title: "Powerful Reports",
     description: "Gain real-time insights into your program with our custom reports. Instantly access up-to-date data on registrations, scheduling, attendance, and more.",
     tabs: [
       {
         id: "filters",
-        label: "Filters",
+        label: "Filter",
         items: ["Sort by registrant types", "Categorize by activities", "Order by time slots", "Advanced custom fields"]
       },
       {
         id: "tracking",
-        label: "Tracking",
-        items: ["Track background check status", "Track terms & conditions signatures", "Track hours, shifts, and activities", "Track payments & refunds"]
+        label: "Track",
+        items: ["Background check status", "Terms & conditions signatures", "Hours, shifts, and activities", "Payments & refunds"]
       },
       {
         id: "export",
         label: "Export",
-        items: ["Save and view real-time reports", "Export to CSV", "Customize reports to view specific data"]
+        items: ["Save and view real-time reports", "Export to CSV", "Customize specific data reports"]
       }
     ]
   },
@@ -194,18 +194,18 @@ const featureCardsData = [
     tabs: [
       {
         id: "creation",
-        label: "Creation",
-        items: ["Create email templates for each event", "Automate confirmation emails"]
+        label: "Create",
+        items: ["Create email templates", "Custom mail merge", "Personalize messages"]
       },
       {
         id: "delivery",
-        label: "Delivery",
-        items: ["Scheduled messages", "Bulk email and SMS", "Targeted messages and reports"]
+        label: "Send",
+        items: ["Schedule messages", "Bulk email and SMS", "Targeted messages and reports"]
       },
       {
         id: "tracking",
-        label: "Tracking",
-        items: ["Review email history", "Track delivery status"]
+        label: "Track",
+        items: ["Review email history", "Track delivery status", "Automate confirmation emails"]
       }
     ]
   },
@@ -236,12 +236,12 @@ const featureCardsData = [
       {
         id: "features",
         label: "Features",
-        items: ["Universal access to myTRS", "Admin reports and bookmarks", "On-the-go check-in"]
+        items: ["Access to reports", "On-the-go check-in", "Volunteer check-in assistance"]
       },
       {
         id: "compatibility",
         label: "Compatibility",
-        items: ["Works on iOS and Android", "No app installation required"]
+        items: ["Optomized for mobile","Works on iOS and Android", "No app installation required"]
       }
     ]
   }

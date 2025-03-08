@@ -52,12 +52,8 @@ export default function ClientLogos() {
 
   // Create srcset paths for responsive loading
   const getSrcSet = (file) => {
-    // Extract base name without extension
-    const baseName = file.substring(0, file.lastIndexOf('.'));
-    const extension = file.substring(file.lastIndexOf('.'));
-    
-    // Use small version if available
-    return `/img/client_logos/small/${baseName}-small${extension} 200w, /img/client_logos/${file} 800w`;
+    // Since small versions aren't available yet, just use the regular version
+    return `/img/client_logos/${file} 800w`;
   };
 
   return (

@@ -1,0 +1,200 @@
+/* Dark mode adjustments */
+html[data-theme='dark'] .testimonialCard {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+html[data-theme='dark'] .blueCard {
+  background: linear-gradient(to right, #1a365d, #2a4a7f);
+  border-left: 4px solid #4299e1;
+}
+
+html[data-theme='dark'] .orangeCard {
+  background: linear-gradient(to right, #7b341e, #9c4221);
+  border-left: 4px solid #ed8936;
+}
+
+html[data-theme='dark'] .quote {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+html[data-theme='dark'] .organization {
+  color: rgba(255, 255, 255, 1);
+}
+
+html[data-theme='dark'] .blueCard .organization,
+html[data-theme='dark'] .orangeCard .organization {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+html[data-theme='dark'] .navButton {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: white;
+}
+
+html[data-theme='dark'] .navButton:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+html[data-theme='dark'] .quoteIcon {
+  opacity: 0.5;
+  color: white;
+}.carouselContainer {
+  position: relative;
+  max-width: 900px;
+  margin: 2.5rem auto;
+  display: flex;
+  align-items: center;
+}
+
+.testimonialCard {
+  position: relative;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin: 0 2rem;
+  flex: 1;
+  min-height: 12rem;
+  transition: all 0.3s ease;
+}
+
+.blueCard {
+  background: linear-gradient(to right, #f0f7ff, #e6f0fd);
+  border-left: 4px solid #2563eb;
+}
+
+.orangeCard {
+  background: linear-gradient(to right, #fff7ed, #ffedd5);
+  border-left: 4px solid #ea580c;
+}
+
+.quoteIcon {
+  position: absolute;
+  top: -15px;
+  left: 20px;
+  height: 30px;
+  width: 30px;
+  opacity: 0.3;
+}
+
+.blueCard .quoteIcon {
+  color: #2563eb;
+}
+
+.orangeCard .quoteIcon {
+  color: #ea580c;
+}
+
+.testimonialContent {
+  position: relative;
+}
+
+.quote {
+  font-style: italic;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.organization {
+  font-weight: bold;
+  text-align: right;
+}
+
+.blueCard .organization {
+  color: #1e40af;
+}
+
+.orangeCard .organization {
+  color: #c2410c;
+}
+
+.carouselControls {
+  display: flex;
+  align-items: center;
+}
+
+.navButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: white;
+  border: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.navButton:hover {
+  background-color: #f3f4f6;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.navIcon {
+  width: 20px;
+  height: 20px;
+}
+
+.indicators {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 1.5rem;
+  position: absolute;
+  bottom: -30px;
+  left: 0;
+  right: 0;
+}
+
+.indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #e5e7eb;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.activeIndicator {
+  background-color: #2563eb;
+  transform: scale(1.2);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .carouselContainer {
+    flex-direction: column;
+    margin: 2rem 0.5rem;
+  }
+  
+  .testimonialCard {
+    margin: 1.5rem 0;
+    padding: 1.5rem;
+    width: 100%;
+  }
+  
+  .carouselControls {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0;
+  }
+  
+  .carouselControls:first-of-type {
+    left: -8px;
+  }
+  
+  .carouselControls:last-of-type {
+    right: -8px;
+  }
+  
+  .indicators {
+    margin-top: 1rem;
+    position: relative;
+    bottom: 0;
+  }
+}

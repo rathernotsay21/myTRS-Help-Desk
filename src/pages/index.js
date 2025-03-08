@@ -6,6 +6,8 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import ErrorBoundary from '@site/src/components/ErrorBoundary';
 import ClientCard from '@site/src/components/ClientCard';
+import ServeCategoryCards from '@site/src/components/ServeCategoryCards';
+import TestimonialCarousel from '@site/src/components/TestimonialCarousel';
 import HomepageHeader from '@site/src/components/HomepageHeader';
 import Section from '@site/src/components/Section';
 
@@ -18,6 +20,7 @@ import {
 
 import Heading from '@theme/Heading';
 import styles from './index.module.css';
+import featuresStyles from './features/styles.module.css';
 
 
 
@@ -52,21 +55,6 @@ export default function Home() {
     }
   ];
   
-  // Define client types
-  const clientTypes = [
-    'Local Organizing Committees',
-    'Sports Commissions',
-    'Visitor Bureaus',
-    'Event Management',
-    'Destination Management',
-    'Fortune 500 Businesses',
-    'Healthcare Organizations',
-    'Medical Organizations',
-    'Sports & Event Rights Holders',
-    'Governing Bodies',
-    'Event Sponsors',
-    'Tour Operators'
-  ];
   
   // Info card sections removed
 
@@ -143,11 +131,7 @@ export default function Home() {
     
     {/* Keep the rest of your sections here */}
     <Section heading="Who do we serve?">
-      <div className="responsive-grid">
-        {clientTypes.map((item, i) => (
-          <ClientCard key={i} text={item} />
-        ))}
-      </div>
+      <ServeCategoryCards />
     </Section>
 
     <Section
@@ -160,16 +144,21 @@ export default function Home() {
     {/* CTA Section */}
     <div className="row" style={{ marginBottom: 'var(--my-trs-space-xxl)' }}>
       <div className="col col--10 col--offset-1">
-        <div className="trs-card" style={{ padding: 'var(--my-trs-space-xl)', textAlign: 'center' }}>
-          <h2 style={{ fontSize: '2rem', marginBottom: 'var(--my-trs-space-md)' }}>Ready to Experience the TRS Difference?</h2>
-          <p style={{ fontSize: '1.2rem', marginBottom: 'var(--my-trs-space-lg)', maxWidth: '800px', margin: '0 auto var(--my-trs-space-lg)' }}>
-            Request a demo today and discover how myTRS can transform your event management process.
-          </p>
-          <Link
-            className="button button--primary button--lg"
-            to="/contact">
-            Contact Us
-          </Link>
+        <div className={clsx("trs-card", featuresStyles.ctaSection, 'bg-special-olympics-before')} style={{ padding: 0 }}>
+          <div className={featuresStyles.ctaContent}>
+            <h2 className={featuresStyles.ctaTitle}>Ready to Experience the TRS Difference?</h2>
+            <p className={featuresStyles.ctaText}>
+              Request a demo today and discover how myTRS can transform your event management process.
+            </p>
+            <Link
+              className={featuresStyles.ctaButton}
+              to="/contact">
+              Contact Us
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="16" height="16" fill="currentColor" style={{ marginLeft: '10px' }} aria-hidden="true">
+                <path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/>
+              </svg>
+            </Link>
+          </div>
         </div>
       </div>
     </div>

@@ -4,6 +4,7 @@ import styles from './styles.module.css';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import TestimonialCarousel from '@site/src/components/TestimonialCarousel';
 
 // Import lazy-loaded components
 import {
@@ -42,6 +43,12 @@ export default function Features() {
           <FeatureCards />
           
           <ServicesSection />
+
+          <div className={styles.testimonialSection}>
+            <h2 className={styles.sectionTitle}>What Our Clients Say</h2>
+            <div className={styles.titleUnderline}></div>
+            <TestimonialCarousel />
+          </div>
 
 
 

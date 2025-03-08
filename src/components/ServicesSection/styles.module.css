@@ -11,6 +11,20 @@
     padding: 0 1rem;
   }
   
+  @media (max-width: 480px) {
+    .servicesContainer {
+      padding: 2.5rem 0;
+    }
+    
+    .servicesInner {
+      padding: 0 0.75rem;
+    }
+    
+    .header {
+      margin-bottom: 2rem;
+    }
+  }
+  
   .header {
     text-align: center;
     margin-bottom: 3rem;
@@ -34,6 +48,109 @@
     color: var(--ifm-color-emphasis-700);
     max-width: 36rem;
     margin: 0 auto;
+  }
+  
+  /* Media queries for responsive font sizes */
+  @media (max-width: 768px) {
+    .title {
+      font-size: 1.8rem;
+    }
+    
+    .accordionTitle {
+      font-size: 1.1rem;
+    }
+    
+    .listTitle {
+      font-size: 1rem;
+    }
+    
+    .accordionButton {
+      padding: 1.25rem 0.75rem;
+    }
+    
+    .iconContainer {
+      width: 2.25rem;
+      height: 2.25rem;
+      margin-right: 0.75rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .title {
+      font-size: 1.6rem;
+    }
+    
+    .accordionTitle {
+      font-size: 1rem;
+    }
+    
+    .listTitle {
+      font-size: 0.95rem;
+    }
+    
+    .subtitle {
+      font-size: 0.95rem;
+    }
+    
+    .accordionButton {
+      padding: 1rem 0.5rem;
+    }
+    
+    .iconContainer {
+      width: 2rem;
+      height: 2rem;
+      margin-right: 0.5rem;
+    }
+    
+    .iconSvg {
+      width: 1rem;
+      height: 1rem;
+    }
+    
+    .chevron {
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+    
+    .contentInner {
+      padding: 0 0.75rem 1.5rem;
+    }
+    
+    .description {
+      font-size: 0.95rem;
+    }
+    
+    .itemText {
+      font-size: 0.95rem;
+    }
+  }
+  
+  @media (max-width: 360px) {
+    .title {
+      font-size: 1.4rem;
+    }
+    
+    .accordionTitle {
+      font-size: 0.95rem;
+    }
+    
+    .iconContainer {
+      width: 1.75rem;
+      height: 1.75rem;
+      min-width: 1.75rem;
+    }
+    
+    .iconSvg {
+      width: 0.9rem;
+      height: 0.9rem;
+    }
+    
+    .description, 
+    .itemText, 
+    .subtitle,
+    .listTitle {
+      font-size: 0.9rem;
+    }
   }
   
   .accordionContainer {

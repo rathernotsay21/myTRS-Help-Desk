@@ -39,12 +39,17 @@ html[data-theme='dark'] .navButton:hover {
 html[data-theme='dark'] .quoteIcon {
   opacity: 0.5;
   color: white;
-}.carouselContainer {
+}/* Structure for positioning */
+.carouselContainer {
   position: relative;
   max-width: 900px;
   margin: 2.5rem auto;
+}
+
+.carouselWrapper {
   display: flex;
   align-items: center;
+  position: relative;
 }
 
 .testimonialCard {
@@ -93,6 +98,7 @@ html[data-theme='dark'] .quoteIcon {
   font-style: italic;
   margin-bottom: 1.5rem;
   line-height: 1.6;
+  font-size: 1.1rem;
 }
 
 .organization {
@@ -167,14 +173,20 @@ html[data-theme='dark'] .quoteIcon {
 /* Responsive design */
 @media (max-width: 768px) {
   .carouselContainer {
-    flex-direction: column;
     margin: 2rem 0.5rem;
+  }
+  
+  .carouselWrapper {
+    flex-direction: column;
+    position: relative;
+    padding: 0 25px; /* Add padding for the nav buttons */
   }
   
   .testimonialCard {
     margin: 1.5rem 0;
     padding: 1.5rem;
     width: 100%;
+    position: relative;
   }
   
   .carouselControls {
@@ -182,19 +194,81 @@ html[data-theme='dark'] .quoteIcon {
     top: 50%;
     transform: translateY(-50%);
     margin: 0;
+    z-index: 10;
+    width: auto;
   }
   
   .carouselControls:first-of-type {
-    left: -8px;
+    left: -15px;
   }
   
   .carouselControls:last-of-type {
-    right: -8px;
+    right: -15px;
+    position: absolute;
   }
   
   .indicators {
     margin-top: 1rem;
     position: relative;
     bottom: 0;
+  }
+  
+  .quote {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonialCard {
+    padding: 1.25rem;
+  }
+  
+  .quote {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+  }
+  
+  .organization {
+    font-size: 0.85rem;
+  }
+  
+  .carouselWrapper {
+    padding: 0 30px; /* Increase padding for nav buttons */
+  }
+  
+  .carouselControls:first-of-type {
+    left: 0;
+  }
+  
+  .carouselControls:last-of-type {
+    right: 0;
+  }
+  
+  .navButton {
+    width: 32px;
+    height: 32px;
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+  
+  .navIcon {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* Very small screens */
+@media (max-width: 360px) {
+  .carouselWrapper {
+    padding: 0 28px;
+  }
+  
+  .navButton {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .navIcon {
+    width: 14px;
+    height: 14px;
   }
 }

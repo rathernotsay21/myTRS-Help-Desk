@@ -49,7 +49,7 @@
 }
 
 .heroSubtitle {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   line-height: 1.5;
   opacity: 0.9;
   max-width: 700px;
@@ -86,7 +86,7 @@
 }
 
 .introText {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   line-height: 1.8;
   color: var(--my-trs-text-light);
 }
@@ -202,7 +202,7 @@ html[data-theme='dark'] .serviceCard {
 }
 
 .ctaText {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   margin-bottom: var(--my-trs-space-xxl);
   max-width: 700px;
   margin-left: auto;
@@ -264,11 +264,11 @@ html[data-theme='dark'] .ctaButton:hover {
   }
   
   .heroTitle {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
   
   .heroSubtitle {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
   
   .sectionTitle {
@@ -277,7 +277,7 @@ html[data-theme='dark'] .ctaButton:hover {
   
   .introText,
   .ctaText {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
   
   .servicesGrid {
@@ -292,6 +292,38 @@ html[data-theme='dark'] .ctaButton:hover {
   .ctaButton {
     padding: var(--my-trs-space-sm) var(--my-trs-space-xl);
     font-size: 1rem;
+  }
+}
+
+/* Small screens */
+@media (max-width: 480px) {
+  .heroTitle {
+    font-size: 1.6rem;
+  }
+  
+  .heroSubtitle {
+    font-size: 0.95rem;
+  }
+  
+  .sectionTitle {
+    font-size: 1.6rem;
+  }
+  
+  .introText,
+  .ctaText {
+    font-size: 0.95rem;
+  }
+  
+  .ctaTitle {
+    font-size: 1.6rem;
+  }
+  
+  .serviceTitle {
+    font-size: 1.3rem;
+  }
+  
+  .serviceDescription {
+    font-size: 0.95rem;
   }
 }
 

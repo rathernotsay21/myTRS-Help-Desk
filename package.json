@@ -15,7 +15,9 @@
     "write-heading-ids": "docusaurus write-heading-ids",
     "dev": "docusaurus start",
     "analyze": "cross-env WEBPACK_BUNDLE_ANALYZER=true docusaurus build",
-    "clean-analyze": "node clear-and-analyze.js"
+    "clean-analyze": "node scripts/analysis/clear-and-analyze.js",
+    "optimize-images": "node scripts/image-optimization/optimize-images.sh",
+    "update-image-refs": "node scripts/image-optimization/update-image-references.js"
   },
   "dependencies": {
     "@docusaurus/core": "3.7.0",

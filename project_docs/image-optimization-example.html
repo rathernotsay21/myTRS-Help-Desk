@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Optimization Example</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .image-container {
+            margin: 20px 0;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .comparison {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .image-box {
+            flex: 1;
+            min-width: 300px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #f5f5f5;
+        }
+    </style>
+</head>
+<body>
+    <h1>Image Optimization Example</h1>
+    <p>This page demonstrates the difference between original and optimized images. The optimized images load faster while maintaining visual quality.</p>
+    
+    <div class="image-container">
+        <h2>Logo Comparison</h2>
+        <div class="comparison">
+            <div class="image-box">
+                <h3>Original PNG (96.9 KB)</h3>
+                <img src="/static/img/myTRS_logo_slogan.png" alt="myTRS Logo Original" width="300" loading="lazy">
+            </div>
+            <div class="image-box">
+                <h3>Optimized WebP (6.4 KB)</h3>
+                <img src="/static/img/optimized/myTRS_logo_slogan.webp" alt="myTRS Logo Optimized" width="300" loading="lazy">
+            </div>
+        </div>
+    </div>
+
+    <h2>Image Optimization Summary</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Image Type</th>
+                <th>Original Size</th>
+                <th>Optimized Size</th>
+                <th>Size Reduction</th>
+                <th>Techniques Used</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Logo (PNG → WebP)</td>
+                <td>96.9 KB</td>
+                <td>6.4 KB</td>
+                <td>93%</td>
+                <td>Format conversion, compression</td>
+            </tr>
+            <tr>
+                <td>Banner Images (JPG → WebP)</td>
+                <td>~1 MB each</td>
+                <td>~200 KB each</td>
+                <td>80%</td>
+                <td>Format conversion, resizing to max 1200px width, compression</td>
+            </tr>
+            <tr>
+                <td>Client Logos (Various → WebP)</td>
+                <td>20-50 KB each</td>
+                <td>5-10 KB each</td>
+                <td>75-80%</td>
+                <td>Format conversion, resizing to max 200px width, compression</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Implementation Notes</h2>
+    <ul>
+        <li>All images converted to WebP format for modern browsers</li>
+        <li>Added width and height attributes to prevent layout shifts</li>
+        <li>Added lazy loading for images below the fold</li>
+        <li>Standardized image dimensions for consistent user experience</li>
+    </ul>
+
+    <div class="image-container">
+        <h2>Supporting Modern and Legacy Browsers</h2>
+        <p>For compatibility with older browsers, you can use the picture element:</p>
+        <pre>
+&lt;picture&gt;
+    &lt;source srcset="/static/img/optimized/myTRS_logo_slogan.webp" type="image/webp"&gt;
+    &lt;img src="/static/img/myTRS_logo_slogan.png" alt="myTRS Logo" width="300" height="auto"&gt;
+&lt;/picture&gt;
+        </pre>
+    </div>
+</body>
+</html>

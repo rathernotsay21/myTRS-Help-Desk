@@ -34,10 +34,11 @@ const HomepageHeader = () => {
           </div>
         </div>
         <div className={styles['image-column']}>
+          {/* Banner image - Using optimized version to improve page load speed */}
           <div 
             className={styles['image-container']} 
             style={{
-              backgroundImage: 'url(/img/event_photos/hands_computer.webp)',
+              backgroundImage: 'url(/img/optimized/event_photos/hands_computer.webp)',
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               width: '100%',

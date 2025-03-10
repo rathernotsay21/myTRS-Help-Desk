@@ -41,6 +41,11 @@ html[data-theme='dark'] .hero-banner {
 .image-container {
   max-width: 100%;
   position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  will-change: transform; /* Optimizes for animations */
+  transform: translateZ(0); /* Forces GPU acceleration */
 }
 
 .hero-image {

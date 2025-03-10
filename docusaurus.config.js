@@ -168,6 +168,14 @@ const config = {
             })();
           `,
         },
+        // Preload the banner image for faster rendering
+        {
+          tagName: 'link',
+          rel: 'preload',
+          href: '/img/optimized/event_photos/hands_computer.webp',
+          as: 'image',
+          fetchpriority: 'high'
+        },
         // Add prefetch hints for important pages
         {
           tagName: 'link',

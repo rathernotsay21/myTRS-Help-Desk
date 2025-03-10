@@ -76,9 +76,8 @@ export default function Home() {
   <div className="container">
     <div className="row">
       <div className="col col--10 col--offset-1"> {/* Changed from col--8 col--offset-2 */}
-        <div className="trs-card" style={{ padding: 'var(--my-trs-space-xl)', marginBottom: 'var(--my-trs-space-xxl)' }}>
           {/* Why Choose TRS Section */}
-          <section className={styles.introSection} style={{ padding: 0 }}>
+          <section className={styles.introSection} style={{ padding: 'var(--my-trs-space-xl) 0' }}>
             <h2 className={styles.sectionHeading}>Why Choose TRS?</h2>
             <div className={styles.sectionContent}>
               <h3 className={styles.mainTitle}>
@@ -107,7 +106,7 @@ export default function Home() {
           </section>
 
           {/* Expertise You Can Trust Section */}
-          <section className={styles.introSection} style={{ padding: 0, marginTop: 'var(--my-trs-space-xxl)' }}>
+          <section className={styles.introSection} style={{ padding: 'var(--my-trs-space-xl) 0', marginTop: 'var(--my-trs-space-lg)' }}>
             <div className={styles.sectionContent}>
               <h3 className={styles.mainTitle}>
               Trusted by the Industry Experts since 2000
@@ -120,7 +119,7 @@ export default function Home() {
           </section>
 
           {/* Powerful Technology Section */}
-          <section className={styles.introSection} style={{ padding: 0, marginTop: 'var(--my-trs-space-xxl)' }}>
+          <section className={styles.introSection} style={{ padding: 'var(--my-trs-space-xl) 0', marginTop: 'var(--my-trs-space-lg)' }}>
             <div className={styles.sectionContent}>
               <h3 className={styles.mainTitle}>
               Powerful Event Management Software
@@ -138,7 +137,6 @@ export default function Home() {
               </div>
             </div>
           </section>
-        </div>
       </div>
     </div>
     

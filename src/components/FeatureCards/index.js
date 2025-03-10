@@ -124,7 +124,7 @@ const featureCardsData = [
   {
     icon: Icons.MultiLevelAdmin,
     title: "Multi-Level Access",
-    description: "Empower your team with granular access. Delegate responsibilities by granting specific permissions to team members for the sites, activities, areas and groups they oversee.",
+    description: "Empower your team with granular admin access to ensure seamless collaboration and efficient management of your event. Easily delegate management responsibilities by granting specific permissions based on their roles and management areas.",
     tabs: [
       {
         id: "full",
@@ -145,8 +145,8 @@ const featureCardsData = [
   },
   {
     icon: Icons.AutomatedScheduling,
-    title: "Automated Scheduling",
-    description: "Every event is unique. myTRS offers flexible scheduling tools that adapt to your specific needs. Our system can handle anything from local festivals to the Super Bowl.",
+    title: "Scheduling & Management",
+    description: "Every event is unique. Whether you're managing less than 500 or over 10,000 volunteers, our system scales to meet your needs. Explore the options for individual and group registration, bulk scheduling, registration imports, and much more!",
     tabs: [
       {
         id: "self-service",
@@ -167,7 +167,7 @@ const featureCardsData = [
   },
   {
     icon: Icons.PowerfulReporting,
-    title: "Powerful Reports",
+    title: "Advanced Reports & Data Insights",
     description: "Gain real-time insights into your program with our custom reports. Instantly access up-to-date data on registrations, scheduling, attendance, and more.",
     tabs: [
       {
@@ -189,8 +189,8 @@ const featureCardsData = [
   },
   {
     icon: Icons.EmailSMS,
-    title: "Email and SMS",
-    description: "Streamline volunteer communication with myTRS's powerful tools. Automate confirmation emails, create custom templates, and schedule your targeted messages.",
+    title: "Customizable & Efficient Registration Setup",
+    description: "Create a tailored registration experience with customizable fields, access controls, and security measures. Use pre-built templates or clone past events for a quick and seamless setup.",
     tabs: [
       {
         id: "creation",
@@ -211,8 +211,8 @@ const featureCardsData = [
   },
   {
     icon: Icons.FullIntegration,
-    title: "Full Integration",
-    description: "Enhance your workflow with myTRS's seamless integrations. We support background checks through Sterling Volunteers, offer flexible payment options, and provide valuable insights into user behavior.",
+    title: "Effective Email/SMS Communication",
+    description: "Streamline volunteer communication with myTRS's powerful tools. Explore the options to customize, schedule, track, and send bulk emails/SMS to your volunteers!",
     tabs: [
       {
         id: "payments",
@@ -230,8 +230,8 @@ const featureCardsData = [
   },
   {
     icon: Icons.MobileFriendly,
-    title: "Mobile Friendly",
-    description: "No app needed! myTRS is mobile-friendly. Admins can bookmark and access the system from any phone or tablet to run reports and check in registrants. Even volunteers can assist with check-in!",
+    title: "Full Integrations for a Seamless Experience",
+    description: "Connect with leading systems for payments, background checks, analytics, multilingual support, and credential printing. Integrate seamlessly to enhance efficiency and user experience.",
     tabs: [
       {
         id: "features",

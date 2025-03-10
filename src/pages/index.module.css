@@ -117,7 +117,7 @@
 
 /* Fixed width buttons */
 .fixedWidthButton {
-  width: 220px; /* Set a fixed width for both buttons */
+  width: 230px; /* Set a fixed width for both buttons */
   text-align: center; /* Center the text within buttons */
   justify-content: center; /* Center the text for flex buttons */
   display: inline-flex; /* Use flex for better text alignment */

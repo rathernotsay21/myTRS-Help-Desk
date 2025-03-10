@@ -88,7 +88,7 @@ export default function PricingCards() {
                   <Link
                     to="/contact"
                     className={styles['pricing-cta-button']}
-                    style={{ backgroundColor: plan.buttonColor, paddingLeft: '16px', paddingRight: '16px' }}
+                    style={{ backgroundColor: plan.buttonColor }}
                   >
                     Request Demo
                   </Link>
@@ -100,7 +100,7 @@ export default function PricingCards() {
                     className={styles['pricing-features-text']}
                     style={plan.name !== 'Standard' ? { color: plan.buttonColor } : {}}
                   >
-                    See all Features <span className={styles['pricing-arrow']}>↓</span>
+                    See More Features <span className={styles['pricing-arrow']}>↓</span>
                   </Link>
                 </div>
               </div>

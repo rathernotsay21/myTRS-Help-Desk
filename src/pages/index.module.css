@@ -199,6 +199,11 @@ html[data-theme='dark'] .subtext {
 }
 
 /* Ensure better visibility in dark mode */
+html[data-theme='dark'] .testimonialQuote {
+  background: linear-gradient(to right, #3c2a1b, #492d1d);
+  border-left: 4px solid #ea580c;
+}
+
 html[data-theme='dark'] .testimonialQuote p {
   color: rgba(255, 255, 255, 0.9);
 }
@@ -211,9 +216,17 @@ html[data-theme='dark'] .testimonialQuote p {
   font-style: normal;
 }
 
+html[data-theme='dark'] .testimonialQuote footer {
+  color: #f97316; /* Brighter orange for dark mode */
+}
+
 .organizationHighlight {
   color: var(--my-trs-accent);
   font-weight: 700;
+}
+
+html[data-theme='dark'] .organizationHighlight {
+  color: #f8a76b; /* Lighter orange for better visibility in dark mode */
 }
 
 .quoteIcon {

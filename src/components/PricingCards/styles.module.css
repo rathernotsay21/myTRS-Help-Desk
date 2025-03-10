@@ -158,8 +158,8 @@
   color: white;
   font-weight: 600;
   text-decoration: none;
-  padding: 0.75rem 1.5rem; /* Matches button--lg from Button component */
-  width: 220px; /* Fixed width matching banner buttons */
+  padding: 0.75rem 0.75rem; /* Moderate horizontal padding to match image */
+  width: auto; /* Allow button to fit content */
   margin-bottom: 16px;
   transition: all 0.3s ease;
   font-size: 1.125rem; /* Matches lg button size */

@@ -108,6 +108,14 @@
   --my-trs-shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
+/* Logo sizing fix */
+.navbar-logo {
+  height: auto;
+  width: auto;
+  max-height: 32px;
+  object-fit: contain;
+}
+
 /* Unified button styles */
 .button {
   border-radius: 50px;

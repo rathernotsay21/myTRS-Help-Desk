@@ -17,6 +17,7 @@ import {
   EventStatsCarousel,
   SolutionGrid
 } from '../utils/lazyComponents';
+import IntegrationPartners from '../components/IntegrationPartners';
 
 import Heading from '@theme/Heading';
 import styles from './index.module.css';
@@ -104,7 +105,7 @@ export default function Home() {
           <section className={styles.introSection} style={{ padding: 0, marginTop: 'var(--my-trs-space-xxl)' }}>
             <div className={styles.sectionContent}>
               <h3 className={styles.mainTitle}>
-              Trusted by the Industry Experts
+              Trusted by the Industry Experts since 2000
               </h3>
               <p className={styles.subtext}>
               With a track record of supporting top-tier events—ranging from professional sports and national conventions to corporate conferences and festivals, myTRS has been the trusted choice for seamless event and volunteer management since 2000. Our expertise in handling complex logistics ensures every event runs smoothly, no matter the size or scope.
@@ -146,6 +147,10 @@ export default function Home() {
     >
       <SolutionGrid solutions={solutionBlocks} />
     </Section>
+
+
+
+
 
     {/* CTA Section */}
     <div className="row" style={{ marginBottom: 'var(--my-trs-space-xxl)' }}>

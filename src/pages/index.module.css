@@ -166,6 +166,11 @@
   color: var(--my-trs-text-light);
 }
 
+/* Ensure better visibility in dark mode */
+html[data-theme='dark'] .subtext {
+  color: rgba(255, 255, 255, 0.8);
+}
+
 .introSection, .tracksSection {
   margin-bottom: var(--my-trs-space-xxxl);
 }
@@ -191,6 +196,11 @@
   line-height: 1.6;
   margin-bottom: var(--my-trs-space-sm);
   color: var(--my-trs-text);
+}
+
+/* Ensure better visibility in dark mode */
+html[data-theme='dark'] .testimonialQuote p {
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .testimonialQuote footer {

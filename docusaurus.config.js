@@ -190,6 +190,8 @@ const config = {
         logo: {
           alt: 'myTRS Logo',
           src: 'img/myTRSlogo.png',
+          srcDark: 'img/myTRSlogo.png',
+          className: 'navbar-logo',
         },
         items: [
           {

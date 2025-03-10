@@ -1,53 +1,54 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
 
-const HomepageHeader = ({ 
-  primaryText = 'Event Management',
-  accentText = 'Made Simple',
-  primaryButtonText = 'Request Free Demo',
-  primaryButtonUrl = '/contact',
-  secondaryButtonText = 'Explore Solutions',
-  secondaryButtonUrl = '/docs/intro'
-}) => {
+const HomepageHeader = () => {
   const {siteConfig} = useDocusaurusContext();
   
   return (
-    <header className={clsx('hero', styles['hero-banner'], 'bg-volunteer-checkin')}>
-      <div className="container">
-        <Heading as="h1" className={clsx('hero__title', styles['hero-title'])}>
-          <span className={styles['primary-text']}>{primaryText} </span>
-          <br className={styles['mobile-break']} />
-          <span className={styles['accent-text']}>{accentText}</span>
-        </Heading>
-        <div className={styles.buttons}>
-          <Link
-            className={`button button--outline-secondary button--lg ${styles['fixed-width-button']}`}
-            to={primaryButtonUrl}>
-            {primaryButtonText}
-          </Link>
-          <Link
-            className={`button button--secondary button--lg ${styles['fixed-width-button']}`}
-            to={secondaryButtonUrl}>
-            {secondaryButtonText}
-          </Link>
+    <header className={styles['hero-banner']}>
+      <div className={clsx('container', styles['split-container'])}>        
+        <div className={styles['text-column']}>
+          <Heading as="h1" className={styles['hero-title']}>
+          Event and Volunteer Management made simple.
+          </Heading>
+          <p className={styles['hero-text']}>
+          Build and customize the registration process. Grow a unique volunteer database across events and for the future. Utilize your registrant, event, and financial data for reporting before, during, and after events. <Link to="/features" className={styles['text-link']}>volunteer management software</Link>.
+          </p>
+                   <div className={styles.buttons}>
+            <Link
+              className="button button--outline-secondary button--lg"
+              to="/contact">
+              Request Demo
+            </Link>
+            <Link
+              className="button button--secondary button--lg"
+              to="/docs/intro">
+              Explore Solutions
+            </Link>
+          </div>
+        </div>
+        <div className={styles['image-column']}>
+          <div 
+            className={styles['image-container']} 
+            style={{
+              backgroundImage: 'url(/img/event_photos/hands_computer.webp)',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              width: '100%',
+              height: '350px',
+              borderRadius: '8px'
+            }}
+          ></div>
         </div>
       </div>
     </header>
   );
 };
 
-HomepageHeader.propTypes = {
-  primaryText: PropTypes.string,
-  accentText: PropTypes.string,
-  primaryButtonText: PropTypes.string,
-  primaryButtonUrl: PropTypes.string,
-  secondaryButtonText: PropTypes.string,
-  secondaryButtonUrl: PropTypes.string
-};
+// No PropTypes needed anymore as we're using hardcoded values
 
 export default HomepageHeader;

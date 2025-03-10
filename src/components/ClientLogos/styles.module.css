@@ -1,4 +1,41 @@
 /* src/components/ClientLogos/styles.module.css */
+
+/* Payment services section */
+.payment-services {
+  background-color: white;
+  padding: 0.75rem 0;
+  margin: 0 0 1.5rem;
+  border-radius: 0.25rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.payment-icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.payment-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2rem;
+  margin: 0 0.75rem;
+}
+
+.payment-icon {
+  height: 100%;
+  object-fit: contain;
+  opacity: 0.75;
+  transition: opacity 0.2s ease;
+}
+
+.payment-icon:hover {
+  opacity: 1;
+}
+
 .client-logos {
   padding: var(--my-trs-space-lg) 0 var(--my-trs-space-xxl);
   margin-top: calc(-1 * var(--my-trs-space-xs));
@@ -29,7 +66,7 @@
 
 .section-subtitle {
   text-align: center;
-  margin-top: var(--my-trs-space-md); /* Creates equal spacing on both sides of the blue line */
+  margin-top: var(--my-trs-space-md);
   margin-bottom: var(--my-trs-space-xl);
   font-size: 1.2rem;
   color: var(--my-trs-text-light);
@@ -38,193 +75,117 @@
   margin-right: auto;
 }
 
-/* Grid-based layout */
-.logo-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: var(--my-trs-space-lg);
-  max-width: 1200px;
-  margin: 0 auto;
-  justify-items: center;
-}
+/* ============== Horizontal Scrolling Carousel - CSS Animation Based ============== */
 
-.logo-wrapper {
-  height: 100px;
-  width: 180px;
-  position: relative;
-  perspective: 1000px;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: transform 0.8s cubic-bezier(0.215, 0.61, 0.355, 1), 
-              opacity 0.8s cubic-bezier(0.215, 0.61, 0.355, 1);
-}
-
-.logo-wrapper.animate {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Create staggered animation for logos */
-.delayedAppearance0 { transition-delay: 0.05s; }
-.delayedAppearance1 { transition-delay: 0.1s; }
-.delayedAppearance2 { transition-delay: 0.15s; }
-.delayedAppearance3 { transition-delay: 0.2s; }
-.delayedAppearance4 { transition-delay: 0.25s; }
-.delayedAppearance5 { transition-delay: 0.3s; }
-.delayedAppearance6 { transition-delay: 0.35s; }
-.delayedAppearance7 { transition-delay: 0.4s; }
-.delayedAppearance8 { transition-delay: 0.45s; }
-.delayedAppearance9 { transition-delay: 0.5s; }
-.delayedAppearance10 { transition-delay: 0.55s; }
-.delayedAppearance11 { transition-delay: 0.6s; }
-.delayedAppearance12 { transition-delay: 0.65s; }
-.delayedAppearance13 { transition-delay: 0.7s; }
-
-/* Replace the current .logoInner and hover states with these */
-.logo-inner {
-  height: 100%;
+/* Container with hidden overflow */
+.logo-carousel-container {
   width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Animation track that moves */
+.logo-carousel-track {
+  display: flex;
+  width: fit-content;
+  animation: scroll 30s linear infinite;
+}
+
+/* Animation for the scrolling effect */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* Move by the width of one set of logos */
+  }
+}
+
+/* Each content block contains a complete set of logos */
+.logo-carousel-content {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem; /* Very minimal spacing between logos */
+  padding: 0.5rem 0;
+}
+
+/* Individual logo item */
+.logo-carousel-item {
+  flex: 0 0 auto;
+  height: 70px;
+  width: 120px; /* Reduced width for tighter packing */
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: var(--my-trs-space-md);
   background-color: #ffffff;
-  border-radius: var(--my-trs-border-radius-md);
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  position: relative;
-  overflow: hidden;
+  /* No borders as per requirement #1 */
+  padding: 0.2rem; /* Reduced padding */
 }
 
-.logo-inner::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
-  z-index: 1;
-}
-
-/* Maintain white background in dark mode */
-[data-theme='dark'] .logo-inner {
-  background-color: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-}
-
-[data-theme='dark'] .logo-inner::before {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 100%);
-}
-
-/* Change hover effect to use a border color change and a glow effect rather than movement */
-.logo-wrapper:hover .logo-inner {
-  border-color: var(--ifm-color-primary);
-  box-shadow: var(--my-trs-shadow-md);
-}
-
+/* Logo image styling */
 .logo {
-  max-width: 85%;
-  max-height: 80px;
+  max-width: 90%;
+  max-height: 60px;
   object-fit: contain;
-  transition: all 0.3s ease;
-  z-index: 2;
   position: relative;
 }
 
-/* Scale the logo slightly on hover without using transform */
-.logo-wrapper:hover .logo {
-  max-width: 90%;
-  max-height: 85px;
+/* Ensure white backgrounds in dark mode */
+[data-theme='dark'] .logo-carousel-item {
+  background-color: #ffffff;
 }
 
-/* Remove filter adjustments for dark mode since we're using white backgrounds */
+/* Remove filters for dark mode */
 [data-theme='dark'] .logo {
-  filter: none;
-}
-
-/* Remove specific logo adjustments for dark mode */
-[data-theme='dark'] .logo[src*="NCAA_Logo"],
-[data-theme='dark'] .logo[src*="NFL_Draft_Logo"],
-[data-theme='dark'] .logo[src*="Superbowl_Logo"],
-[data-theme='dark'] .logo[src*="PGA_of_America_Logo"] {
   filter: none;
 }
 
 /* Responsive adjustments */
 @media (max-width: 996px) {
-  .logo-grid {
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-    gap: var(--my-trs-space-lg);
-  }
-  
-  .logo-wrapper {
-    width: 160px;
-    height: 90px;
+  .logo-carousel-item {
+    width: 110px;
+    height: 65px;
   }
   
   .logo {
-    max-height: 70px;
+    max-height: 55px;
+  }
+  
+  .logo-carousel-content {
+    gap: 0.15rem; /* Even less spacing on smaller screens */
   }
 }
 
 @media (max-width: 768px) {
-  .logo-grid {
-    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-    gap: var(--my-trs-space-md);
-  }
-  
-  .logo-wrapper {
-    width: 130px;
-    height: 80px;
-  }
-  
-  .logo-inner {
-    padding: var(--my-trs-space-sm);
+  .logo-carousel-item {
+    width: 90px;
+    height: 55px;
   }
   
   .logo {
-    max-height: 60px;
+    max-height: 45px;
   }
   
   .section-title {
     font-size: 1.5rem;
   }
+  
+  .logo-carousel-content {
+    gap: 0.1rem;
+  }
 }
 
 @media (max-width: 480px) {
-  .logo-grid {
-    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
-    gap: var(--my-trs-space-sm);
-  }
-  
-  .logo-wrapper {
-    width: 110px;
-    height: 70px;
-  }
-  
-  .logo-inner {
-    padding: var(--my-trs-space-xs);
+  .logo-carousel-item {
+    width: 70px;
+    height: 45px;
   }
   
   .logo {
-    max-height: 50px;
-  }
-}
-
-/* Ensure we always have at least 2 items per row even on very small screens */
-@media (max-width: 359px) {
-  .logo-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--my-trs-space-xs);
+    max-height: 35px;
   }
   
-  .logo-wrapper {
-    width: 100%;
-    max-width: 100px;
-    height: 65px;
-  }
-  
-  .logo {
-    max-height: 45px;
+  .logo-carousel-content {
+    gap: 0.05rem; /* Minimal gap on mobile */
   }
 }

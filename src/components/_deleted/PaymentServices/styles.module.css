@@ -1,0 +1,29 @@
+/* src/components/PaymentServices/styles.module.css */
+.payment-services {
+  margin: 2rem 0;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.payment-icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.payment-icon-wrapper {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.payment-icon {
+  height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}

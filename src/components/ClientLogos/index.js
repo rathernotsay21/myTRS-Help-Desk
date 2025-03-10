@@ -1,8 +1,18 @@
 // src/components/ClientLogos/index.js
 import React, { useRef, useEffect, useState } from 'react';
 import styles from './styles.module.css';
-import clsx from 'clsx';
 import ResponsiveImage from '@site/src/components/ResponsiveImage';
+import PricingCards from '@site/src/components/PricingCards';
+
+// Payment service logos for our new section
+const paymentLogos = [
+  { name: 'Authorize.net', src: '/img/payment_services/authorize_net.svg' },
+  { name: 'Braintree', src: '/img/payment_services/Braintree.svg' },
+  { name: 'Payeezy', src: '/img/payment_services/payeezy.svg' },
+  { name: 'Payflow', src: '/img/payment_services/Payflow.svg' },
+  { name: 'PayPal', src: '/img/payment_services/paypal.svg' },
+  { name: 'Stripe', src: '/img/payment_services/stripe.svg' }
+];
 
 // Define client logos with names, sizes and dimensions for better accessibility and performance
 const clientLogos = [
@@ -52,43 +62,79 @@ export default function ClientLogos() {
 
   // Create srcset paths for responsive loading
   const getSrcSet = (file) => {
-    // Since small versions aren't available yet, just use the regular version
     return `/img/client_logos/${file} 800w`;
   };
 
+  // Render a set of logo items
+  const renderLogoItems = (startIndex = 0) => {
+    return clientLogos.map((logo, index) => (
+      <div 
+        key={`logo-${startIndex}-${index}`} 
+        className={styles['logo-carousel-item']}
+      >
+        <ResponsiveImage
+          src={`/img/client_logos/${logo.file}`}
+          srcSet={getSrcSet(logo.file)}
+          sizes="120px"
+          alt={`${logo.name} logo`}
+          width={logo.width}
+          height={logo.height}
+          className={styles.logo}
+          lazy={true}
+        />
+      </div>
+    ));
+  };
+
   return (
-    <section className={styles['client-logos']} ref={logosRef}>
+    <>
+      {/* Pricing Cards Section */}
+      <PricingCards />
+      
+      {/* Payment Services Section */}
       <div className="container">
-        <h2 className={styles['section-title']}>Trusted by the Industry Experts since 2000</h2>
-        <p className={styles['section-subtitle']}>Who do we serve?</p>
-        
-        {/* Logo grid layout */}
-        <div className={styles['logo-grid']}>
-          {clientLogos.map((logo, index) => (
-            <div 
-              key={index} 
-              className={clsx(
-                styles['logo-wrapper'],
-                isVisible && styles.animate,
-                styles[`delayedAppearance${index % 14}`]
-              )}
-            >
-              <div className={styles['logo-inner']}>
+        <div className={styles['payment-services']}>
+          <div className={styles['payment-icons']}>
+            {paymentLogos.map((logo, index) => (
+              <div key={index} className={styles['payment-icon-wrapper']}>
                 <ResponsiveImage
-                  src={`/img/client_logos/${logo.file}`}
-                  srcSet={getSrcSet(logo.file)}
-                  sizes="(max-width: 768px) 150px, 200px"
-                  alt={`${logo.name} logo`}
-                  width={logo.width}
-                  height={logo.height}
-                  className={styles.logo}
+                  src={logo.src}
+                  alt={`${logo.name} payment method`}
+                  className={styles['payment-icon']}
+                  width={100}
+                  height={40}
                   lazy={true}
                 />
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
-    </section>
+      
+      {/* Client Logos Section */}
+      <section className={styles['client-logos']} ref={logosRef}>
+        <div className="container">
+          <h2 className={styles['section-title']}>Trusted by the Industry Experts since 2000</h2>
+          <p className={styles['section-subtitle']}>Who do we serve?</p>
+        
+          {/* Pure CSS marquee-style logo carousel */}
+          <div className={styles['logo-carousel-container']}>
+            {isVisible && (
+              <div className={styles['logo-carousel-track']}>
+                {/* First set of logos */}
+                <div className={styles['logo-carousel-content']}>
+                  {renderLogoItems(1)}
+                </div>
+                
+                {/* Duplicate set for continuous effect */}
+                <div className={styles['logo-carousel-content']}>
+                  {renderLogoItems(2)}
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
+    </>
   );
 }

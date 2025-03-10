@@ -30,6 +30,11 @@
   background-image: url('/img/event_photos/2003_Special_Olympics_Opening_Crowd-min.webp') !important;
 }
 
+/* Hands on computer background */
+.bg-hands-computer {
+  background-image: url('/img/event_photos/hands_computer.webp');
+}
+
 /* Media query for mobile devices */
 @media (max-width: 768px) {
   .bg-volunteer-checkin {

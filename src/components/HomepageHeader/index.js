@@ -20,12 +20,12 @@ const HomepageHeader = () => {
           </p>
                    <div className={styles.buttons}>
             <Link
-              className="button button--outline-secondary button--lg"
+              className="button button--primary button--lg"
               to="/contact">
               Request Demo
             </Link>
             <Link
-              className="button button--secondary button--lg"
+              className="button button--outline-secondary button--lg"
               to="/docs/intro">
               Explore Solutions
             </Link>

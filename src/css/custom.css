@@ -125,6 +125,7 @@
   border: 2px solid transparent;
 }
 
+/* Default button styles */
 .button--primary {
   background-color: var(--ifm-color-primary);
   color: white;
@@ -135,6 +136,50 @@
   color: white;
   transform: translateY(-2px);
   box-shadow: var(--my-trs-shadow-md);
+}
+
+/* Global improved button styles for the hero sections */
+header .button--primary,
+.heroBanner .button--primary,
+.hero-banner .button--primary,
+[class*="hero"] .button--primary {
+  background-color: #ff6b00 !important; /* Bright orange background */
+  color: white !important;
+  border: 2px solid #ff6b00 !important;
+  font-weight: 700 !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
+  transition: all 0.3s ease !important;
+}
+
+header .button--primary:hover,
+.heroBanner .button--primary:hover,
+.hero-banner .button--primary:hover,
+[class*="hero"] .button--primary:hover {
+  background-color: #ff8124 !important; /* Lighter orange on hover */
+  border-color: #ff8124 !important;
+  transform: translateY(-3px) !important;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+header .button--outline-secondary,
+.heroBanner .button--outline-secondary,
+.hero-banner .button--outline-secondary,
+[class*="hero"] .button--outline-secondary {
+  background-color: transparent !important;
+  color: white !important;
+  border: 2px solid white !important;
+  font-weight: 700 !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
+}
+
+header .button--outline-secondary:hover,
+.heroBanner .button--outline-secondary:hover,
+.hero-banner .button--outline-secondary:hover,
+[class*="hero"] .button--outline-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.15) !important;
+  color: white !important;
+  transform: translateY(-3px) !important;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3) !important;
 }
 
 .button--secondary {

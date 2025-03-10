@@ -3,8 +3,14 @@
   position: relative;
   overflow: hidden;
   color: var(--my-trs-text);
-  background-color: #f8f9fa;
+  background-color: #185eab;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3E%3Cpath fill='%23ffffff' fill-opacity='0.05' d='M0 0h4v4H0V0zm4 4h4v4H4V4z'/%3E%3C/svg%3E");
   height: auto;
+}
+
+/* Darker pattern in dark mode for better visibility */
+html[data-theme='dark'] .hero-banner {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3E%3Cpath fill='%23ffffff' fill-opacity='0.1' d='M0 0h4v4H0V0zm4 4h4v4H4V4z'/%3E%3C/svg%3E");
 }
 
 /* Split container for the layout */
@@ -99,24 +105,29 @@
   margin-bottom: var(--my-trs-space-lg);
   text-align: left;
   line-height: 1.2;
-  color: #003057;
+  color: white; /* White text for better contrast */
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); /* Enhanced text shadow for better readability */
 }
 
 .hero-text {
   font-size: 1.1rem;
   line-height: 1.6;
   margin-bottom: var(--my-trs-space-md);
-  color: var(--my-trs-text);
+  color: #fff3e2; /* Light cream color to match the button */
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); /* Enhanced text shadow for better readability */
 }
 
 .text-link {
-  color: var(--ifm-color-primary);
+  color: #FFD700; /* Gold color for better visibility */
   text-decoration: underline;
-  font-weight: 500;
+  font-weight: 600; /* Increased font weight */
+  text-decoration-thickness: 2px; /* Thicker underline */
+  text-underline-offset: 2px; /* Space between text and underline */
 }
 
 .text-link:hover {
-  color: var(--ifm-color-primary-dark);
+  color: #FFC107; /* Slightly darker gold on hover */
+  text-decoration: underline;
 }
 
 .buttons {
@@ -134,6 +145,35 @@
   justify-content: center;
   display: inline-flex;
   align-items: center;
+  font-weight: 600;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+/* Primary button (Request Demo) custom styling */
+.buttons a.button--primary {
+  background-color: transparent; /* Changed to transparent background */
+  color: #fff3e2; /* Light cream text color */
+  border: 2px solid #fff3e2; /* Light cream border */
+  font-weight: 700; /* Make text bolder */
+}
+
+.buttons a.button--primary:hover {
+  background-color: rgba(255, 243, 226, 0.15); /* Slight light background on hover */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Secondary outline button (Explore Solutions) custom styling */
+.buttons a.button--outline-secondary {
+  border-color: white;
+  color: white;
+}
+
+.buttons a.button--outline-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Hide the mobile break on larger screens */

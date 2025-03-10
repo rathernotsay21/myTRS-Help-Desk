@@ -88,7 +88,7 @@ export default function PricingCards() {
                   <Link
                     to="/contact"
                     className={styles['pricing-cta-button']}
-                    style={{ backgroundColor: plan.buttonColor }}
+                    style={{ backgroundColor: plan.buttonColor, paddingLeft: '16px', paddingRight: '16px' }}
                   >
                     Request Demo
                   </Link>

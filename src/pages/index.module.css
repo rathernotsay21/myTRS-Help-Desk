@@ -442,6 +442,13 @@ html[data-theme='dark'] .testimonialQuote p {
   margin-bottom: var(--my-trs-space-xs);
 }
 
+/* Pricing section */
+.pricingSection {
+  background: linear-gradient(180deg, var(--ifm-background-color) 0%, var(--ifm-background-surface-color) 50%);
+  padding: 0;
+  margin: 0;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .formRow {

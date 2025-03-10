@@ -9,6 +9,7 @@ import ClientCard from '@site/src/components/ClientCard';
 import ServeCategoryCards from '@site/src/components/ServeCategoryCards';
 import TestimonialCarousel from '@site/src/components/TestimonialCarousel';
 import HomepageHeader from '@site/src/components/HomepageHeader';
+import PricingCards from '@site/src/components/PricingCards';
 import Section from '@site/src/components/Section';
 
 // Import lazy-loaded components
@@ -64,6 +65,10 @@ export default function Home() {
       title={`Welcome to ${siteConfig.title}`}
       description="my TRS - Powering the World's Most Prestigious Events">
       <HomepageHeader />
+      <div className={styles.pricingSection}>
+        <PricingCards />
+        <IntegrationPartners />
+      </div>
       <ClientLogos />
       
 {/* Why TRS Sections (Moved from why-trs page) */}
@@ -125,7 +130,8 @@ export default function Home() {
               </p>
               <div style={{ marginTop: 'var(--my-trs-space-lg)' }}>
                 <Link
-                  className="button button--secondary button--lg"
+                  className="button button--lg"
+                  style={{ backgroundColor: '#ea580b', color: 'white' }}
                   to="/features">
                   Explore Features
                 </Link>
@@ -163,6 +169,7 @@ export default function Home() {
             </p>
             <Link
               className={featuresStyles.ctaButton}
+              style={{ backgroundColor: '#ea580b', color: 'white' }}
               to="/contact">
               Contact Us
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="16" height="16" fill="currentColor" style={{ marginLeft: '10px' }} aria-hidden="true">

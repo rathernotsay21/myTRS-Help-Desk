@@ -21,11 +21,13 @@ const HomepageHeader = () => {
                    <div className={styles.buttons}>
             <Link
               className="button button--primary button--lg"
+              style={{ width: "180px" }}
               to="/contact">
               Request Demo
             </Link>
             <Link
               className="button button--outline-secondary button--lg"
+              style={{ width: "180px" }}
               to="/docs/intro">
               Explore Solutions
             </Link>

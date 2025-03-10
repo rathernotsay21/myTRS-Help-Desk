@@ -13,22 +13,26 @@ const IntegrationPartners = () => {
   ];
 
   return (
-    <div className={styles.partnersContainer}>
-      <div className={styles.partnersGrid}>
-        {paymentPartners.map((partner, index) => (
-          <div key={index} className={styles.partnerLogo}>
-            <ResponsiveImage
-              src={partner.src}
-              alt={`${partner.name} payment method`}
-              className={styles.partnerImage}
-              width={partner.width}
-              height={partner.height}
-              lazy={true}
-            />
+    <section className={styles.partnersSection}>
+      <div className={styles.partnersContainer}>
+        <div className="container">
+          <div className={styles.partnersGrid}>
+            {paymentPartners.map((partner, index) => (
+              <div key={index} className={styles.partnerLogo}>
+                <ResponsiveImage
+                  src={partner.src}
+                  alt={`${partner.name} payment method`}
+                  className={styles.partnerImage}
+                  width={partner.width}
+                  height={partner.height}
+                  lazy={true}
+                />
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 

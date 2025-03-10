@@ -2,17 +2,8 @@
 import React, { useRef, useEffect, useState } from 'react';
 import styles from './styles.module.css';
 import ResponsiveImage from '@site/src/components/ResponsiveImage';
-import PricingCards from '@site/src/components/PricingCards';
 
-// Payment service logos for our new section
-const paymentLogos = [
-  { name: 'Authorize.net', src: '/img/payment_services/authorize_net.svg' },
-  { name: 'Braintree', src: '/img/payment_services/Braintree.svg' },
-  { name: 'Payeezy', src: '/img/payment_services/payeezy.svg' },
-  { name: 'Payflow', src: '/img/payment_services/Payflow.svg' },
-  { name: 'PayPal', src: '/img/payment_services/paypal.svg' },
-  { name: 'Stripe', src: '/img/payment_services/stripe.svg' }
-];
+
 
 // Define client logos with names, sizes and dimensions for better accessibility and performance
 const clientLogos = [
@@ -88,29 +79,6 @@ export default function ClientLogos() {
 
   return (
     <>
-      {/* Pricing Cards Section */}
-      <PricingCards />
-      
-      {/* Payment Services Section */}
-      <div className="container">
-        <div className={styles['payment-services']}>
-          <div className={styles['payment-icons']}>
-            {paymentLogos.map((logo, index) => (
-              <div key={index} className={styles['payment-icon-wrapper']}>
-                <ResponsiveImage
-                  src={logo.src}
-                  alt={`${logo.name} payment method`}
-                  className={styles['payment-icon']}
-                  width={100}
-                  height={40}
-                  lazy={true}
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-      
       {/* Client Logos Section */}
       <section className={styles['client-logos']} ref={logosRef}>
         <div className="container">

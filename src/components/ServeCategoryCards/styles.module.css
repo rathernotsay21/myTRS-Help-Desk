@@ -40,7 +40,23 @@ html[data-theme='dark'] .card-orange .cardTitle {
 html[data-theme='dark'] .card-orange .listItem {
   color: rgba(255, 255, 255, 0.9);
   border-left-color: #ed8936;
-}.cardsContainer {
+}/* Icon watermark styles */
+.iconWatermark {
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.5rem;
+  opacity: 0.1;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.categoryIcon {
+  width: 100px;
+  height: 100px;
+}
+
+/* Card container styles */
+.cardsContainer {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
@@ -78,6 +94,8 @@ html[data-theme='dark'] .card-orange .listItem {
 
 .cardContent {
   padding: 1.5rem;
+  position: relative;
+  z-index: 2;
 }
 
 .cardTitle {
@@ -101,6 +119,19 @@ html[data-theme='dark'] .card-orange .listItem {
 
 .listItem:last-child {
   margin-bottom: 0;
+}
+
+/* Card color variations for icons */
+.card-blue .categoryIcon {
+  stroke: #2563eb;
+}
+
+.card-green .categoryIcon {
+  stroke: #16a34a;
+}
+
+.card-orange .categoryIcon {
+  stroke: #ea580c;
 }
 
 /* Card color variations */

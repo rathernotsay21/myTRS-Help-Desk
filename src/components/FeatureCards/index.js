@@ -15,10 +15,8 @@ const FeatureCard = ({
 
   return (
     <div className={styles.featureCard}>
-      {/* Centered icon with consistent sizing */}
-      <div className={styles.featureIcon}>
-        {icon}
-      </div>
+      {/* Icon is now a component that includes SVG */}
+      {icon}
       
       {/* Centered heading */}
       <h3 className={styles.featureTitle}>{title}</h3>
@@ -68,61 +66,47 @@ const FeatureCard = ({
   );
 };
 
-// Improved icons for the specific cards
-const Icons = {
-  // Better icon for Multi-Level Admin
-  MultiLevelAdmin: (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" fill="currentColor" width="28" height="28" aria-hidden="true">
-      {/* Font Awesome User Shield - better represents admin access */}
-      <path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3zm420.2-93.9c-15.8-17.9-39.1-26.5-62.3-23.7l-47.9 5.9c-6.6-14.5-19.9-24.8-35.9-26.3c-24.1-2.4-45.9 13.7-50.8 37.3L385.3 335c30.9 34.1 48.7 78.9 48.7 126.8c0 3.4-.2 6.8-.5 10.2h73.1c41.8 0 80.4-22.1 101.4-58.3c7.9-13.5 15.3-28.7 21.8-45.3c8.9-22.8 13.7-47 14.2-71.6c.3-13.8-5.2-27-15.2-37.7z"/>
-    </svg>
-  ),
-  
-  // Better icon for Automated Scheduling
-  AutomatedScheduling: (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor" width="28" height="28" aria-hidden="true">
-      {/* Font Awesome Calendar with Check */}
-      <path d="M128 0c13.3 0 24 10.7 24 24V64H296V24c0-13.3 10.7-24 24-24s24 10.7 24 24V64h40c35.3 0 64 28.7 64 64v16 48V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V192 144 128c0-35.3 28.7-64 64-64h40V24c0-13.3 10.7-24 24-24zM400 192H48V448c0 8.8 7.2 16 16 16H384c8.8 0 16-7.2 16-16V192zM329 297L217 409c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47 95-95c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/>
-    </svg>
-  ),
-  
-  // Better icon for Powerful Reporting
-  PowerfulReporting: (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" width="28" height="28" aria-hidden="true">
-      {/* Font Awesome Chart Column */}
-      <path d="M32 32c17.7 0 32 14.3 32 32V400c0 8.8 7.2 16 16 16H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H80c-44.2 0-80-35.8-80-80V64C0 46.3 14.3 32 32 32zM160 224c0-17.7 14.3-32 32-32s32 14.3 32 32V352c0 17.7-14.3 32-32 32s-32-14.3-32-32V224zm128-64V352c0 17.7-14.3 32-32 32s-32-14.3-32-32V160c0-17.7 14.3-32 32-32s32 14.3 32 32zm64 32c17.7 0 32 14.3 32 32V352c0 17.7-14.3 32-32 32s-32-14.3-32-32V224c0-17.7 14.3-32 32-32zm128-64c17.7 0 32 14.3 32 32V352c0 17.7-14.3 32-32 32s-32-14.3-32-32V128c0-17.7 14.3-32 32-32z"/>
-    </svg>
-  ),
-  
-  // EmailSMS icon
-  EmailSMS: (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" width="28" height="28" aria-hidden="true">
-      {/* Font Awesome Comment Dots */}
-      <path d="M256 448c141.4 0 256-93.1 256-208S397.4 32 256 32S0 125.1 0 240c0 45.1 17.7 86.8 47.7 120.9c-1.9 24.5-11.4 46.3-21.4 62.9c-5.5 9.2-11.1 16.6-15.2 21.6c-2.1 2.5-3.7 4.4-4.9 5.7c-.6 .6-1 1.1-1.3 1.4l-.3 .3 0 0 0 0 0 0 0 0c-4.6 4.6-5.9 11.4-3.4 17.4c2.5 6 8.3 9.9 14.8 9.9c28.7 0 57.6-8.9 81.6-19.3c22.9-10 42.4-21.9 54.3-30.6c31.8 11.5 67 17.9 104.1 17.9zM128 208a32 32 0 1 1 0 64 32 32 0 1 1 0-64zm128 0a32 32 0 1 1 0 64 32 32 0 1 1 0-64zm96 32a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"/>
-    </svg>
-  ),
-  
-  // Better icon for Full Integration
-  FullIntegration: (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" fill="currentColor" width="28" height="28" aria-hidden="true">
-      {/* Font Awesome Network Wired */}
-      <path d="M256 64H384v64H256V64zM240 0c-26.5 0-48 21.5-48 48v96c0 26.5 21.5 48 48 48h48v32H32c-17.7 0-32 14.3-32 32s14.3 32 32 32h96v32H80c-26.5 0-48 21.5-48 48v96c0 26.5 21.5 48 48 48H240c26.5 0 48-21.5 48-48V368c0-26.5-21.5-48-48-48H192V288H448v32H400c-26.5 0-48 21.5-48 48v96c0 26.5 21.5 48 48 48H560c26.5 0 48-21.5 48-48V368c0-26.5-21.5-48-48-48H512V288h96c17.7 0 32-14.3 32-32s-14.3-32-32-32H352V192h48c26.5 0 48-21.5 48-48V48c0-26.5-21.5-48-48-48H240zM96 448V384H224v64H96zm320-64H544v64H416V384z"/>
-    </svg>
-  ),
-  
-  // MobileFriendly icon
-  MobileFriendly: (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" fill="currentColor" width="28" height="28" aria-hidden="true">
-      {/* Font Awesome Mobile Alt */}
-      <path d="M16 64C16 28.7 44.7 0 80 0H304c35.3 0 64 28.7 64 64V448c0 35.3-28.7 64-64 64H80c-35.3 0-64-28.7-64-64V64zM224 448a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zM304 64H80V384H304V64z"/>
-    </svg>
-  )
-};
+// Updated icon components to use stroke-based style similar to PricingCards
+const MultiLevelAdminIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="28" height="28" aria-hidden="true" className={styles.featureIcon}>
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+  </svg>
+);
+
+const AutomatedSchedulingIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="28" height="28" aria-hidden="true" className={styles.featureIcon}>
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2zm4-7l2 2 4-4" />
+  </svg>
+);
+
+const PowerfulReportingIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="28" height="28" aria-hidden="true" className={styles.featureIcon}>
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+  </svg>
+);
+
+const EmailSMSIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="28" height="28" aria-hidden="true" className={styles.featureIcon}>
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+  </svg>
+);
+
+const FullIntegrationIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="28" height="28" aria-hidden="true" className={styles.featureIcon}>
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+  </svg>
+);
+
+const MobileFriendlyIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="28" height="28" aria-hidden="true" className={styles.featureIcon}>
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+  </svg>
+);
 
 // Feature cards data
 const featureCardsData = [
   {
-    icon: Icons.MultiLevelAdmin,
+    icon: <MultiLevelAdminIcon />,
     title: "Multi-Level Access",
     description: "Empower your team with granular admin access to ensure seamless collaboration and efficient management of your event. Easily delegate management responsibilities by granting specific permissions based on their roles and management areas.",
     tabs: [
@@ -144,7 +128,7 @@ const featureCardsData = [
     ]
   },
   {
-    icon: Icons.AutomatedScheduling,
+    icon: <AutomatedSchedulingIcon />,
     title: "Scheduling & Management",
     description: "Every event is unique. Whether you're managing less than 500 or over 10,000 volunteers, our system scales to meet your needs. Explore the options for individual and group registration, bulk scheduling, registration imports, and much more!",
     tabs: [
@@ -166,7 +150,7 @@ const featureCardsData = [
     ]
   },
   {
-    icon: Icons.PowerfulReporting,
+    icon: <PowerfulReportingIcon />,
     title: "Advanced Reports & Data Insights",
     description: "Gain real-time insights into your program with our custom reports. Instantly access up-to-date data on registrations, scheduling, attendance, and more.",
     tabs: [
@@ -188,7 +172,7 @@ const featureCardsData = [
     ]
   },
   {
-    icon: Icons.EmailSMS,
+    icon: <EmailSMSIcon />,
     title: "Customizable & Efficient Registration Setup",
     description: "Create a tailored registration experience with customizable fields, access controls, and security measures. Use pre-built templates or clone past events for a quick and seamless setup.",
     tabs: [
@@ -210,7 +194,7 @@ const featureCardsData = [
     ]
   },
   {
-    icon: Icons.FullIntegration,
+    icon: <FullIntegrationIcon />,
     title: "Effective Email/SMS Communication",
     description: "Streamline volunteer communication with myTRS's powerful tools. Explore the options to customize, schedule, track, and send bulk emails/SMS to your volunteers!",
     tabs: [
@@ -229,7 +213,7 @@ const featureCardsData = [
     ]
   },
   {
-    icon: Icons.MobileFriendly,
+    icon: <MobileFriendlyIcon />,
     title: "Full Integrations for a Seamless Experience",
     description: "Connect with leading systems for payments, background checks, analytics, multilingual support, and credential printing. Integrate seamlessly to enhance efficiency and user experience.",
     tabs: [

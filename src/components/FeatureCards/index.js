@@ -3,6 +3,27 @@ import Link from '@docusaurus/Link';
 import clsx from 'clsx';
 import styles from './styles.module.css';
 
+// Simple tooltip component for displaying additional information
+const InfoTooltip = ({ text, children }) => {
+  const [isVisible, setIsVisible] = useState(false);
+  
+  return (
+    <span className={styles.tooltipContainer}
+      onMouseEnter={() => setIsVisible(true)}
+      onMouseLeave={() => setIsVisible(false)}
+      onClick={() => setIsVisible(!isVisible)}
+    >
+      {children}
+      <span className={clsx(styles.infoIcon, 'info-icon')}>ⓘ</span>
+      {isVisible && (
+        <div className={styles.tooltip}>
+          {text}
+        </div>
+      )}
+    </span>
+  );
+};
+
 // Enhanced Feature Card component that implements all requested improvements
 const FeatureCard = ({ 
   icon, 
@@ -12,9 +33,14 @@ const FeatureCard = ({
   link = "/docs/intro" 
 }) => {
   const [activeTab, setActiveTab] = useState(tabs?.[0]?.id || '');
+  const [isHovering, setIsHovering] = useState(false);
 
   return (
-    <div className={styles.featureCard}>
+    <div 
+      className={styles.featureCard}
+      onMouseEnter={() => setIsHovering(true)}
+      onMouseLeave={() => setIsHovering(false)}
+    >
       {/* Icon is now a component that includes SVG */}
       {icon}
       
@@ -25,43 +51,44 @@ const FeatureCard = ({
       
       {/* Tab navigation - only render if tabs exist */}
       {tabs && tabs.length > 0 && (
-        <div className={styles.tabsContainer}>
-          <div className={styles.tabsNav}>
-            {tabs.map((tab) => (
-              <button
-                key={tab.id}
-                className={clsx(styles.tabButton, { [styles.active]: activeTab === tab.id })}
-                onClick={() => setActiveTab(tab.id)}
-                aria-selected={activeTab === tab.id}
-                role="tab"
-                aria-controls={`tabpanel-${tab.id}`}
-              >
-                {tab.label}
-              </button>
-            ))}
+        <>
+          {/* Expandable tab content that appears on hover */}
+          <div className={clsx(styles.expandableContent, { [styles.expanded]: isHovering })}>
+            <div className={styles.tabsNav}>
+              {tabs.map((tab) => (
+                <button
+                  key={tab.id}
+                  className={clsx(styles.tabButton, { [styles.active]: activeTab === tab.id })}
+                  onClick={() => setActiveTab(tab.id)}
+                  aria-selected={activeTab === tab.id}
+                  role="tab"
+                  aria-controls={`tabpanel-${tab.id}`}
+                >
+                  {tab.label}
+                </button>
+              ))}
+            </div>
+            
+            <div className={styles.tabContent}>
+              {tabs.map((tab) => (
+                <div
+                  key={tab.id}
+                  id={`tabpanel-${tab.id}`}
+                  role="tabpanel"
+                  aria-labelledby={`tab-${tab.id}`}
+                  className={clsx(styles.tabPane, { [styles.active]: activeTab === tab.id })}
+                >
+                  <ul className={styles.featureList}>
+                    {tab.items.map((item, index) => (
+                      <li key={index}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
           </div>
-          
-          {/* Responsive tab content area */}
-          <div className={styles.tabContent}>
-            {tabs.map((tab) => (
-              <div
-                key={tab.id}
-                id={`tabpanel-${tab.id}`}
-                role="tabpanel"
-                aria-labelledby={`tab-${tab.id}`}
-                className={clsx(styles.tabPane, { [styles.active]: activeTab === tab.id })}
-              >
-                <ul className={styles.featureList}>
-                  {tab.items.map((item, index) => (
-                    <li key={index}>{item}</li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
+        </>
       )}
-      
     </div>
   );
 };
@@ -237,7 +264,9 @@ const featureCardsData = [
       {
         id: "features",
         label: "Essential",
-        items: ["Sterling backgroud checks", "Payment processing", "Transifex multilingual setup"]
+        items: ["Sterling backgroud checks", 
+        <InfoTooltip key="payment-tooltip" text="Integrated with Stripe, Authorize.net, PayPal Payflow Pro, Payeezy, and Braintree">Payment processing</InfoTooltip>, 
+        "Transifex multilingual setup"]
       },
       {
         id: "compatibility",

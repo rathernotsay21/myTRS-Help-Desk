@@ -112,120 +112,139 @@ const featureCardsData = [
     tabs: [
       {
         id: "full",
-        label: "Manage",
-        items: ["Complete system access", "Manage all settings", "Oversee all registrations"]
+        label: "Access Level",
+        items: ["Full access", "Site build", "Reporting", "Communication", "Financial"]
       },
       {
         id: "limited",
-        label: "Build",
-        items: ["Restricted to specific areas", "Build and setup registration site", "Limited user management"]
+        label: "Manage",
+        items: ["All sites", "Specific sites", "Specific activities", "Specific groups"]
       },
-      {
-        id: "specialized",
-        label: "Deliver",
-        items: ["Send emails & messages", "View, save, and export reports", "Handle specific event types"]
-      }
     ]
   },
   {
     icon: <AutomatedSchedulingIcon />,
-    title: "Scheduling & Management",
+    title: "Smart Scheduling",
     description: "Every event is unique. Whether you're managing less than 500 or over 10,000 volunteers, our system scales to meet your needs. Explore the options for individual and group registration, bulk scheduling, registration imports, and much more!",
     tabs: [
       {
         id: "self-service",
-        label: "Volunteers",
-        items: ["User-selected time slots", "Group registration", "Calendar view of availability", "Automatic time conflict checks"]
+        label: "Schedule",
+        items: ["Self-scheduling", "Group registration", "Bulk shift assignment", "Edit/view schedules", "Availability collection"]
       },
       {
         id: "admin-tools",
         label: "Admin",
-        items: ["Bulk scheduling assignment",  "Schedule template library", "Add registrant type/activities questions", "Protect activities/groups with codes"]
+        items: ["Time slot imports", "Team leader management", "Time conflict checks", "Capacity management", "Registration imports"]
       },
-      {
-        id: "management",
-        label: "Manage",
-        items: ["Automatic time conflict checks", "Capacity management", "Match volunteer with opportunities"]
-      }
     ]
   },
   {
     icon: <PowerfulReportingIcon />,
-    title: "Advanced Reports & Data Insights",
+    title: "Advanced Reports",
     description: "Gain real-time insights into your program with our custom reports. Instantly access up-to-date data on registrations, scheduling, attendance, and more.",
     tabs: [
       {
         id: "filters",
-        label: "Filter",
-        items: ["Sort by registrant types", "Categorize by activities", "Order by time slots", "Advanced custom fields"]
+        label: "Sort by",
+        items: ["Roles & activity groups",
+"Activities & shifts",
+"Responses (e.g: shirt size)",
+"Location",
+"Time slot capacity"]
       },
       {
         id: "tracking",
         label: "Track",
-        items: ["Background check status", "Terms & conditions signatures", "Hours, shifts, and activities", "Payments & refunds"]
+        items: ["Background check status", "Waiver signature",
+"Volunteer hours",
+"Payments & refunds",
+"Number of shifts"]
       },
       {
         id: "export",
         label: "Export",
-        items: ["Save and view real-time reports", "Export to CSV", "Customize specific data reports"]
+        items: ["Save reports with filters", "Export to CSV"]
       }
     ]
   },
   {
     icon: <FullIntegrationIcon />,
-    title: "Customizable & Efficient Registration Setup",
+    title: "Custom Registration",
     description: "Create a tailored registration experience with customizable fields, access controls, and security measures. Use pre-built templates or clone past events for a quick and seamless setup.",
     tabs: [
       {
         id: "creation",
-        label: "Create",
-        items: ["Create email templates", "Custom mail merge", "Personalize messages"]
+        label: "Tailored",
+        items: ["Role-based questions",
+"Custom activity structure",
+"Custom landing page",
+"Registrant curation"]
       },
       {
         id: "delivery",
-        label: "Send",
-        items: ["Schedule messages", "Bulk email and SMS", "Targeted messages and reports"]
+        label: "Easy",
+        items: ["Pre-built templates",
+"Clone past events",
+"Time slot imports"]
       },
       {
         id: "tracking",
-        label: "Track",
-        items: ["Review email history", "Track delivery status", "Automate confirmation emails"]
+        label: "Secure",
+        items: ["Waiver e-signatures",
+"Encrypted fields",
+"Activity access controls"]
       }
     ]
   },
   {
     icon: <EmailSMSIcon />,
-    title: "Effective Email/SMS Communication",
+    title: "Email & SMS",
     description: "Streamline volunteer communication with myTRS's powerful tools. Explore the options to customize, schedule, track, and send bulk emails/SMS to your volunteers!",
     tabs: [
       {
-        id: "payments",
-        label: "Payments",
-        items: ["Stripe, PayPal, and Authorize.net", 
-        "Payflow Pro, Payeezy, and Braintree"
+        id: "automation",
+        label: "Automated",
+        items: ["Auto registration confirmation",
+"Schedule emails",
+"Bulk resend confirmation",
+"Bulk emails/SMS"
         ]
       },
       {
-        id: "external",
-        label: "External",
-        items: ["Background check integration", "Google Analytics", "Export to other systems"]
+        id: "customization",
+        label: "Custom",
+        items: ["Personalized mail merge",
+"Custom email templates",
+"Add file hyperlinks",
+"Embed maps & images"]
+      },
+      {
+        id: "manage",
+        label: "Manage",
+        items: ["Shift cancellation notifications", 
+"Track email history", 
+"Track delivery status", 
+"Cc' emails & reply-to options"]
       }
     ]
   },
   {
     icon: <MobileFriendlyIcon />,
-    title: "Full Integrations for a Seamless Experience",
+    title: "Full Integrations",
     description: "Connect with leading systems for payments, background checks, analytics, multilingual support, and credential printing. Integrate seamlessly to enhance efficiency and user experience.",
     tabs: [
       {
         id: "features",
-        label: "Features",
-        items: ["Access to reports", "On-the-go check-in", "Volunteer check-in assistance"]
+        label: "Essential",
+        items: ["Sterling backgroud checks", "Payment processing", "Transifex multilingual setup"]
       },
       {
         id: "compatibility",
-        label: "Compatibility",
-        items: ["Optomized for mobile","Works on iOS and Android", "No app installation required"]
+        label: "Additional",
+        items: ["Google Analytics",
+"DYMO credential printing",
+"CRM"]
       }
     ]
   }

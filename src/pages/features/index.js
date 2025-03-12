@@ -36,7 +36,7 @@ export default function Features() {
               <h2 className={styles.sectionTitle}>Streamlined Solutions for Every Event</h2>
               <div className={styles.titleUnderline}></div>
               <p className={styles.introText}>
-             myTRS combines intuitive design with robust functionality to help you manage registrations, scheduling, communication and reporting with ease. Save time and reduce effort by cloning your registration sites year after year. Duplicate your existing setup, including all settings, structures and questions. Simply update your branding and scheduling details. We provide templates from similar events to help you get started. Your registrant data is always secure and not included in the cloning process.</p>
+              At TRS, we understand that successful event management requires powerful, flexible tools that adapt to your unique needs. Our platform combines intuitive design with robust functionality to help you manage registrations, scheduling, communication, and reporting with ease. Explore our key features below to see how myTRS can transform your volunteer management and event registration process.</p>
             </div>
           </div>
 

@@ -13,7 +13,7 @@ const HomepageHeader = () => {
       <div className={clsx('container', styles['split-container'])}>        
         <div className={styles['text-column']}>
           <Heading as="h1" className={styles['hero-title']}>
-          Event and Volunteer Management made simple.
+          Volunteer Management & Event Registration Solution
           </Heading>
           <p className={styles['hero-text']}>
           Build and customize the registration process. Grow a unique volunteer database across events and for the future. Utilize your registrant, event, and financial data for reporting before, during, and after events. <Link to="/features" className={styles['text-link']}>volunteer management software</Link>.

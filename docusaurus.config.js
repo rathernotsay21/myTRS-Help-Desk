@@ -118,7 +118,29 @@ const config = {
       // Replace with your project's social card
       image: 'img/my-trs-social-card.jpg', // Keep as JPG for social sharing compatibility
       head: [
-        // Font preloading for better performance
+        // Resource hints for better performance
+        {
+          tagName: 'meta',
+          name: 'viewport',
+          content: 'width=device-width, initial-scale=1.0, viewport-fit=cover'
+        },
+        // DNS prefetching
+        {
+          tagName: 'link',
+          rel: 'dns-prefetch',
+          href: 'https://fonts.googleapis.com'
+        },
+        {
+          tagName: 'link',
+          rel: 'dns-prefetch',
+          href: 'https://fonts.gstatic.com'
+        },
+        {
+          tagName: 'link',
+          rel: 'dns-prefetch',
+          href: 'https://cdnjs.cloudflare.com'
+        },
+        // Preconnect for critical domains
         {
           tagName: 'link',
           rel: 'preconnect',
@@ -130,6 +152,17 @@ const config = {
           href: 'https://fonts.gstatic.com',
           crossorigin: 'anonymous',
         },
+        // Preload critical assets
+        {
+          tagName: 'link',
+          rel: 'preload',
+          href: '/img/myTRSlogo.webp',
+          as: 'image',
+          type: 'image/webp',
+          crossorigin: 'anonymous',
+          fetchpriority: 'high'
+        },
+        // Deferred font loading
         {
           tagName: 'link',
           rel: 'stylesheet',
@@ -137,6 +170,7 @@ const config = {
           media: 'print',
           onload: "this.media='all'"
         },
+        // Deferred icon font loading
         {
           tagName: 'link',
           rel: 'stylesheet',
@@ -144,6 +178,8 @@ const config = {
           integrity: 'sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==',
           crossorigin: 'anonymous',
           referrerpolicy: 'no-referrer',
+          media: 'print',
+          onload: "this.media='all'"
         },
         // Add font observer script for better font loading
         {
@@ -202,6 +238,8 @@ const config = {
           src: 'img/myTRSlogo.webp',
           srcDark: 'img/myTRSlogo.webp',
           className: 'navbar-logo',
+          width: 32,
+          height: 32,
         },
         items: [
           {

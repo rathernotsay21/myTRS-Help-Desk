@@ -57,14 +57,18 @@ async function optimizeCSS() {
       
       console.log(`Optimizing: ${fileName}`);
       
-      // Run PurgeCSS
+      // Run PurgeCSS with more aggressive settings
       const purgeCSSResult = await new PurgeCSS().purge({
         content: CONTENT_PATHS,
         css: [cssFile],
         safelist: {
           standard: [/^html/, /^body/, /^:root/],
           deep: [/dark-mode/, /theme--/, /DocSearch/, /navbar/, /pagination/]
-        }
+        },
+        rejected: true, // Log removed selectors for debugging
+        keyframes: true, // Remove unused keyframes
+        fontFace: true, // Remove unused font faces
+        variables: true // Remove unused variables
       });
       
       if (purgeCSSResult.length > 0) {

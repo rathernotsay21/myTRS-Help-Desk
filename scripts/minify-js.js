@@ -72,12 +72,22 @@ async function minifyJavaScript() {
       console.log(`Minifying: ${fileName}`);
       const minified = await minify(code, {
         compress: {
-          drop_console: false,
-          drop_debugger: true
+          drop_console: true,
+          drop_debugger: true,
+          pure_funcs: ['console.log', 'console.info', 'console.debug'],
+          passes: 3,
+          unsafe: true,
+          unsafe_comps: true,
+          unsafe_methods: true,
+          unsafe_proto: true
         },
-        mangle: true,
+        mangle: {
+          toplevel: true,
+          properties: false
+        },
         format: {
-          comments: false
+          comments: false,
+          beautify: false
         }
       });
       

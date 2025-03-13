@@ -110,10 +110,11 @@
 
 /* Logo sizing fix */
 .navbar-logo {
-  height: auto;
-  width: auto;
-  max-height: 32px;
+  height: 32px;
+  width: 32px;
   object-fit: contain;
+  transform: translateZ(0); /* Hardware acceleration */
+  image-rendering: -webkit-optimize-contrast; /* Sharper image on Chrome */
 }
 
 /* Unified button styles */

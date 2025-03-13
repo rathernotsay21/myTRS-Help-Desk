@@ -42,19 +42,32 @@ async function ensureDependencies() {
     'cssnano',
     'purgecss',
     'postcss',
-    'postcss-cli'
+    'postcss-cli',
+    'critical',
+    'critical-css-webpack-plugin',
+    'purgecss-webpack-plugin',
+    'terser-webpack-plugin'
   ];
   
-  console.log('Installing required dependencies...');
+  console.log('Checking required dependencies...');
   
   try {
-    // Always install dependencies to ensure they're available
-    console.log(`Installing optimization dependencies: ${requiredDependencies.join(', ')}`);
-    await runCommand('npm', ['install', '--save-dev', ...requiredDependencies]);
-    console.log('Dependencies installed successfully.');
+    // Just check if the dependencies are in package.json
+    // We'll assume they're installed via the manual yarn add command
+    const packageJson = require('../package.json');
+    const devDeps = packageJson.devDependencies || {};
+    
+    const missingDeps = requiredDependencies.filter(dep => !devDeps[dep]);
+    
+    if (missingDeps.length > 0) {
+      console.warn(`Some dependencies may be missing from package.json: ${missingDeps.join(', ')}`);
+      console.log('Please run: yarn add --dev ' + missingDeps.join(' '));
+    } else {
+      console.log('All required dependencies found in package.json');
+    }
   } catch (error) {
-    console.error('Error installing dependencies:', error);
-    throw error;
+    console.error('Error checking dependencies:', error);
+    console.log('Continue anyway...');
   }
 }
 
@@ -102,6 +115,14 @@ async function optimizeBuild() {
       console.warn('Hero image optimization failed, but continuing:', error.message);
     }
     
+    // 2.1. Remove PNG logo version and ensure WebP is used everywhere
+    console.log('\n=== Ensuring WebP Logo is Used ===');
+    try {
+      await runCommand('node', [path.join(__dirname, 'remove-png-logo.js')]);
+    } catch (logoError) {
+      console.warn('Logo optimization failed, but continuing:', logoError.message);
+    }
+    
     // 3. Minify JavaScript
     console.log('\n=== Minifying JavaScript ===');
     try {
@@ -117,6 +138,18 @@ async function optimizeBuild() {
       try {
         console.log('Attempting advanced CSS optimization with PurgeCSS...');
         await runCommand('node', [path.join(__dirname, 'optimize-css.js')]);
+        
+        // Extract critical CSS after build is complete
+        console.log('\n=== Extracting Critical CSS ===');
+        try {
+          // Use our simplified critical CSS approach which doesn't rely on the critical package
+          console.log('Adding inline critical CSS...');
+          // Use native require to avoid module compatibility issues
+          require('./extract-critical-css');
+        } catch (criticalError) {
+          console.warn('Critical CSS extraction failed:', criticalError.message);
+          console.log('Continuing without critical CSS extraction...');
+        }
       } catch (purgeError) {
         console.warn('Advanced CSS optimization failed, falling back to basic minification:', purgeError.message);
         console.log('Running basic CSS minification...');

@@ -8,6 +8,7 @@
     "build": "docusaurus build",
     "build:analyze": "cross-env WEBPACK_BUNDLE_ANALYZER=true docusaurus build",
     "build:safe": "docusaurus build && node scripts/safe-optimize.js",
+    "build:optimized": "yarn build && yarn optimize-build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
@@ -23,7 +24,8 @@
     "extract-critical-css": "node scripts/extract-critical-css.js",
     "optimize-logo": "node scripts/optimize-logo.js",
     "optimize-images": "node scripts/optimize-images.sh",
-    "update-image-refs": "node scripts/image-optimization/update-image-references.js"
+    "update-image-refs": "node scripts/image-optimization/update-image-references.js",
+    "update-deps": "node scripts/update-dependencies.js"
   },
   "dependencies": {
     "@docusaurus/core": "3.7.0",

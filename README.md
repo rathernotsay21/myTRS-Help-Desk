@@ -12,6 +12,26 @@ Key Features
     Secure data storage and management
     Integration with existing business systems
 
+## Development
+
+This project uses Yarn as the package manager. Always use yarn commands for consistency:
+
+```bash
+# Install dependencies
+yarn install
+
+# Start development server
+yarn start
+
+# Build for production
+yarn build
+
+# Build with optimizations
+yarn build:optimized
+```
+
+**Important:** Do not use npm commands to avoid package manager conflicts.
+
 Need Help?
 
 This help desk contains comprehensive documentation, tutorials, and resources to help you get the most out of myTRS. Browse our documentation sections or use the search feature to find specific information.

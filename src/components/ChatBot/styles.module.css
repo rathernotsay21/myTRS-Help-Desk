@@ -99,6 +99,17 @@
   border-radius: var(--my-trs-border-radius-md);
   align-self: flex-start;
   max-width: 80%;
+  margin-bottom: var(--my-trs-space-sm);
+}
+
+.message-user {
+  background-color: var(--ifm-color-primary-lighter);
+  color: white;
+  padding: var(--my-trs-space-sm) var(--my-trs-space-md);
+  border-radius: var(--my-trs-border-radius-md);
+  align-self: flex-end;
+  max-width: 80%;
+  margin-bottom: var(--my-trs-space-sm);
 }
 
 .message-placeholder {
@@ -106,6 +117,7 @@
   font-style: italic;
   font-size: 0.9rem;
   padding: var(--my-trs-space-sm) 0;
+  margin-top: auto;
 }
 
 .chat-input {
@@ -167,4 +179,8 @@
 
 [data-theme='dark'] .message-system {
   background-color: var(--my-trs-light-bg);
+}
+
+[data-theme='dark'] .message-user {
+  background-color: var(--ifm-color-primary);
 }

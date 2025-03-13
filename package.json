@@ -7,6 +7,7 @@
     "start": "docusaurus start",
     "build": "docusaurus build",
     "build:analyze": "cross-env WEBPACK_BUNDLE_ANALYZER=true docusaurus build",
+    "build:optimized": "docusaurus build && node scripts/optimize-build.js",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
@@ -16,7 +17,11 @@
     "dev": "docusaurus start",
     "analyze": "cross-env WEBPACK_BUNDLE_ANALYZER=true docusaurus build",
     "clean-analyze": "node scripts/analysis/clear-and-analyze.js",
-    "optimize-images": "node scripts/image-optimization/optimize-images.sh",
+    "optimize-build": "node scripts/optimize-build.js",
+    "minify-js": "node scripts/minify-js.js",
+    "optimize-css": "node scripts/optimize-css.js",
+    "optimize-logo": "node scripts/optimize-logo.js",
+    "optimize-images": "node scripts/optimize-images.sh",
     "update-image-refs": "node scripts/image-optimization/update-image-references.js"
   },
   "dependencies": {
@@ -39,8 +44,14 @@
     "@docusaurus/types": "3.7.0",
     "autoprefixer": "^10.4.16",
     "cross-env": "^7.0.3",
-    "postcss": "^8.4.32",
+    "cssnano": "^6.1.2",
+    "glob": "^10.4.5",
+    "postcss": "^8.5.3",
+    "postcss-cli": "^11.0.1",
     "postcss-preset-env": "^9.3.0",
+    "purgecss": "^5.0.0",
+    "sharp": "^0.33.2",
+    "terser": "^5.39.0",
     "webpack-bundle-analyzer": "^4.10.1"
   },
   "browserslist": {

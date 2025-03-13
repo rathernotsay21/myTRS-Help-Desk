@@ -10,17 +10,25 @@ const fs = require('fs');
 const path = require('path');
 
 // Configuration
-const BUILD_DIR = path.join(__dirname, 'build');
-const CSS_DIR = path.join(BUILD_DIR, 'css');
+const BUILD_DIR = path.join(__dirname, '..', 'build');
+const CSS_DIR = path.join(BUILD_DIR, 'assets/css');
 const CONTENT_PATHS = [
   path.join(BUILD_DIR, '**/*.html'),
   path.join(BUILD_DIR, '**/*.js')
 ];
 
+console.log(`Looking for CSS files in: ${CSS_DIR}`);
+
+// Make sure the build directory exists
+if (!fs.existsSync(BUILD_DIR)) {
+  console.error(`Build directory does not exist: ${BUILD_DIR}`);
+  process.exit(1);
+}
+
 // Create backup of original CSS files
-const backupDirectory = path.join(__dirname, 'css-backup');
+const backupDirectory = path.join(CSS_DIR, 'backup');
 if (!fs.existsSync(backupDirectory)) {
-  fs.mkdirSync(backupDirectory);
+  fs.mkdirSync(backupDirectory, { recursive: true });
 }
 
 async function optimizeCSS() {

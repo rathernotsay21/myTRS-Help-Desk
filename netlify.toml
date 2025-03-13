@@ -1,6 +1,6 @@
 # Netlify configuration file
 [build]
-  command = "yarn install && yarn build"
+  command = "yarn install && npm install --save-dev terser glob cssnano purgecss postcss postcss-cli sharp && yarn build:optimized"
   publish = "build"
   
 [build.environment]

@@ -174,7 +174,9 @@ const config = {
           rel: 'preload',
           href: '/img/optimized/event_photos/hands_computer.webp',
           as: 'image',
-          fetchpriority: 'high'
+          fetchpriority: 'high',
+          imageSizes: '100vw',
+          imageSrcset: '/img/optimized/event_photos/hands_computer.webp'
         },
         // Add prefetch hints for important pages
         {
@@ -197,8 +199,8 @@ const config = {
         title: 'myTRS',
         logo: {
           alt: 'myTRS Logo',
-          src: 'img/myTRSlogo.png',
-          srcDark: 'img/myTRSlogo.png',
+          src: 'img/myTRSlogo.webp',
+          srcDark: 'img/myTRSlogo.webp',
           className: 'navbar-logo',
         },
         items: [

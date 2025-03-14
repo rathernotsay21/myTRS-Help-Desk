@@ -58,7 +58,8 @@
 }
 
 .form-field input,
-.form-field textarea {
+.form-field textarea,
+.form-field select {
   width: 100%;
   padding: var(--my-trs-space-sm) var(--my-trs-space-md);
   border: 1px solid var(--my-trs-border);
@@ -69,8 +70,17 @@
   transition: border-color 0.2s ease, background-color 0.2s ease;
 }
 
+.form-field select {
+  appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>');
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 40px;
+}
+
 .form-field input:focus,
-.form-field textarea:focus {
+.form-field textarea:focus,
+.form-field select:focus {
   outline: none;
   border-color: var(--ifm-color-primary);
   box-shadow: 0 0 0 1px var(--ifm-color-primary-lightest);
@@ -78,14 +88,16 @@
 
 /* Dark mode form field styling */
 [data-theme='dark'] .form-field input,
-[data-theme='dark'] .form-field textarea {
+[data-theme='dark'] .form-field textarea,
+[data-theme='dark'] .form-field select {
   background-color: #2d2d2d;
   color: var(--my-trs-text);
   border-color: #444;
 }
 
 [data-theme='dark'] .form-field input:focus,
-[data-theme='dark'] .form-field textarea:focus {
+[data-theme='dark'] .form-field textarea:focus,
+[data-theme='dark'] .form-field select:focus {
   border-color: var(--ifm-color-primary);
   box-shadow: 0 0 0 1px var(--ifm-color-primary-darker);
 }

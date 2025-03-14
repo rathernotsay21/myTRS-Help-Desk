@@ -1,0 +1,45 @@
+.pricingPage {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Heading styles to match provided design */
+.industryExpertsHeading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  color: var(--ifm-color-primary);
+}
+
+.headingUnderline {
+  width: 75px;
+  height: 4px;
+  background-color: var(--ifm-color-primary);
+  margin: 0 auto 2.5rem;
+}
+
+.container {
+  padding: var(--my-trs-space-xl) 0;
+}
+
+/* Pricing Cards Section */
+.pricingCardsSection {
+  padding: var(--my-trs-space-xl) 0 var(--my-trs-space-xxl);
+  background-color: var(--ifm-background-surface-color);
+  margin-top: var(--my-trs-space-xl);
+}
+
+/* Responsive styles */
+@media (max-width: 996px) {
+  .industryExpertsHeading {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: var(--my-trs-space-lg) 0;
+  }
+}

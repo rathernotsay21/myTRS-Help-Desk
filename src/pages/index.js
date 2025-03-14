@@ -74,6 +74,24 @@ export default function Home() {
 {/* Why TRS Sections (Moved from why-trs page) */}
 <main className={styles.whyTrsSection}>
   <div className="container">
+    {/* Who do we serve section - Moved here */}
+    <div className="row">
+      <div className="col col--10 col--offset-1">
+        <section className={styles.introSection} style={{ padding: 'var(--my-trs-space-xl) 0' }}>
+          <h2 className={styles.sectionHeading}>Who do we serve?</h2>
+          <div className={styles.sectionContent}>
+            <h3 className={styles.mainTitle}>
+              Scalable Solutions for Events of Any Size
+            </h3>
+            <p className={styles.subtext}>
+              Whether you are managing 500 or 10,000+ volunteers for your event, we can handle it all with our scalable system built on 25+ years of experience. Our robust platform seamlessly scales to support events of any size, delivering powerful management capabilities without complexity.
+            </p>
+            <ServeCategoryCards />
+          </div>
+        </section>
+      </div>
+    </div>
+
     <div className="row">
       <div className="col col--10 col--offset-1"> {/* Changed from col--8 col--offset-2 */}
           {/* Why Choose TRS Section */}
@@ -141,9 +159,6 @@ export default function Home() {
     </div>
     
     {/* Keep the rest of your sections here */}
-    <Section heading="Who do we serve?">
-      <ServeCategoryCards />
-    </Section>
 
     <Section
       heading="CHOOSE YOUR TRACK"

@@ -15,6 +15,8 @@ const DemoForm = () => {
     orgType: '',
     eventsNeeded: '',
     registrantsCount: '',
+    registrationExperience: '',
+    timeline: '',
     additionalInfo: ''
   });
   
@@ -251,7 +253,7 @@ const DemoForm = () => {
             
             <div className={styles['form-row']}>
               <div className={styles['form-field']}>
-                <label htmlFor="eventsNeeded">Number of Events Needed <span className={styles.required}>*</span></label>
+                <label htmlFor="eventsNeeded">Number of Events <span className={styles.required}>*</span></label>
                 <input 
                   type="number" 
                   id="eventsNeeded" 
@@ -270,21 +272,57 @@ const DemoForm = () => {
               </div>
               
               <div className={styles['form-field']}>
-                <label htmlFor="registrantsCount">Total Number of Registrants/Volunteers <span className={styles.required}>*</span></label>
-                <input 
-                  type="text" 
-                  id="registrantsCount" 
-                  name="registrantsCount" 
-                  placeholder="Enter an estimate or a range (e.g: ~1,000 - 1,500 registrants)" 
-                  required 
+                <label htmlFor="registrantsCount">Number of Registrants <span className={styles.required}>*</span></label>
+                <select
+                  id="registrantsCount"
+                  name="registrantsCount"
+                  required
                   aria-required="true"
                   aria-invalid={!!errors.registrantsCount}
                   aria-describedby={errors.registrantsCount ? 'registrantsCount-error' : undefined}
                   value={formData.registrantsCount}
                   onChange={handleChange}
                   className={errors.registrantsCount ? styles['input-error'] : ''}
-                />
+                >
+                  <option value="">Select an option</option>
+                  <option value="< 500">{'< 500'}</option>
+                  <option value="1,000 - 5,000">1,000 - 5,000</option>
+                  <option value="5000 - 10,000">5000 - 10,000</option>
+                  <option value="10,000+">10,000+</option>
+                </select>
                 {renderError('registrantsCount')}
+              </div>
+            </div>
+            
+            <div className={styles['form-row']}>
+              <div className={styles['form-field']}>
+                <label htmlFor="registrationExperience">Have you had experience with a registration system before?</label>
+                <select
+                  id="registrationExperience"
+                  name="registrationExperience"
+                  value={formData.registrationExperience || ''}
+                  onChange={handleChange}
+                >
+                  <option value="">Select an option</option>
+                  <option value="YES">YES</option>
+                  <option value="NO">NO</option>
+                </select>
+              </div>
+              
+              <div className={styles['form-field']}>
+                <label htmlFor="timeline">How soon will you set up your event registration site?</label>
+                <select
+                  id="timeline"
+                  name="timeline"
+                  value={formData.timeline || ''}
+                  onChange={handleChange}
+                >
+                  <option value="">Select an option</option>
+                  <option value="As soon as possible">As soon as possible</option>
+                  <option value="In a few weeks">In a few weeks</option>
+                  <option value="In a few months">In a few months</option>
+                  <option value="Just looking for now">Just looking for now</option>
+                </select>
               </div>
             </div>
             

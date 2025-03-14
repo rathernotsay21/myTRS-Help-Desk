@@ -1,0 +1,334 @@
+/* Heading styles */
+.industryExpertsHeading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  color: var(--ifm-color-primary);
+}
+
+.headingUnderline {
+  width: 75px;
+  height: 4px;
+  background-color: var(--ifm-color-primary);
+  margin: 0 auto 2.5rem;
+}
+
+.packageSection {
+  padding: var(--my-trs-space-xl) 0;
+  background-color: var(--ifm-background-color);
+}
+
+/* Top Cards - Styled like PricingCards */
+.packageTopGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto 2rem;
+}
+
+.packageTopCard {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.packageTopCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.packageTopContent {
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.packageTopHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 16px;
+  margin-bottom: 10px;
+}
+
+.packageSvgIcon {
+  width: 32px;
+  height: 32px;
+  color: var(--ifm-color-primary);
+}
+
+.packageIconWrapper {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.packageTopTitle {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 12px;
+  text-align: center;
+}
+
+.packageTopDescription {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+/* Detailed Feature Cards */
+.packageGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto var(--my-trs-space-xl);
+}
+
+.packageCard {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.packageCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.packageAccent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+}
+
+/* Package Content */
+.packageContent {
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.packageCardTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: var(--my-trs-space-md);
+  text-align: center;
+}
+
+/* Card divider */
+.packageDivider {
+  height: 1px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  margin: 0 0 20px;
+}
+
+.featuresList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sectionHeader {
+  font-weight: 700;
+  margin-top: var(--my-trs-space-md);
+  margin-bottom: var(--my-trs-space-xs);
+  font-size: 1.1rem;
+  color: var(--ifm-color-emphasis-800);
+}
+
+.featureItem {
+  display: flex;
+  align-items: center;
+  padding: 8px 0;
+  gap: 8px;
+}
+
+.checkIcon {
+  display: flex;
+  align-items: center;
+  color: var(--ifm-color-success);
+}
+
+.checkIcon svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.packageButtonContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: auto;
+  padding-top: 16px;
+}
+
+.packageCtaButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  border-radius: 50px;
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 1rem 1rem;
+  width: auto;
+  margin-bottom: 16px;
+  transition: all 0.3s ease;
+  font-size: 1.125rem;
+}
+
+.packageCtaButton:hover {
+  opacity: 0.9;
+  text-decoration: none;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--my-trs-shadow-md);
+  filter: brightness(90%);
+}
+
+.additionalServices {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: var(--ifm-background-color);
+  border-radius: 12px;
+  padding: var(--my-trs-space-lg) var(--my-trs-space-xl);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.additionalTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: var(--my-trs-space-md);
+  color: var(--ifm-color-emphasis-900);
+}
+
+.additionalList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.additionalItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1 1 300px;
+}
+
+/* Card color variations */
+.card-blue {
+  background: linear-gradient(to bottom right, #f0f7ff, #e6f0fd);
+}
+
+.card-blue .packageCardTitle,
+.card-blue .packageTopTitle {
+  color: #1e40af;
+}
+
+.card-green {
+  background: linear-gradient(to bottom right, #f0fdf4, #e5f6eb);
+}
+
+.card-green .packageCardTitle,
+.card-green .packageTopTitle {
+  color: #15803d;
+}
+
+.card-orange {
+  background: linear-gradient(to bottom right, #fff7ed, #ffedd5);
+}
+
+.card-orange .packageCardTitle,
+.card-orange .packageTopTitle {
+  color: #c2410c;
+}
+
+/* Dark mode adjustments */
+html[data-theme='dark'] .packageCard,
+html[data-theme='dark'] .packageTopCard {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+html[data-theme='dark'] .additionalServices {
+  background: var(--ifm-background-surface-color);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+html[data-theme='dark'] .card-blue {
+  background: linear-gradient(to bottom right, #1a365d, #2a4a7f);
+}
+
+html[data-theme='dark'] .card-blue .packageCardTitle,
+html[data-theme='dark'] .card-blue .packageTopTitle {
+  color: #63b3ed;
+}
+
+html[data-theme='dark'] .card-green {
+  background: linear-gradient(to bottom right, #1c4532, #276749);
+}
+
+html[data-theme='dark'] .card-green .packageCardTitle,
+html[data-theme='dark'] .card-green .packageTopTitle {
+  color: #68d391;
+}
+
+html[data-theme='dark'] .card-orange {
+  background: linear-gradient(to bottom right, #7b341e, #9c4221);
+}
+
+html[data-theme='dark'] .card-orange .packageCardTitle,
+html[data-theme='dark'] .card-orange .packageTopTitle {
+  color: #fbd38d;
+}
+
+/* Responsive styles */
+@media (max-width: 996px) {
+  .packageTopGrid,
+  .packageGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  
+  .packageTopContent,
+  .packageContent {
+    padding: 24px 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .packageTopGrid,
+  .packageGrid {
+    grid-template-columns: repeat(1, 1fr);
+    max-width: 450px;
+    margin: 0 auto var(--my-trs-space-xl);
+  }
+}

@@ -35,7 +35,7 @@ export default function PricingCards() {
       buttonColor: '#0056b3'
     },
     {
-      name: 'Extended',
+      name: 'Pro',
       iconComponent: ExtendedIcon,
       color: 'green',
       accentColor: '#16a34a',
@@ -44,7 +44,7 @@ export default function PricingCards() {
       buttonColor: '#16a34a'
     },
     {
-      name: 'Custom',
+      name: 'Enterprise',
       iconComponent: CustomIcon,
       color: 'orange',
       accentColor: '#ea580c',

@@ -10,10 +10,6 @@ const TestimonialCarousel = () => {
   // Testimonial data
   const testimonials = [
     {
-      quote: "TRS has been one of our most valuable tools to manage our volunteer program. We are happy to recommend TRS. myTRS basically does volunteer recruiting for us - all we have to do is take care of the logistics of our event.",
-      organization: "Indiana Sports Corp"
-    },
-    {
       quote: "The ability to pull reports and get the information you need in a timely manner is incredible. The email & texting features of this software make it easy to communicate with registered volunteers. For an organization who uses repeat volunteers, I'd recommend this software. The individual sites and similar sign-up process leaves frequent users at ease. The simplicity of adding features such as a background check and liability waivers is a plus.",
       organization: "Greater Cleveland Sports Commission"
     },
@@ -26,7 +22,7 @@ const TestimonialCarousel = () => {
       organization: "Delray Beach Open"
     },
     {
-      quote: "The customer service is outstanding. TRS staff are a joy to work with.",
+      quote: "What I like the most about working with TRS is the high level of customer service provided. Each event has unique registration needs, and TRS works with clients individually to craft a platform that is successful for their event. I appreciate the time and dedication to solve problems and create solutions for our clients.",
       organization: "National FFA Organization"
     },
     {

@@ -228,6 +228,11 @@ const config = {
         {
           tagName: 'link',
           rel: 'prefetch',
+          href: '/pricing',
+        },
+        {
+          tagName: 'link',
+          rel: 'prefetch',
           href: '/blog',
         }
       ],
@@ -246,6 +251,11 @@ const config = {
             to: '/features',
             position: 'left',
             label: 'Features',
+          },
+          {
+            to: '/pricing',
+            position: 'left',
+            label: 'Pricing',
           },
           {to: '/blog', label: 'Updates', position: 'left'},
           {
@@ -279,6 +289,10 @@ const config = {
               {
                 label: 'Platform Overview',
                 to: '/features',
+              },
+              {
+                label: 'Pricing Plans',
+                to: '/pricing',
               },
               {
                 label: 'Support Resources',

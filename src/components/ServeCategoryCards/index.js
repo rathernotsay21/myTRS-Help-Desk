@@ -36,6 +36,7 @@ const ServeCategoryCards = () => {
       items: [
         'Local Organizing Committees',
         'Sports Commissions',
+        'Convention & Visitor Bureaus',
         'Event Management',
         'Sports & Event Rights Holders',
         'Governing Bodies'

@@ -14,7 +14,7 @@ Contact registrants by email/SMS
 
 Button: Re-send Confirmation
 
-Communicate with your registrants by utilizing your Registrant Reports OR [User Accounts](<../user-accounts.html>) menu panel option, located on the left side of your dashboard. 
+Communicate with your registrants by utilizing your Registrant Reports OR [User Accounts](<user_accounts.md>) menu panel option, located on the left side of your dashboard. 
 
 For communication by utilizing your reports, you have the ability to contact your registrants by using either your: 
 
@@ -64,7 +64,7 @@ NOTE: If you have never communicated with registrants, it is highly recommended 
 
 __________________________
 
-Once the applicable registrants in your report have been selected, or you have selected the appropriate individual(s) in [User Accounts](<../user-accounts.html>), please click:
+Once the applicable registrants in your report have been selected, or you have selected the appropriate individual(s) in [User Accounts](<user_accounts.md>), please click:
 
 * Contact Selected to compose a custom email, or send a custom text message
 

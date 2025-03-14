@@ -38,7 +38,7 @@ After a volunteer confirms their schedule, they will be directed to Sterling sit
 
 If the volunteer fails to submit background check, they will NOT receive a confirmation email of their schedules. They will also see a red notification on their dashboard that requires them to resubmit background check.
 
-Check out [this article ](<../troubleshoot/check-volunteers-background-check-status.html>)on how to run reports on background check result and find out which registrants didn't complete their background checks.
+Check out [this article ](<../troubleshoot/check_volunteers_background_check_status.md>)on how to run reports on background check result and find out which registrants didn't complete their background checks.
 
 ## Print credentials with DYMO Label integration
 
@@ -76,7 +76,7 @@ Copy + Paste the XML code into the open text box under the DYMO Label Configurat
 
 Print labels:
 
-1. Locate the registrant's user account (see [Modify profiles & check in](<../registration-management/check-ins.html>) for instructions) and view their registration.
+1. Locate the registrant's user account (see [Modify profiles & check in](<../registration_management/check_ins.md>) for instructions) and view their registration.
 
 2. View Schedule on the horizontal menu.
 

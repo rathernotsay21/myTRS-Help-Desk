@@ -16,4 +16,4 @@ sidebar_position: 12
 
 [IMAGE: Screenshot - Original URL: https://lh6.googleusercontent.com/kz7tNYGQB8B2oGh-oJoT4yT4viot_JHHvFQUBCftdq-47dp7mbNtXw40Jh3CuDdKaQ-X2Kk8iqFZI0KoqUmaXLnMOel6JiRQIBMhhY9C16Dk7P6TWGTPN2fcmql6l3sLQw=w1280]
 
-For information on communication with your registrants within reports (Re-send Confirmation or Contact Selected), please go to [volunteer communication instruction.](<registrant-reports/registrant-communication.html>)
+For information on communication with your registrants within reports (Re-send Confirmation or Contact Selected), please go to [volunteer communication instruction.](<registrant_communication.md>)

@@ -135,6 +135,6 @@ Volunteer Communication.mov
 
 Before going live, our clients are strongly recommended to do multiple test registrations to make sure the site is set up correctly. Follow the link below to find out:
 
-* [What do you need to verify before doing test registration?](before-doing-test-registrations.html)
-* [What to test?](step-9-required-test-launch-site.html)
+* [What do you need to verify before doing test registration?](before_doing_test_registrations.md)
+* [What to test?](step_9_required_test_launch_site.md)
 * How to go live?

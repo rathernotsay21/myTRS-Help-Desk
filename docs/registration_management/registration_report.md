@@ -233,4 +233,4 @@ To export your filtered report, simply click CSV to automatically download your 
 
 [IMAGE: Screenshot - Original URL: https://lh6.googleusercontent.com/kz7tNYGQB8B2oGh-oJoT4yT4viot_JHHvFQUBCftdq-47dp7mbNtXw40Jh3CuDdKaQ-X2Kk8iqFZI0KoqUmaXLnMOel6JiRQIBMhhY9C16Dk7P6TWGTPN2fcmql6l3sLQw=w1280]
 
-For instructions on communication with your registrants within reports, please go to [volunteer communication instruction.](<registrant-communication.html>)
+For instructions on communication with your registrants within reports, please go to [volunteer communication instruction.](<registrant_communication.md>)

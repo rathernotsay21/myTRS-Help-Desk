@@ -50,4 +50,4 @@ Find the total number of people for your selected shirt size at the top of the r
 
 [IMAGE: Screenshot - Original URL: https://lh5.googleusercontent.com/ICQTZ53PxTC08DasiTrZyZSqhweLq59DYL3QlQFq6nd-rlIXRwrjBx7vhKrFWDxphxhkATUV_rm9aQ_SiObt0GkDmyX2a64xoFmue_a_RD9NsgGS0o3FfInQ6SKAtjzinA=w1280]
 
-Save the report in the system (see Help Desk article [here](<../registration-management/saved-reports.html>)) so next time you can just run it and view the information you need. 
+Save the report in the system (see Help Desk article [here](<../registration_management/saved_reports.md>)) so next time you can just run it and view the information you need. 

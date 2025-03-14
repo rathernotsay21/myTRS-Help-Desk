@@ -34,7 +34,7 @@ Once this has been completed, we HIGHLY recommend conducting test registrations 
 
 Creating "test" registrations can help you make adjustments to clean up your site, and catch issues that you may overlook in your site editor. To save time though, starting in your settings is the first step to determining any problems going on that need attention before the site opens. 
 
-Find out how to test your site thoroughly [here](step-9-required-test-launch-site.html).
+Find out how to test your site thoroughly [here](step_9_required_test_launch_site.md).
 
 ## Checklist for site setup
 

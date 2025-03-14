@@ -53,9 +53,9 @@ If you want to find a record created on a specific site, select that site in the
 
 If a volunteer has trouble signing up for an account and activities, you can add them from the back-end by creating an account and selecting activities for them. 
 
-Watch the video below to learn how to add a new volunteer and register for them in the TRS system. If you want to add multiple registrants at the same time, go to [this article](<imports.html>) about importing multiple registrants.
+Watch the video below to learn how to add a new volunteer and register for them in the TRS system. If you want to add multiple registrants at the same time, go to [this article](<imports.md>) about importing multiple registrants.
 
-NOTE: If your volunteers already have accounts, you will need to add new activities for them by adding items to current their schedules in the Registration Report. Go [here](<registrant-reports/update-a-registrants-schedules-profile.html>) to see more instructions on updating volunteers' schedules.
+NOTE: If your volunteers already have accounts, you will need to add new activities for them by adding items to current their schedules in the Registration Report. Go [here](<update_a_registrants_schedules_profile.md>) to see more instructions on updating volunteers' schedules.
 
 After you have created an account for your volunteer, share the username and password that you created with them. The volunteer can then go to your registration site, Log in using the user name and password you created > go to their Dashboard > click on View Schedule to see the activities that you registered for them. They can also go to Edit profile to add details to their profile information and answer the questions (that you created in Custom Fields).
 

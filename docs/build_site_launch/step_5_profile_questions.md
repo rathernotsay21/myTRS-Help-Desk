@@ -45,7 +45,7 @@ Add short instructions using this "instructions" field format. To see the instru
 
 ### Inline instruction
 
-This is for longer description/instruction. This section will show up right under the field for registrants to read before they proceed to fill in their information. You can add images, hyperlink, maps, bullet points, tables, etc. in this section just like a description field in Page Settings or [Activities](<step-4-activitiesschedules.html>).
+This is for longer description/instruction. This section will show up right under the field for registrants to read before they proceed to fill in their information. You can add images, hyperlink, maps, bullet points, tables, etc. in this section just like a description field in Page Settings or [Activities](step_4_activities_schedules.md).
 
 [IMAGE: Screenshot - Original URL: https://lh5.googleusercontent.com/ELL7-GXXuu5FUp6fEarPmrAeoc8cPn7HlC0DB0E3CL_ZGAxxZXwfj31bpt20iT-TU1fmgZQ-m4wglCXq3L4W9vviIZif-G6ps1yFltsU_sQeASkXPbFM3EXIwqKXf_YGnw=w1280]
 

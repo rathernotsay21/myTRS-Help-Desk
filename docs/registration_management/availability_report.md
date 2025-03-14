@@ -60,7 +60,7 @@ Once you are done selecting your filters you can either:
 Once you run the report, you have the capability to see how many people have signed up versus maximum capacity, and the list of users attending. When you click the Registrations link, you access the list of the registrants signed up for the specific time slot or activities. You have the option to:
 
 * Use filters & advanced filters
-* Save the report in the system to view later (See [Saved Reports](../saved-reports.html) for more instructions)
+* Save the report in the system to view later (See [Saved Reports](saved_reports.md) for more instructions)
 
 [IMAGE: Screenshot - Original URL: https://lh4.googleusercontent.com/OezLCZ9N509E5Sa0BeTNWOXqWi_KkAOBByoTGdIzynEYMAoXeZutskuR34NyWHda6Z5yYbu-XEKvtSYzgIgvOnutalAo8tT-Cj2qfzqhL0wH6q9XSXb3p0QlUbbFdCKQEw=w1280]
 

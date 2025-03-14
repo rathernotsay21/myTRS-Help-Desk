@@ -6,14 +6,14 @@ sidebar_position: 99
 
 # Registrant Reports
 
-[General guide to customize, use, and save reports](<registrant-reports/general-guide-to-reports.html>)
+[General guide to customize, use, and save reports](<general_guide_to_reports.md>)
 
-[Availability Report](<registrant-reports/availability-report.html>)
+[Availability Report](<availability_report.md>)
 
-[Registration Report](<registrant-reports/registration-report.html>)
+[Registration Report](<registration_report.md>)
 
-[Update a registrant's schedules and profile](<registrant-reports/update-a-registrants-schedules-profile.html>)
+[Update a registrant's schedules and profile](<update_a_registrants_schedules_profile.md>)
 
-[How to communicate with registrants](<registrant-reports/registrant-communication.html>)
+[How to communicate with registrants](<registrant_communication.md>)
 
 How to register for a volunteer (who already has a user account)

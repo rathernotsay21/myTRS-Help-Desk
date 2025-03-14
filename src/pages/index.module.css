@@ -1,3 +1,76 @@
+/* Powerful management section with image */
+.powerfulSection {
+  display: flex;
+  gap: var(--my-trs-space-xl);
+  margin-bottom: var(--my-trs-space-xl);
+  align-items: center;
+  flex-direction: row; /* Changed from row-reverse to row to ensure image is on left */
+}
+
+.powerfulContent {
+  flex: 0.55; /* Reduced from 0.6 (60%) to 0.55 (55%) */
+}
+
+.powerfulImageContainer {
+  flex: 0.45; /* Increased from 0.4 (40%) to 0.45 (45%) */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.powerfulImage {
+  /* Removed box-shadow */
+}
+
+@media (max-width: 996px) {
+  .powerfulSection {
+    flex-direction: column;
+  }
+  
+  .powerfulContent,
+  .powerfulImageContainer {
+    width: 100%;
+  }
+}
+/* Support section with image */
+.supportSection {
+  display: flex;
+  gap: var(--my-trs-space-xl);
+  margin-bottom: var(--my-trs-space-xl);
+  align-items: center;
+}
+
+.supportContent {
+  flex: 0.6; /* Changed from 1 to 0.6 (60%) */
+}
+
+.supportImageContainer {
+  flex: 0.4; /* Changed from 1 to 0.4 (40%) */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Modified for background image approach */
+.supportImage {
+  box-shadow: var(--my-trs-shadow-md);
+}
+
+@media (max-width: 996px) {
+  .supportSection {
+    flex-direction: column;
+  }
+  
+  .supportContent,
+  .supportImageContainer {
+    width: 100%;
+  }
+  
+  .supportImage {
+    max-height: 400px;
+    width: 100%;
+  }
+}
 /**
  * CSS files with the .module.css suffix will be treated as CSS modules
  * and scoped locally.

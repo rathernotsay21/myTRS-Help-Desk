@@ -45,6 +45,7 @@ const SolutionGrid = ({ solutions }) => {
           text={solution.text}
           isPrimary={solution.isPrimary}
           isAnimated={animatedBlocks.includes(index)}
+          icon={solution.icon}
         />
       ))}
     </div>
@@ -54,10 +55,11 @@ const SolutionGrid = ({ solutions }) => {
 SolutionGrid.propTypes = {
   solutions: PropTypes.arrayOf(
     PropTypes.shape({
-      number: PropTypes.number.isRequired,
+      number: PropTypes.number,
       title: PropTypes.string.isRequired,
       text: PropTypes.string.isRequired,
-      isPrimary: PropTypes.bool
+      isPrimary: PropTypes.bool,
+      icon: PropTypes.node
     })
   ).isRequired
 };

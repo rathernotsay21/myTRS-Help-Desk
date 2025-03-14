@@ -83,7 +83,6 @@ export default function ClientLogos() {
       <section className={styles['client-logos']} ref={logosRef}>
         <div className="container">
           <h2 className={styles['section-title']}>Trusted by Thousands of Event Experts</h2>
-          <p className={styles['section-subtitle']}>Who do we serve?</p>
         
           {/* Pure CSS marquee-style logo carousel */}
           <div className={styles['logo-carousel-container']}>

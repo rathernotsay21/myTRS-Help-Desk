@@ -96,11 +96,11 @@ export default function PricingCards() {
                 
                 <div className={styles['pricing-features-link']}>
                   <Link 
-                    to="/features" 
+                    to="/pricing" 
                     className={styles['pricing-features-text']}
                     style={plan.name !== 'Standard' ? { color: plan.buttonColor } : {}}
                   >
-                    See More Features <span className={styles['pricing-arrow']}>↓</span>
+                    See More Features
                   </Link>
                 </div>
               </div>

@@ -98,12 +98,30 @@ export default function Home() {
           <section className={styles.introSection} style={{ padding: 'var(--my-trs-space-xl) 0' }}>
             <h2 className={styles.sectionHeading}>Why Choose TRS?</h2>
             <div className={styles.sectionContent}>
-              <h3 className={styles.mainTitle}>
-                Unparalleled Support & Partnership
-              </h3>
-              <p className={styles.subtext}>
-              More than just a software company, TRS brings world-class customer service to major events. At myTRS, we understand that successful volunteer management requires more than just powerful software. Our staff provides unparalleled 1-on-1 support and expert advice. We share lessons learned and options gleaned from 25+ years of online event and volunteer management experiences. Even on weekends and holidays, our team is here to help you navigate any challenge, from initial setup and training to troubleshooting and on-site support at the event. We're committed to your success every step of the way.
-              </p>
+              <div className={styles.supportSection}>
+                <div className={styles.supportContent}>
+                  <h3 className={styles.mainTitle}>
+                    Unparalleled Support & Partnership
+                  </h3>
+                  <p className={styles.subtext}>
+                  More than just a software company, TRS brings world-class customer service to major events. At myTRS, we understand that successful volunteer management requires more than just powerful software. Our staff provides unparalleled 1-on-1 support and expert advice. We share lessons learned and options gleaned from 25+ years of online event and volunteer management experiences. Even on weekends and holidays, our team is here to help you navigate any challenge, from initial setup and training to troubleshooting and on-site support at the event. We're committed to your success every step of the way.
+                  </p>
+                </div>
+                <div className={styles.supportImageContainer}>
+                  <div
+                    className={styles.supportImage}
+                    style={{
+                      backgroundImage: 'url(/img/event_photos/support.jpg)',
+                      backgroundSize: 'cover',
+                      backgroundPosition: 'center',
+                      width: '100%',
+                      height: '350px',
+                      borderRadius: '8px'
+                    }}
+                    aria-label="TRS Support Team providing assistance"
+                  ></div>
+                </div>
+              </div>
               <div className={styles.quoteContainer}>
                 <blockquote className={styles.testimonialQuote}>
                   <div className={styles.quoteIcon}>
@@ -139,19 +157,38 @@ export default function Home() {
           {/* Powerful Technology Section */}
           <section className={styles.introSection} style={{ padding: 'var(--my-trs-space-xl) 0', marginTop: 'var(--my-trs-space-lg)' }}>
             <div className={styles.sectionContent}>
-              <h3 className={styles.mainTitle}>
-              Powerful Event Management Software
-              </h3>
-              <p className={styles.subtext}>
-              myTRS is streamlined to handle events in many scales. From customizable registration platform and automated scheduling to real-time reporting and seamless communication tools, our software empowers you to manage multiple sites, committees, and communications with ease. Access the platform from anywhere, anytime, with our mobile-friendly interface.
-              </p>
-              <div style={{ marginTop: 'var(--my-trs-space-lg)' }}>
-                <Link
-                  className="button button--lg"
-                  style={{ backgroundColor: '#ea580b', color: 'white' }}
-                  to="/features">
-                  Explore Features
-                </Link>
+              <div className={styles.powerfulSection}>
+                <div className={styles.powerfulImageContainer}>
+                  <div
+                    className={styles.powerfulImage}
+                    style={{
+                      backgroundImage: 'url(/img/event_photos/mockup_devices_four.png)',
+                      backgroundSize: 'contain',
+                      backgroundPosition: 'center',
+                      backgroundRepeat: 'no-repeat',
+                      width: '100%',
+                      height: '400px', /* Increased from 350px to 400px */
+                      borderRadius: '0' /* Removed rounded corners */
+                    }}
+                    aria-label="myTRS application on multiple devices"
+                  ></div>
+                </div>
+                <div className={styles.powerfulContent}>
+                  <h3 className={styles.mainTitle}>
+                  Powerful Event Management Software
+                  </h3>
+                  <p className={styles.subtext}>
+                  myTRS is streamlined to handle events in many scales. From customizable registration platform and automated scheduling to real-time reporting and seamless communication tools, our software empowers you to manage multiple sites, committees, and communications with ease. Access the platform from anywhere, anytime, with our mobile-friendly interface.
+                  </p>
+                  <div style={{ marginTop: 'var(--my-trs-space-lg)' }}>
+                    <Link
+                      className="button button--lg"
+                      style={{ backgroundColor: '#ea580b', color: 'white' }}
+                      to="/features">
+                      Explore Features
+                    </Link>
+                  </div>
+                </div>
               </div>
             </div>
           </section>
@@ -161,10 +198,35 @@ export default function Home() {
     {/* Keep the rest of your sections here */}
 
     <Section
-      heading="CHOOSE YOUR TRACK"
-      title="Customized plans for every industry sector"
+      heading="myTRS Services"
+      title="Comprehensive Support"
     >
-      <SolutionGrid solutions={solutionBlocks} />
+      <SolutionGrid solutions={[
+        {
+          number: 1,
+          title: 'Personalized Training',
+          text: 'Master the myTRS platform with hands-on training covering site building, registration setup, reporting, communication, and more. We\'ll guide you through the platform, answer your questions, and ensure you have the knowledge and confidence to manage your volunteer program effectively.',
+          isPrimary: true
+        },
+        {
+          number: 2,
+          title: 'Expert Site Testing',
+          text: 'Take control of your registration process with our expert site testing service. Upon request, we\'ll meticulously review your registration setup, identify potential issues, and ensure a smooth registration experience for your volunteers.',
+          isPrimary: false
+        },
+        {
+          number: 3,
+          title: 'Dedicated Customer Service',
+          text: 'Experience unparalleled customer service excellence with myTRS. Our dedicated support team provides 24/7 personalized assistance, rapid response times, and expert solutions to every inquiry. We pride ourselves on building lasting relationships through attentive care, proactive problem-solving, and an unwavering commitment to your success.',
+          isPrimary: false
+        },
+        {
+          number: 4,
+          title: 'On-Site Support',
+          text: 'Focus on your event, not the technology. myTRS offers on-site support to ensure your volunteers and staff have the assistance they need to confidently utilize our system. Request this service to have our expert team provide comprehensive training, personalized guidance, and proactive problem-solving on event day.',
+          isPrimary: true
+        }
+      ]} />
     </Section>
 
 

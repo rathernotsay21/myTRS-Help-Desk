@@ -1,0 +1,19 @@
+HTTrack3.49-2+htsswf+htsjava launched on Fri, 14 Mar 2025 09:48:55 at https://sites.google.com/my-trs.com/trshelpdesk/ +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar
+(winhttrack -qwC2%Ps2u1%s%uN0%I0p3DaK0H0%kf2A25000%f#f -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F "<!-- Mirrored from %s%s by HTTrack Website Copier/3.x [XR&CO'2014], %s -->" -%l "en, *" https://sites.google.com/my-trs.com/trshelpdesk/ -O1 "C:\My Web Sites\helpdesk" +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+09:49:21	Error: 	"Not Found" (404) at link https://sites.google.com/my-trs.com/trshelpdesk/POST (from https://sites.google.com/my-trs.com/trshelpdesk/)
+09:49:37	Error: 	"Not Found" (404) at link https://sites.google.com/my-trs.com/trshelpdesk/"https://app.calendarhero.com/assets/widget.js"></script> (from https://sites.google.com/my-trs.com/trshelpdesk/)
+09:49:38	Error: 	"Not Found" (404) at link https://sites.google.com/my-trs.com/trshelpdesk/overview/POST (from https://sites.google.com/my-trs.com/trshelpdesk/overview/giving-admin-access)
+09:49:38	Error: 	"Not Found" (404) at link https://sites.google.com/my-trs.com/trshelpdesk/build-site-launch/POST (from https://sites.google.com/my-trs.com/trshelpdesk/build-site-launch/dashboard-navigation)
+09:49:39	Error: 	"Not Found" (404) at link https://sites.google.com/my-trs.com/trshelpdesk/registration-management/POST (from https://sites.google.com/my-trs.com/trshelpdesk/registration-management/user-accounts)
+09:49:39	Error: 	"Not Found" (404) at link https://sites.google.com/my-trs.com/trshelpdesk/registration-management/registrant-reports/POST (from https://sites.google.com/my-trs.com/trshelpdesk/registration-management/registrant-reports/general-guide-to-reports)
+09:49:39	Error: 	"Not Found" (404) at link https://sites.google.com/my-trs.com/trshelpdesk/faq/check-volunteers-background-check-status (from https://sites.google.com/my-trs.com/trshelpdesk/troubleshoot)
+09:49:39	Error: 	"Not Found" (404) at link https://sites.google.com/my-trs.com/trshelpdesk/troubleshoot/POST (from https://sites.google.com/my-trs.com/trshelpdesk/troubleshoot/add-images-to-description)
+
+HTTrack Website Copier/3.49-2 mirror complete in 45 seconds : 70 links scanned, 61 files written (10612873 bytes overall) [1986770 bytes received at 44150 bytes/sec], 11494097 bytes transferred using HTTP compression in 67 files, ratio 12%
+(8 errors, 0 warnings, 0 messages)

@@ -4,7 +4,7 @@
   publish = "build"
   
 [build.environment]
-  NODE_VERSION = "18.19.0"
+  NODE_VERSION = "20.11.1"
   SKIP_TAILWIND = "true"
   
 [build.processing]

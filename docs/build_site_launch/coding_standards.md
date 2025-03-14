@@ -53,12 +53,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './styles.module.css';
 
-/**
- * Button component with various variants and sizes
- *
- * @param {string} variant - Button variant (primary, secondary, etc.)
- * @param {string} size - Button size (sm, md, lg)
- * @param {ReactNode} children - Button content
+/** * Button component with various variants and sizes
+* * @param {string} variant - Button variant (primary, secondary, etc.)
+* @param {string} size - Button size (sm, md, lg)
+* @param {ReactNode} children - Button content
  */
 const Button = ({ 
   variant = 'primary',

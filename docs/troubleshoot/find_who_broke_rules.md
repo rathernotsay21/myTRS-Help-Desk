@@ -1,4 +1,9 @@
 ---
 sidebar_position: 16
 ---
-# Find who broke rules
+
+
+
+# How to find registrants that broke the rules
+
+To find registrations that broke the rules, watch the video below:
